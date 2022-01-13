@@ -1,0 +1,69 @@
+<form autocomplete='off'>
+  <div class='form-group'>
+    <label>{{localize 'SWADE.Formula'}}</label>
+    <input type='text' name='formula' value='{{formula}}' disabled />
+  </div>
+  <fieldset>
+    <legend>{{localize 'SWADE.Modifiers'}}</legend>
+    <header class='modifier-entry header'>
+      <div>{{localize 'SWADE.Name'}}</div>
+      <div>Value</div>
+      <div>Ignore?</div>
+    </header>
+    <ul class='modifiers'>
+      {{#each modifiers}}
+        <li class='modifier-entry'>
+          <div>{{label}}</div>
+          <div>{{value}}</div>
+          <input
+            type='checkbox'
+            data-index={{@index}}
+            name='modifiers.{{@index}}.ignore'
+            {{checked ignore}}
+          />
+        </li>
+      {{/each}}
+    </ul>
+    <footer class='modifier-entry footer'>
+      <input
+        type='text'
+        class='new-modifier-label'
+        placeholder='{{localize "SWADE.Mod"}}'
+      />
+      <input
+        type='text'
+        class='new-modifier-value'
+        placeholder='{{localize "SWADE.RollExample"}}'
+      />
+      <button type='button' class='add-modifier'>
+        <i class='fa fa-plus'></i>&nbsp;{{localize 'SWADE.Add'}}
+      </button>
+    </footer>
+  </fieldset>
+  <div class='form-group'>
+    <label>{{localize 'SWADE.RollMode'}}</label>
+    <select id='rollMode' name='rollMode'>
+      {{#select rollMode}}
+        {{#each rollModes as |label mode|}}
+          <option value='{{mode}}'>{{localize label}}</option>
+        {{/each}}
+      {{/select}}
+    </select>
+  </div>
+  <div class='flexrow'>
+    <button type='submit'>
+      <i class='fas fa-dice'></i>
+      {{localize 'SWADE.Roll'}}
+    </button>
+    {{#if displayExtraButton}}
+      <button type='submit' data-type='extra'>
+        <i class='far fa-plus-square'></i>
+        {{extraButtonLabel}}
+      </button>
+    {{/if}}
+    <button type='button' id='close'>
+      <i class='fas fa-times'></i>
+      {{localize 'Close'}}
+    </button>
+  </div>
+</form>

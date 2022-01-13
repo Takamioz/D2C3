@@ -1,0 +1,23 @@
+<form autocomplete="off">
+  <ul class="card-dialog">
+    {{#each data.cards as |card|}}
+    <li class="card">
+      <label for="{{card.id}}">
+        <input
+          type="radio"
+          name="card"
+          id="{{card.id}}"
+          data-card-id="{{card.id}}"
+        />
+        <figure>
+          <img src="{{card.data.img}}" />
+          <figcaption>
+            {{card.name}} {{#if (eq card.id ../data.oldCard)}}<br />({{localize
+            "SWADE.OldCard"}}){{/if}}
+          </figcaption>
+        </figure>
+      </label>
+    </li>
+    {{/each}}
+  </ul>
+</form>

@@ -1,0 +1,38 @@
+<div class="ve-flex-col ve-window min-h-0 h-100">
+	<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+		<input type="search" class="search w-100 form-control" placeholder="Find {{titleSearch}}...">
+		<button class="btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>
+	</div>
+	<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink" data-name="wrp-btns-sort">
+		<button class="btn-5et col-7-5 sort" data-sort="name">Name</button>
+		<button class="btn-5et col-1-5 sort" data-sort="source">Source</button>
+
+		<button class="btn-5et col-3" disabled>Version</button>
+	</div>
+
+	<div class="veapp__list mb-1 h-100">
+		{{#each rows}}
+			<label class="w-100 ve-flex-v-center pb-1p veapp__list-row veapp__list-row-hoverable min-h-24p">
+				<span class="col-7-5 pl-1">{{name}}</span>
+				<span class="col-1-5 text-center {{sourceClassName}}" title="{{sourceLong}}">{{sourceShort}}</span>
+
+				{{#if hasVersions}}
+					<div class="col-3 ve-flex-v-center">
+						<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-version">
+							<option value="-1">&mdash;</option>
+							{{#each availableVersions}}
+								<option value="{{ix}}">{{name}}</option>
+							{{/each}}
+						</select>
+					</div>
+				{{else}}
+					<div class="col-3 text-center">&mdash;</div>
+				{{/if}}
+			</label>
+		{{/each}}
+	</div>
+
+	<div class="no-shrink">
+		<button class="btn-5et" name="btn-run">Import</button>
+	</div>
+</div>

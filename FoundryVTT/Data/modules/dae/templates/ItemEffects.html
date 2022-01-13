@@ -1,0 +1,66 @@
+<form autocomplete="off">
+  <section>
+    <div class="flexrow" height="30px">
+      <label>{{localize "dae.Active"}}</label>
+      <input type="checkbox" name="flags.dae.activeEquipped" value="flags.dae.activeEquipped" data-dtype="{{Boolean}}"
+        {{checked flags.dae.activeEquipped}} />
+    </div>
+    <div class="flexrow" height="30px">
+      <label>{{localize "dae.Cursed"}}</label>
+      <input type="checkbox" name="flags.dae.alwaysActive" value="1" data-dtype="{{Boolean}}"
+        {{checked flags.dae.alwaysActive}} />
+    </div>
+  </section>
+  <section>
+    <div class="dnd5e sheet item ">
+      {{#if showEffects}}
+      <ol class="dae-effect-list">
+        <li class="flexrow effect-header">
+          <div class="effect-name">{{localize "dae.ActiveEffectName"}}</div>
+          <div class="effect-mode">{{localize "dae.EffectMode"}}</div>
+          <div class="effect-value">{{localize "dae.EffectValue"}}</div>
+          {{#if canEdit}}
+          <div class="effect-controls">
+            <a class="effect-add" title={{localize dae.add}}><i class="fas fa-plus"></i></a>
+          </div>
+          {{/if}}
+        </li>
+
+        {{#each actives as |effect iid|}}
+        <li class="flexrow effect-header" effect-id="{{effect._id}}">
+          <div class="effect-label">{{effect.label}}</div>
+          <div><img src="{{effect.icon}}" height="20px" style="border:0px"></div>
+          {{#if effect.transfer}}
+          {{#if ../isOwned}}
+          {{localize "dae.readOnly"}}
+          {{else}}
+          <i class="fas fa-arrow-down" style="padding-top: 4px"></i>
+          {{/if}}
+          {{else}}
+          <i class="fas fa-arrow-right" style="padding-top: 4px"></i>
+          {{/if}}
+          {{#if effect.flags.dae.active}}
+          <div>&nbsp{{localize "dae.enabled"}}</div>
+          {{else}}
+          <div>&nbsp{{localize "dae.disabled"}}</div>
+          {{/if}}
+
+          <div class="effect-controls dae-effect-list">
+            <a class="effect-edit" title={{localize dae.edit}}><i class="fas fa-edit"></i></a>
+            <a class="effect-delete" title={{localize dae.Delete}}><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+        {{#each effect.changes as |change cid|}}
+        <li class="flexrow dae-change-list" effect-id="{{effect._id}}" change-id="{{cid}}">
+          <div class="effect-name">{{change.label}}</div>
+          <div class="effect-mode">{{lookup ../../modes @change.mode}}</div>
+          <div class="effect-value">{{change.value}}</div>
+          {{/each}}
+        </li>
+        {{/each}}
+      </ol>
+      {{/if}}
+    </div>
+  </section>
+
+</form>

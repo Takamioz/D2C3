@@ -1,0 +1,232 @@
+{
+  "resources": [
+    "dicehit.mp3"
+  ],
+  "spritemap": {
+    "dicehit_coin1": {
+      "start": 0,
+      "end": 0.11464852607709751,
+      "loop": false
+    },
+    "dicehit_coin2": {
+      "start": 2,
+      "end": 2.1044897959183673,
+      "loop": false
+    },
+    "dicehit_coin3": {
+      "start": 4,
+      "end": 4.104489795918368,
+      "loop": false
+    },
+    "dicehit_coin4": {
+      "start": 6,
+      "end": 6.114648526077097,
+      "loop": false
+    },
+    "dicehit_coin5": {
+      "start": 8,
+      "end": 8.104489795918367,
+      "loop": false
+    },
+    "dicehit_coin6": {
+      "start": 10,
+      "end": 10.104489795918367,
+      "loop": false
+    },
+    "dicehit_metal1": {
+      "start": 12,
+      "end": 12.055328798185942,
+      "loop": false
+    },
+    "dicehit_metal10": {
+      "start": 14,
+      "end": 14.056780045351474,
+      "loop": false
+    },
+    "dicehit_metal11": {
+      "start": 16,
+      "end": 16.040816326530614,
+      "loop": false
+    },
+    "dicehit_metal12": {
+      "start": 18,
+      "end": 18.019410430839002,
+      "loop": false
+    },
+    "dicehit_metal2": {
+      "start": 20,
+      "end": 20.06621315192744,
+      "loop": false
+    },
+    "dicehit_metal3": {
+      "start": 22,
+      "end": 22.047528344671203,
+      "loop": false
+    },
+    "dicehit_metal4": {
+      "start": 24,
+      "end": 24.034285714285716,
+      "loop": false
+    },
+    "dicehit_metal5": {
+      "start": 26,
+      "end": 26.008526077097507,
+      "loop": false
+    },
+    "dicehit_metal6": {
+      "start": 28,
+      "end": 28.019591836734694,
+      "loop": false
+    },
+    "dicehit_metal7": {
+      "start": 30,
+      "end": 30.027573696145126,
+      "loop": false
+    },
+    "dicehit_metal8": {
+      "start": 32,
+      "end": 32.03265306122449,
+      "loop": false
+    },
+    "dicehit_metal9": {
+      "start": 34,
+      "end": 34.014331065759634,
+      "loop": false
+    },
+    "dicehit_plastic1": {
+      "start": 36,
+      "end": 36.03140589569161,
+      "loop": false
+    },
+    "dicehit_plastic10": {
+      "start": 38,
+      "end": 38.09575963718821,
+      "loop": false
+    },
+    "dicehit_plastic11": {
+      "start": 40,
+      "end": 40.107233560090705,
+      "loop": false
+    },
+    "dicehit_plastic12": {
+      "start": 42,
+      "end": 42.068888888888885,
+      "loop": false
+    },
+    "dicehit_plastic13": {
+      "start": 44,
+      "end": 44.049569160997734,
+      "loop": false
+    },
+    "dicehit_plastic14": {
+      "start": 46,
+      "end": 46.03766439909297,
+      "loop": false
+    },
+    "dicehit_plastic15": {
+      "start": 48,
+      "end": 48.027800453514736,
+      "loop": false
+    },
+    "dicehit_plastic2": {
+      "start": 50,
+      "end": 50.02013605442177,
+      "loop": false
+    },
+    "dicehit_plastic3": {
+      "start": 52,
+      "end": 52.02498866213152,
+      "loop": false
+    },
+    "dicehit_plastic4": {
+      "start": 54,
+      "end": 54.02124716553288,
+      "loop": false
+    },
+    "dicehit_plastic5": {
+      "start": 56,
+      "end": 56.0249433106576,
+      "loop": false
+    },
+    "dicehit_plastic6": {
+      "start": 58,
+      "end": 58.019954648526074,
+      "loop": false
+    },
+    "dicehit_plastic7": {
+      "start": 60,
+      "end": 60.0209977324263,
+      "loop": false
+    },
+    "dicehit_plastic8": {
+      "start": 62,
+      "end": 62.144285714285715,
+      "loop": false
+    },
+    "dicehit_plastic9": {
+      "start": 64,
+      "end": 64.12163265306123,
+      "loop": false
+    },
+    "dicehit_wood1": {
+      "start": 66,
+      "end": 66.08326530612244,
+      "loop": false
+    },
+    "dicehit_wood10": {
+      "start": 68,
+      "end": 68.01269841269841,
+      "loop": false
+    },
+    "dicehit_wood11": {
+      "start": 70,
+      "end": 70.00471655328798,
+      "loop": false
+    },
+    "dicehit_wood12": {
+      "start": 72,
+      "end": 72.02285714285715,
+      "loop": false
+    },
+    "dicehit_wood2": {
+      "start": 74,
+      "end": 74.04625850340136,
+      "loop": false
+    },
+    "dicehit_wood3": {
+      "start": 76,
+      "end": 76.04607709750567,
+      "loop": false
+    },
+    "dicehit_wood4": {
+      "start": 78,
+      "end": 78.02231292517007,
+      "loop": false
+    },
+    "dicehit_wood5": {
+      "start": 80,
+      "end": 80.0172335600907,
+      "loop": false
+    },
+    "dicehit_wood6": {
+      "start": 82,
+      "end": 82.06240362811792,
+      "loop": false
+    },
+    "dicehit_wood7": {
+      "start": 84,
+      "end": 84.00761904761904,
+      "loop": false
+    },
+    "dicehit_wood8": {
+      "start": 86,
+      "end": 86.02013605442177,
+      "loop": false
+    },
+    "dicehit_wood9": {
+      "start": 88,
+      "end": 88.12734693877552,
+      "loop": false
+    }
+  }
+}

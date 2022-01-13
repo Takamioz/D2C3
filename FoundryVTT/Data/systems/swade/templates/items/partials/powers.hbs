@@ -1,0 +1,66 @@
+<div class="flexrow">
+  <div class="form-group header-field">
+    <div class="creators-arcane-skill">
+      <label for="die">{{localize "SWADE.ArcaneSkill"}}</label>
+      <span class="form-fields">
+        <select name="data.arcaneSkillDie.sides" id="die" data-dtype="Number">
+          {{#select data.data.arcaneSkillDie.sides}} {{>
+          "systems/swade/templates/die-sides-options.hbs"}} {{/select}}
+        </select>
+        <input name="data.arcaneSkillDie.modifier" type="text" value="{{data.data.arcaneSkillDie.modifier}}"
+          placeholder="{{localize 'SWADE.Mod'}}" data-dtype="Number" />
+      </span>
+    </div>
+    <!-- Global counter -->
+    {{#unless settingrules.noPowerPoints}}
+    <div class="power-counter" data-arcane="All">
+      <label for="data.powerPoints.value">{{localize "SWADE.PP"}}</label>
+      <input name="data.powerPoints.value" type="text" value="{{data.data.powerPoints.value}}"
+        placeholder="{{localize 'SWADE.CurPP'}}" data-dtype="Number" />
+      <span>/</span>
+      <input name="data.powerPoints.max" type="text" value="{{data.data.powerPoints.max}}"
+        placeholder="{{localize 'SWADE.MaxPP'}}" data-dtype="Number" />
+    </div>
+    {{/unless}}
+  </div>
+</div>
+<powers class="powers-list">
+  {{#each this.data.flags.swade.embeddedPowers as |power|}}
+  <div class="power item" data-item-id="{{power.[0]}}" data-arcane="{{power.[1].data.arcane}}">
+    <div class="power-header flexrow">
+      <div class="item-image" style="background-image: url('{{power.[1].img}}')"></div>
+      <h4 class="item-name">{{power.[1].name}}</h4>
+      {{#if ../owner}}
+      <div class="item-controls flexrow">
+        <a class="power-delete"><i class="fas fa-trash"></i></a>
+      </div>
+      {{/if}}
+    </div>
+    <div class="power-content">
+      <div class="power-details">
+        <div class="flexrow">
+          {{#if power.[1].data.rank}}
+          <div>{{localize 'SWADE.Rank'}}: {{power.[1].data.rank}}</div>
+          {{/if}} {{#if power.[1].data.pp}}
+          <div>{{power.[1].data.pp}} PP</div>
+          {{/if}}
+        </div>
+        <div class="flexrow">
+          {{#if power.[1].data.range}}
+          <div>{{localize 'SWADE.Rng'}}: {{power.[1].data.range}}</div>
+          {{/if}} {{#if power.[1].data.duration}}
+          <div>{{localize 'SWADE.Dur'}}: {{power.[1].data.duration}}</div>
+          {{/if}}
+        </div>
+        {{#if power.[1].data.damage.length}}
+        <div>
+          {{localize 'SWADE.Dmg'}}:
+          <a class="damage-roll">{{power.[1].data.damage}}</a>
+        </div>
+        {{/if}}
+      </div>
+      <div class="power-description">{{enrich power.[1].data.description}}</div>
+    </div>
+  </div>
+  {{/each}}
+</powers>

@@ -1,0 +1,159 @@
+/* ------------------------------------ */
+/*					CSS					*/
+/*  	  Add your styles here			*/
+/* ------------------------------------ */
+
+.dnd5e.sheet.item .dae-effect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+  overflow-y: auto;
+}
+.dnd5e.sheet.item .dae-effect-list .effect {
+  line-height: 30px;
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+
+.dnd5e.sheet.item .dae-effect-list .effect .effect-name {
+  cursor: pointer;
+  min-width: 220px;
+}
+
+.dnd5e.sheet.item .dae-effect-list .effect .effect-name h4 {
+  margin: 0;
+}
+.dnd5e.sheet.item  .effect-header {
+  margin: 2px 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 3px groove #eeede0;
+  font-weight: bold;
+  line-height: 24px;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-header h3 {
+  margin: 0 0px 0 0;
+  padding-left: 0px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.dnd5e.sheet.item .dae-effect-list .effect-name,
+.dnd5e.sheet.item .dae-effect-list .effect-label
+{
+  flex: 0 0 200px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-transfer
+{
+  flex: 0 0 100px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-mode
+{
+  flex: 0 0 100px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-value
+{
+  flex: 0 0 120px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  min-width: 120px;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-value-value
+{
+  flex: 0 0 240px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  min-width: 120px;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dnd5e.sheet.item .smallbox {
+  line-height: 14px;
+  font-size: 14px;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-controls,
+.dnd5e.sheet.item .dae-change-list .change-controls
+ {
+  flex: 2 0 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justify-content: flex-end;
+}
+
+.dnd5e.sheet.item .dae-effect-list .effect-controls > * {
+  flex: 1;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-controls .flex1 {
+  flex: 1;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-controls .flex2 {
+  flex: 2;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-controls .flex3 {
+  flex: 3;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-controls .flex4 {
+  flex: 4;
+}
+.dnd5e.sheet.item .dae-effect-list .effect-controls a {
+  flex: 0 0 22px;
+  font-size: 10px;
+  text-align: center;
+  color: #606060;
+}
+
+.dae-green-text {
+  color: green
+}
+
+.dae-active-button-styling {
+  border: none;
+  padding: 0px;
+}
+.dae-active-button {
+  border: none;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  font-weight: bold;
+  color: green;
+  justify-content: space-between;
+}
+.dae-inactive-button {
+  border: none;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  color: grey;
+  justify-content: space-between;
+}
+.dae-inactive-itemeffect {
+  color: grey;
+  text-indent: 10px;
+  font-size: 12px;
+}
+.dae-active-itemeffect {
+  text-indent: 10px;
+  font-size: 12px;
+}
+.dae-active-toggle {
+  border: none;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-between;
+}

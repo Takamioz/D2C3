@@ -1,0 +1,20 @@
+<li class="gear-card item" data-item-id="{{id}}">
+  <header class="card-header flexrow">
+    <div class="item-image" style="background-image: url('{{img}}')"></div>
+    <button type="button" class="item-name">{{name}}</button>
+    <div class="item-controls">
+      <button type="button" class="item-control item-show">
+        <i class="far fa-comment-alt"></i>
+      </button>
+    </div>
+  </header>
+  <div class="card-content" style="display: none">
+  {{#if (or data.data.actions.skill data.data.actions.dmgMod data.data.actions.skillMod data.data.actions.additional.length data.data.isArcaneDevice)}}
+    {{>"systems/swade/templates/shared-partials/action-card.hbs" item=this}}
+  {{else}}
+  {{#if data.data.description}}
+    {{{enrich data.data.description}}}
+  {{/if}}
+  {{/if}}
+  </div>
+</li>

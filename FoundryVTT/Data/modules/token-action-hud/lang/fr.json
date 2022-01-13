@@ -1,0 +1,502 @@
+{
+  "tokenactionhud": {
+    "abilities": "Abilités",
+    "accept": "Accepter",
+    "actions": "Actions",
+    "activate": "Activer",
+    "active": "Activé",
+    "advanced": "Avancé",
+    "allowlist": "Liste autorisée",
+    "armour": "Armure",
+    "atk": "Atk",
+    "attack": "Attaque",
+    "attribute": {
+      "agility": "Agilité",
+      "intellect": "Intellect",
+      "perception": "Perception",
+      "strength": "Force",
+      "will": "Volonté"
+    },
+    "attributes": "Attributs",
+    "bab": "BAB",
+    "basic": "Basique",
+    "bennies": "Bennies",
+    "blessing": "Bénédiction",
+    "blocklist": "Liste bloquée",
+    "blocklistLabel": "liste bloquée : caché / liste autorisée: afffiché",
+    "bonusActions": "Actions Bonus",
+    "bonuses": "Bonus",
+    "book": "Livre",
+    "books": "Livres",
+    "buffs": "Buffs",
+    "cancel": "Annuler",
+    "cantrips": "Tours de magie",
+    "characteristics": "Caractéristiques",
+    "casterlevel": "Caster Level",
+    "categoryTagExplanation": "Ajoutez et supprimez des catégories supplémentaires personnalisables.",
+    "categoryTagTitle": "Ajouter/Supprimer des catégories",
+    "charts": "Statistiques",
+    "checks": "Tests",
+    "classFeatures": "Capacités de classe",
+    "clearButton": "Clear",
+    "cmb": "CMB",
+    "commonSkills": "Compétences communes",
+    "concentration": "Concentration",
+    "conditions": "Conditions",
+    "consumables": "Consommables",
+    "corebonus": "Core Bonus",
+    "crewActions": "Crew Actions",
+    "critical": "Critique",
+    "d35e": {
+      "grapple": "Agripper"
+    },
+    "damage": "Dommages",
+    "dc": "DC",
+    "deathSave": "Sauvegarde contre la mort",
+    "defenses": "Défenses",
+    "dmg": "Dmg",
+    "dodge": "Dodge",
+    "doomed": "Doomed",
+    "downtime": "Downtime",
+    "dying": "Dying",
+    "edges": "Edges",
+    "edgesAndHindrances": "Edges/Hindrances",
+    "effects": "Effets",
+    "engineering": "Engineering",
+    "equipment": "Equipement",
+    "experimental": "Experimental",
+    "exploration": "Exploration",
+    "fatigue": "Fatigue",
+    "feats": "Dons",
+    "features": "Capacités",
+    "filterPlaceholder": "Choix (séparation avec point-virgule)",
+    "filterTagExplanation": "Add entries here to show or hide specific category entries.",
+    "filterTitle": "Filtre",
+    "free": "Libre",
+    "fullAttack": "Attaque totale",
+    "gear": "Gear",
+    "get": "Get",
+    "gm": "MJ",
+    "grit": "Grit",
+    "handlerNotFound": "non trouvé, retour au gestionnaire par défaut.",
+    "hase": "HASE",
+    "healing": "Soigner",
+    "heroPoints": "Points de Heros",
+    "hindrances": "Hindrances",
+    "hull": "Hull",
+    "improvisedWeapon": "Arme Improvisée",
+    "inconsumables": "Non consommables",
+    "initiative": "Initiative",
+    "inspiration": "Inspiration",
+    "instinct": "Instinct",
+    "inventory": "Inventaire",
+    "lair": "Antre",
+    "lairActions": "Lair Actions",
+    "legendary": "Légendaire",
+    "legendaryActions": "Legendary Actions",
+    "level": "Niveau",
+    "levelAbbreviation": "Niv",
+    "longRest": "Repos Long",
+    "lore": "Savoir",
+    "magic": "Magie",
+    "magicItems": "Objets magiques",
+    "mech": "Mech",
+    "melee": "Mêlée",
+    "misc": "Divers",
+    "monsterMoves": "Déplacements Créature",
+    "moves": "Déplacements",
+    "msa": "Sort de Combat",
+    "mwa": "Attaque à l'arme de mélée",
+    "noammo": "Pas de munitions",
+    "other": "Autre",
+    "passive": "Passif",
+    "petty": "Mineur",
+    "pf1": {
+      "disabled": "Désactivé"
+    },
+    "pf2e": {
+      "useTwoHandedLabel": "Utiliser une arme à deux mains",
+      "recoveryCheck": "Test de récupération"
+    },
+    "pilot": "Pilote",
+    "points": "Points",
+    "powers": "Pouvoirs",
+    "profession": "Profession",
+    "push": "Right",
+    "pushLabelExplanation": "Montrer les catégories de quel côté?",
+    "ranged": "Projectile",
+    "rank": "Rang",
+    "reactions": "Réactions",
+    "recharge": "Recharger",
+    "religion": "Religion",
+    "resistance": "Résistance",
+    "rest": "Repos",
+    "restNight": "Se reposer pour la nuit",
+    "takeBreather": "Reprendre son soffle",
+    "rests": "Repos",
+    "roll": "Lancer Dés",
+    "rollable": "Lançable",
+    "rollInitiative": "Lancer l'initiative",
+    "rsa": "Sort de Missile",
+    "rwa": "Attaque à l'arme à distance",
+    "saves": "Sauvegardes",
+    "shields": "Boucliers",
+    "shortRest": "Repos rapide",
+    "skills": "Compétences",
+    "skilltriggers": "Déclancheurs de compétences",
+    "special": "Spécial",
+    "specialActions": "Actions spéciales",
+    "specialQualities": "Qualités spéciales",
+    "spellbook": "Grimoire",
+    "spells": "Sorts",
+    "spend": "Spend",
+    "starting": "Démarre",
+    "stat": "Stat",
+    "stats": "Stats",
+    "status": "Statut",
+    "strikes": "Frappes",
+    "subcategoryTagExplanation": "Ajoutez et supprimez des sous-catégories : saisissez du texte libre pour les sous-catégories ou sélectionnez des compendiums liés..",
+    "subcategoryTagTitle": "Ajouter/supprimer des sous-catégories",
+    "swade": {
+      "abilities": "Capacités",
+      "specialAbilities": "Capacités Spéciales"
+    },
+    "systems": "Systèmes",
+    "tags": "Tags",
+    "talents": "Talents",
+    "techattack": "Attaque Tech",
+    "techs": "Techs",
+    "temporary": "Temporaire",
+    "title": "Token Action HUD",
+    "toggleCombatState": "Basculer l'état de Combat",
+    "toggles": "Basculer",
+    "toggleVisibility": "Basculer la visibilité",
+    "token": "Token",
+    "tools": "Outils",
+    "traits": "Traits",
+    "treasure": "Trésor",
+    "treatWounds": "Traiter les blessures",
+    "unarmed": "Non armé",
+    "stomp": "Stomp!",
+    "unrollable": "Non testable",
+    "unshift": "Gauche",
+    "utility": "Utilitaire",
+    "weapons": "Armes",
+    "wounded": "Blessé",
+    "wounds": "Blessures",
+    "woundsAndFatigue": "Blessures/Fatigue",
+    "settings": {
+      "activeCssAsText": {
+        "name": "Marquer le CSS actif avec du texte",
+        "hint": "Si activée, les boutons qui peuvent être actifs seront également marqués d'un astérisque pour indiquer leur activité. Les boutons inactifs n'auront pas d'astérisque."
+      },
+      "alwaysShowAdditionalCategories": {
+        "hint": "Si activée, les catégories personnalisées seront affichées même si aucun token n'est sélectionné.",
+        "name": "Toujours afficher les catégories personnalisées"
+      },
+      "alwaysShowHud": {
+        "hint": "Si l'utilisateur a un personnage assigné, le HUD affichera celui-ci par défaut quand aucun token n'est sélectionné.",
+        "name": "Toujours afficher le HUD"
+      },
+      "clickOpenCategory": {
+        "hint": "Si activée, les catégories s'ouvriront sur un clic plutôt qu'un survol.",
+        "name": "Clic pour ouvrir les catégories"
+      },
+      "debug": {
+        "hint": "Active le log de debug. (Cette fonction est en quelque sorte tombée en désuétude, ne vous attendez pas à ce qu'elle soit très utile)",
+        "name": "Activer le debug"
+      },
+      "dropdown": {
+        "hint": "Si activée, l'affichage des catégories se fait vers le bas, sinon il utilise une implémentation médiocre (avertissement !) vers le haut. N'hésitez pas à signaler tout bug.",
+        "name": "Catégories déroulant vers le bas"
+      },
+      "enabledForUser": {
+        "hint": " Si activée, le HUD est actif pour le joueur. Ne vient pas écraser les permissions données au joueur.",
+        "name": "Activer le HUD pour le joueur actuel"
+      },
+      "itemMacroReplace": {
+        "showBoth": "Montrer l'objet original et l'objet Item Macro",
+        "showItemMacro": "Montrer l'objet Item Macro",
+        "showOriginal": "Montrer l'objet original"
+      },
+      "onTokenHover": {
+        "hint": "Si activée, le HUD apparaîtra lorsque la souris survole un token contrôlé par le joueur. Attention : à cause de la nature imprévisible de l'aposition du Token sur la scène, certaines actions pourraient être affichées hors de l'écran.",
+        "name": "Activer le survol"
+      },
+      "playerPermission": {
+        "hint": "Si activée, les joueurs pourront voir le HUD.",
+        "name": "Activer le HUD pour les joueurs"
+      },
+      "renderItemOnRightClick": {
+        "hint": "Si activée, un clic droit sur un objet dans le HUD fera apparaître sa fiche (conflit potentiel avec d'autres paramètres qui utilisent le clic droit).",
+        "name": "Affiche la fiche avec un clic droit"
+      },
+      "rollHandler": {
+        "hint": "Choisissez quel module recevra les actions du HUD.",
+        "name": "HUD gestionnnaire de dés"
+      },
+      "scale": {
+        "hint": "Ajuster l'échelle du HUD en termes de pourcentage (100 étant la valeur par défaut).",
+        "name": "Echelle HUD"
+      },
+      "background": {
+        "hint": "Prend un code couleur HTML valide (par exemple 'red', '#00000055', '#FFF', etc.) et l'utilise pour l'arrière-plan, sans vérifier la validité du code.",
+        "name": "Couleur de fond du HUD"
+      },
+      "showHudTitle": {
+        "name": "Afficher le titre du HUD",
+        "hint": "Affiche un titre au-dessus du HUD, normalement l'alias du token sélectionné."
+      },
+      "showIcons": {
+        "hint": "Si activée, l'image de l'action sera affichée sur le bouton HUD lorsqu'il est disponible.",
+        "name": "Afficher les icônes d'action"
+      },
+      "useActionList": {
+        "name": "Groupe par Type d'Action",
+        "hint": "Dépend du module 'Character Actions 5e'. Si elle est activée, les boutons seront regroupés par type d'action."
+      },
+      "demonlord": {
+        "attackoptions": "Attack Options",
+        "challenge": "Challenge Roll",
+        "rest": "Rest",
+        "specialattacks": "Special Attacks"
+      },
+      "dnd5e": {
+        "abbreviateSkills": {
+          "hint": "Si activée les caractéristiques et les compétences utiliserons une abréviation de 3 caractères.",
+          "name": "Abréger les noms des caractéristiques et des compétences"
+        },
+        "hideLongerActions": {
+          "hint": "Si activée, les actions avec un temps d'activation plus long (minutes, heures ou jours) seront affichées.",
+          "name": "Cacher les actions avec un coût d'activation d'un round ou plus"
+        },
+        "ignorePassiveFeats": {
+          "hint": "Si activée, les dons passifs ne seront pas affichés.",
+          "name": "Ignorer les dons passifs"
+        },
+        "itemMacroReplace": {
+          "hint": "Sélectionne quels objets seront montrés dans l'inventaire.",
+          "name": "Item-Macro: macro d'objet, objet original, ou les deux"
+        },
+        "showAllNonpreparableSpells": {
+          "hint": "Si désactivée, les sorts tels que les tours de magie, innés, de pacte et à volonté doivent être préparés dans le détail du sort pour être affiché dans le HUD.",
+          "name": "Afficher tous les sorts non préparés"
+        },
+        "showAllNpcItems": {
+          "hint": "Si activée, tous les objets seront affichés pour les PNJ, et pas seulement les objets équipés.",
+          "name": "Afficher tous les objets des PNJs"
+        },
+        "showConditionsCategory": {
+          "hint": "Si activée, les conditions et status seront affichés dans une catégorie du HUD.",
+          "name": "Afficher la catégorie des Conditions"
+        },
+        "showEmptyItems": {
+          "hint": "Si activée, les objets seront affichés dans le HUD même s'ils n'ont plus de charges.",
+          "name": "Afficher les objets vides (y compris les objets et les sorts)"
+        },
+        "showSpellInfo": {
+          "hint": "Si activée, les informations sur les composantes de sort, la concentration et les rituels seront affichées à côté du nom du sort.",
+          "name": "Afficher les informations des sorts"
+        },
+        "splitAbilities": {
+          "hint": "Si activée, les caractéristiques seront séparées en tests et sauvegardes.",
+          "name": "Afficher séparément les catégories de tests de caractéristique et de compétence"
+        }
+      },
+      "dungeonworld": {
+        "showGmCompendiums": {
+          "name": "Afficher les compendiums du MJ",
+          "hint": "Si activée, et que l'utilisateur est MJ, la barre HUD inclura les actions de MJ, les tables aléatoires et les graphiques."
+        }
+      },
+      "pf1": {
+        "showDisabled": {
+          "hint": "Si activée, les fonctionnalités désactivées ne seront pas affichées.",
+          "name": "Masquer les fonctionnalités désactivées"
+        }
+      },
+      "pf2e": {
+        "abbreviateSkills": {
+          "hint": "Si cette option est activée, les caractéristiques et compétences seront abrégées en 3 caractères.",
+          "name": "Abréger les noms des caractéristiques et des compétences"
+        },
+        "calculateAttackPenalty": {
+          "hint": "Si cette option est activée, les attaques affichent le bonus calculé (bonus d'attaque - PAM) ; si elle est désactivée, elles affichent simplement la PAM.",
+          "name": "Afficher le bonus d'attaque calculé au lieu de juste la PAM"
+        },
+        "ignorePassiveActions": {
+          "hint": "Si cette option est activée, les actions passives ne sont pas affichées.",
+          "name": "Cacher les actions passives"
+        },
+        "printSpellCard": {
+          "hint": "Si cette option est désactivée, un clic gauche sur un sort déclenchera un jet d'attaque (Shift + clic droit pour ouvrir la fenêtre permettant de gérer les bonus), un clic droit déclenchera le jet de dégâts (Ctrl + clic droit pour ouvrir la fenêtre permettant de gérer les bonus). Si aucune de ces choses ne s'applique pour le sort en question, la description du sort sera envoyée vers le chat.",
+          "name": "Afficher la description du sort dans le chat en cas de clic"
+        },
+        "separateTogglesCategory": {
+          "hint": "Si cette option est activée, les éléments de règle activables (on/off) seront affichés dans une catégorie propre à eux. Si cette option est désactivée, ils seront placés dans l'onglet Frappes.",
+          "name": "Ranger les éléments de règle activables dans une catégorie à part"
+        },
+        "showNpcAbilities": {
+          "hint": "Si cette option est activée, les caractéristiques des PNJs seront affichées sur le HUD.",
+          "name": "Afficher les caractéristiques des PNJs"
+        },
+        "showOldNpcStrikes": {
+          "hint": "Si cette option est activée, les Frappes des PNJ (ancienne version) seront affichées en plus des nouvelles versions (expérimentales).",
+          "name": "Afficher également les Frappes des PNJs (ancienne version)"
+        },
+        "showPcAbilities": {
+          "hint": "Si cette option est activée, les caractéristiques des PJs seront affichées.",
+          "name": "Afficher les caractéristiques des PJs"
+        }
+      },
+      "sfrpg": {
+        "showMiscFeats": {
+          "hint": "If enabled, features with no assigned action type will be shown in a catch-all, miscellaneous category.",
+          "name": "Display miscellaneous feats"
+        },
+        "showSpellInfo": {
+          "hint": "If enabled, spell resistance, dismissible, concentration and save information noted next to the spell name.",
+          "name": "Display spell information"
+        }
+      },
+      "sw5e": {
+        "abbreviateSkills": {
+          "hint": "If enabled, skills and abilities will use a three-character abbreviation.",
+          "name": "Abbreviate skill and ability names"
+        },
+        "hideLongerActions": {
+          "hint": "If enabled, actions with longer activation types (minutes, hours, or days) are not shown.",
+          "name": "Hide actions with an activation longer than 1 round"
+        },
+        "ignorePassiveFeats": {
+          "hint": "If enabled, passive feats are not shown.",
+          "name": "Ignore passive feats"
+        },
+        "showEmptyItems": {
+          "hint": "If enabled, items are shown in the HUD even if they have no remaining charges.",
+          "name": "Show empty items (includes items and powers)"
+        }
+      },
+      "swade": {
+        "abbreviateAttributes": {
+          "hint": "If enabled, skills and abilities will use a three-character abbreviation.",
+          "name": "Abbreviate skill and ability names"
+        }
+      },
+      "wfrp": {
+        "meleeSkillPrefix": "Melee",
+        "rangedSkillPrefix": "Ranged"
+      },
+      "alienrpg": {
+        "consumables": "Consommables",
+        "conditions": "États",
+        "skill": "Compétences",
+        "stresspoints": "Points de Stress",
+        "rollStress": "Jet de Stress",
+        "starving": "Affamé",
+        "dehydrated": "Déshydraté",
+        "exhausted": "Epuisé",
+        "freezing": "Gelé",
+        "panic": "Panique",
+        "attributestr": "Force",
+        "attributewit": "Esprit",
+        "attributeagl": "Agilité",
+        "attributeemp": "Empathie",
+        "skillheavyMach": "Machine Lourde",
+        "skillcloseCbt": "Comb. Rapproché",
+        "skillstamina": "Endurance",
+        "skillrangedCbt": "Comb. à Distance",
+        "skillmobility": "Mobilité",
+        "skillpiloting": "Pilotage",
+        "skillcommand": "Commandement",
+        "skillmanipulation": "Manipulation",
+        "skillmedicalAid": "Soins Médicaux",
+        "skillobservation": "Observation",
+        "skillsurvival": "Survie",
+        "skillcomtech": "Comtech",
+        "consumablesair": "Air",
+        "consumablespower": "Énergie",
+        "consumablesfood": "Nourriture",
+        "consumableswater": "Eau",
+        "agenda": "Objectif/Cartes d'histoire",
+        "power": "Énergie",
+        "attributespeed": "Vitesse",
+        "attributearmorvfire": "Protection V Feu",
+        "attributearmorrating": "Protection",
+        "attributeacidSplash": "Jet d'Acide",
+        "attributemobility": "Mobilité",
+        "attributeobservation": "Observation",
+        "creatureAttack": "Test d'attaque",
+        "health": "Santé",
+        "rollCrit": "Jet Crit"
+      },
+      "ds4": {
+        "displayCheckTargetNumbers": {
+          "name": "Afficher des exemples de valeurs",
+          "hint": "Si ce paramètre est activé, les valeurs des échantillons individuels sont affichées."
+        }
+      },
+      "forbiddenlands": {
+        "consumables": "Consommables",
+        "attributestrength": "Force",
+        "attributewits": "Esprit",
+        "attributeagility": "Agilité",
+        "attributeempathy": "Empathie",
+        "conditions": "Conditions",
+        "skillmelee": "Mêlée",
+        "skillendurance": "Endurance",
+        "skillmight": "Vigueur",
+        "skillcrafting": "Artisanat",
+        "skillstealth": "Furtivité",
+        "skillmove": "Souplesse",
+        "skillsleight-of-hand": "Dextérité",
+        "skillmarksmanship": "Tir",
+        "skillscouting": "Perception",
+        "skilllore": "Érudition",
+        "skillsurvival": "Survie",
+        "skillinsight": "Intuition",
+        "skillmanipulation": "Manipulation",
+        "skillhealing": "Soins",
+        "skillperformance": "Représentation",
+        "skillanimal-handling": "Dressage",
+        "monsterAttack": "Attaque de monstre",
+        "consumablesfood": "Nourriture",
+        "consumableswater": "Eau",
+        "consumablesarrows": "Flèches",
+        "consumablestorches": "Torches",
+        "hungry": "Affamé",
+        "thirsty": "Assoiffé",
+        "sleepy": "Épuisé",
+        "cold": "Glacé"
+      }
+    },
+    "symbaroum": {
+      "abilities": "Talents",
+      "mysticalPowers": "Pouvoirs"
+    },
+    "kamigakari": {
+      "mainStats": "Main Stats",
+      "subStats": "Sub Stats",
+      "start": "Start",
+      "prep": "Prep",
+      "attack": "Attack",
+      "defense": "Defense",
+      "end": "End",
+      "constant": "Constant",
+      "free": "Free",
+      "spiritBurn": "Spirit Burn",
+      "transcend": "Transcend",
+      "vitalIgnition": "Vital Ignition",
+      "conceptDestruction": "Concept Destruction",
+      "items": "items",
+      "sacraments": "Sacraments",
+      "consumables": "Consumables"
+    },
+    "co": {
+      "combat": "Combat",
+      "attacks": "Attaques",
+      "protections": "Protections",
+      "capacities": "Capacités"
+    }
+  }
+}

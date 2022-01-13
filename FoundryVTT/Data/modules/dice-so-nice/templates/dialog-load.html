@@ -1,0 +1,9 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+    <div class="form-group">
+        <select data-save-list name="save-list">
+            {{#each saveList as |name key|}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>

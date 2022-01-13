@@ -1,0 +1,58 @@
+<section class="flexrow inventory-info">
+  {{localize "SWADE.CargoWeight"}}&nbsp;
+  <strong>{{inventoryWeight}} / {{data.data.maxCargo}}</strong>
+</section>
+<section class="inventory-categories">
+  <div class="items-section">
+    {{!-- This is misc items only --}}
+    <li class="item-titles flexrow">
+      <div class="item-name">{{localize "SWADE.Item"}}</div>
+      <div class="field-longer">{{localize "SWADE.Notes"}}</div>
+      <div class="field-short">{{localize "SWADE.Quantity"}}</div>
+      <div class="field-short">{{localize "SWADE.Weight"}}</div>
+      <div class="item-controls">
+        <a class="item-create" data-type="choice"
+          ><i class="fa fa-plus"></i> {{localize "SWADE.Add"}}</a
+        >
+      </div>
+    </li>
+
+    <ol class="item-list">
+      {{#each inventory as |item|}}
+      <li class="item flexrow" data-item-id="{{item.id}}">
+        <div class="item-name flexrow">
+          <div
+            class="item-image"
+            style="background-image: url({{item.img}})"
+          ></div>
+          <h4 title="{{item.name}}">
+            {{item.name}}{{#if item.data.data.isVehicular}}<i
+              class="fas fa-car-side"
+            ></i
+            >{{/if}}
+          </h4>
+        </div>
+        <div class="field-longer" title="{{item.data.notes}}">
+          {{item.data.notes}}
+        </div>
+        <div class="field-short">{{item.data.quantity}}</div>
+        <div class="field-short">{{item.data.weight}}</div>
+        <div class="item-controls">
+          {{#if ../owner}}
+          <a
+            class="item-control item-edit"
+            title='{{localize "SWADE.ItemEdit"}}'
+            ><i class="fas fa-edit"></i
+          ></a>
+          <a
+            class="item-control item-delete"
+            title='{{localize "SWADE.ItemDelete"}}'
+            ><i class="fas fa-trash"></i
+          ></a>
+          {{/if}}
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

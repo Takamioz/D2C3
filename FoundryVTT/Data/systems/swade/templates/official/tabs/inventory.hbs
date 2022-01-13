@@ -1,0 +1,245 @@
+<section class="flexrow">
+  <div>
+    {{localize "SWADE.CarryWeight"}}
+    <strong>{{formatNumber data.data.details.encumbrance.value}} / {{data.data.details.encumbrance.max}} {{weightUnit}}</strong>
+  </div>
+  <div class="form-group currency">
+    {{#if (eq settingrules.wealthType "currency")}}
+    <label>{{settingrules.currencyName}}</label>
+    <span class="form-fields">
+      <input
+        name="data.details.currency"
+        type="text"
+        value="{{data.data.details.currency}}"
+        placeholder="{{localize 'SWADE.Currency'}}"
+      />
+    </span>
+    {{else if (eq settingrules.wealthType "wealthDie")}}
+    <label><button class="roll">{{localize "SWADE.WealthDie"}}</button></label>
+    <span class="form-fields">
+      <select data-dtype="Number" name="data.details.wealth.die">
+        {{#select data.data.details.wealth.die}} {{> "systems/swade/templates/die-sides-options.hbs"}} {{/select}}
+      </select>
+      <input
+        type="text"
+        data-dtype="Number"
+        name="data.details.wealth.modifier"
+        value="{{signedString data.data.details.wealth.modifier}}"
+        placeholder="{{localize 'SWADE.Mod'}}"
+      />
+    </span>
+    {{/if}}
+  </div>
+</section>
+<section class="inventory">
+  <header class="header weapon">
+    <span class="header-name">{{localize "SWADE.Weapons"}}</span>
+    <span class="damage">{{localize "SWADE.Dmg"}}</span>
+    <span class="ap">{{localize "SWADE.Ap"}}</span>
+    <span class="note" style="text-align: center"
+      >{{localize "SWADE.Notes"}}</span
+    >
+    <span class="weight">{{localize "SWADE.Weight"}}</span>
+    <span class="item-controls">
+      <button type="button" class="item-create" data-type="weapon">
+        <i class="fa fa-plus"></i>{{localize "SWADE.Add"}}
+      </button>
+    </span>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.weapon}}
+    <li class="item weapon" data-item-id="{{id}}">
+      <img class="item-img" src="{{img}}" />
+      <button
+        type="button"
+        class="name flexrow item-name"
+        title="{{name}}"
+      >
+        {{#if (gte data.data.quantity 2)}} (x{{data.data.quantity}}) {{/if}}
+        {{name}}
+      </button>
+      <span class="damage">
+        {{#if data.data.damage}}
+        <button type="button" class="damage-roll">{{data.data.damage}}</button>
+        {{/if}}
+      </span>
+      <span class="ap">{{data.data.ap}}</span>
+      <span class="note">{{enrich data.data.notes}}</span>
+      <span class="weight">{{formatNumber (times data.data.weight data.data.quantity)}}</span>
+      <span class="item-controls">
+        {{#if isOwner}}
+        <button
+          type="button"
+          class="item-toggle {{#unless data.data.equipped}}item-unequipped{{/unless}}"
+        >
+          <i class="fas fa-tshirt"></i>
+        </button>
+        <button type="button" class="item-show">
+          <i class="far fa-comment-alt"></i>
+        </button>
+        <button type="button" class="item-edit">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button type="button" class="item-delete">
+          <i class="fas fa-trash"></i>
+        </button>
+        {{/if}}
+      </span>
+      <div class="description">{{enrich data.data.description}}</div>
+    </li>
+    {{/each}}
+  </ul>
+
+  <header class="header armor">
+    <span class="header-name">{{localize "SWADE.Armors"}}</span>
+    <span class="bonus">{{localize "SWADE.Armor"}}</span>
+    <span class="min-str">{{localize "SWADE.MinStrShort"}}</span>
+    <span class="note" style="text-align: center"
+      >{{localize "SWADE.Notes"}}</span
+    >
+    <span class="weight">{{localize "SWADE.Weight"}}</span>
+    <span class="item-controls">
+      <button type="button" class="item-create" data-type="armor">
+        <i class="fa fa-plus"></i>{{localize "SWADE.Add"}}
+      </button>
+    </span>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.armor}}
+    <li class="item armor" data-item-id="{{id}}">
+      <img class="item-img" src="{{img}}" />
+      <button
+        type="button"
+        class="name flexrow item-name"
+        title="{{item.name}}"
+      >
+        {{#if (gte data.data.quantity 2)}} (x{{data.data.quantity}}) {{/if}}
+        {{name}}
+      </button>
+      <span class="bonus"> {{data.data.armor}} </span>
+      <span class="min-str">{{data.data.minStr}}</span>
+      <span class="note">{{enrich data.data.notes}}</span>
+      <span class="weight">{{formatNumber (times data.data.weight data.data.quantity)}}</span>
+      <span class="item-controls">
+        {{#if ../owner}}
+        <button
+          type="button"
+          class="item-toggle {{#unless data.data.equipped}}item-unequipped{{/unless}}"
+        >
+          <i class="fas fa-tshirt"></i>
+        </button>
+        <button type="button" class="item-show">
+          <i class="far fa-comment-alt"></i>
+        </button>
+        <button type="button" class="item-edit">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button type="button" class="item-delete">
+          <i class="fas fa-trash"></i>
+        </button>
+        {{/if}}
+      </span>
+      <div class="description">{{enrich data.data.description}}</div>
+    </li>
+    {{/each}}
+  </ul>
+
+  <header class="header shield">
+    <span class="header-name">{{localize "SWADE.Shields"}}</span>
+    <span class="parry">{{localize "SWADE.Parry"}}</span>
+    <span class="cover">{{localize "SWADE.Cover"}}</span>
+    <span class="note" style="text-align: center"
+      >{{localize "SWADE.Notes"}}</span
+    >
+    <span class="weight">{{localize "SWADE.Weight"}}</span>
+    <span class="item-controls">
+      <button type="button" class="item-create" data-type="shield">
+        <i class="fa fa-plus"></i>{{localize "SWADE.Add"}}
+      </button>
+    </span>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.shield}}
+    <li class="item shield" data-item-id="{{id}}">
+      <img class="item-img" src="{{img}}" />
+      <button
+        type="button"
+        class="name flexrow item-name"
+        title="{{name}}"
+      >
+        {{#if (gte data.data.quantity 2)}} (x{{data.data.quantity}}) {{/if}}
+        {{data.name}}
+      </button>
+      <span class="parry">{{data.data.parry}}</span>
+      <span class="cover">{{enrich data.data.cover}}</span>
+      <span class="weight">{{formatNumber (times data.data.weight data.data.quantity)}}</span>
+      <span class="item-controls">
+        {{#if isOwner}}
+        <button
+          type="button"
+          class="item-toggle {{#unless data.data.equipped}}item-unequipped{{/unless}}"
+        >
+          <i class="fas fa-tshirt"></i>
+        </button>
+        <button type="button" class="item-show">
+          <i class="far fa-comment-alt"></i>
+        </button>
+        <button type="button" class="item-edit">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button type="button" class="item-delete">
+          <i class="fas fa-trash"></i>
+        </button>
+        {{/if}}
+      </span>
+      <div class="description">{{enrich data.data.description}}</div>
+    </li>
+    {{/each}}
+  </ul>
+
+  <header class="header misc">
+    <span class="header-name">{{localize "SWADE.Misc"}}</span>
+    <span class="weight">{{localize "SWADE.Weight"}}</span>
+    <span class="item-controls">
+      <button type="button" class="item-create" data-type="gear">
+        <i class="fa fa-plus"></i>{{localize "SWADE.Add"}}
+      </button>
+    </span>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.gear}}
+    <li class="item misc" data-item-id="{{id}}">
+      <img class="item-img" src="{{img}}" />
+      <button
+        type="button"
+        class="name flexrow item-name"
+        title="{{name}}"
+      >
+        (x{{data.data.quantity}}) {{name}}
+      </button>
+      <span class="weight">{{formatNumber (times data.data.weight data.data.quantity)}}</span>
+      <span class="item-controls">
+        {{#if isOwner}} {{#if data.data.equippable}}
+        <button
+          type="button"
+          class="item-toggle {{#unless data.data.equipped}}item-unequipped{{/unless}}"
+        >
+          <i class="fas fa-tshirt"></i>
+        </button>
+        {{/if}}
+        <button type="button" class="item-show">
+          <i class="far fa-comment-alt"></i>
+        </button>
+        <button type="button" class="item-edit">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button type="button" class="item-delete">
+          <i class="fas fa-trash"></i>
+        </button>
+        {{/if}}
+      </span>
+      <div class="description">{{enrich data.data.description}}</div>
+    </li>
+    {{/each}}
+  </ul>
+</section>

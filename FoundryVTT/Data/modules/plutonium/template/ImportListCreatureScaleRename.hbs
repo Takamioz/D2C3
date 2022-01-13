@@ -1,0 +1,107 @@
+<div class="ve-flex-col ve-window min-h-0 h-100">
+	<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+		<input type="search" class="search w-100 form-control" placeholder="Find {{titleSearch}}...">
+		<button class="btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>
+	</div>
+	<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink" data-name="wrp-btns-sort">
+		<button class="btn-5et col-3 sort name" data-sort="name">Name</button>
+		<button class="btn-5et col-1 sort source" data-sort="source">Source</button>
+		<button class="btn-5et col-1-5 sort cr" data-sort="cr">CR</button>
+
+		<button class="btn-5et col-2" disabled>Rename To</button>
+		<button class="btn-5et col-0-5 help" disabled title="Named Creature">N.</button>
+		<button class="btn-5et col-2" disabled>Scale To</button>
+		<button class="btn-5et col-2" disabled>Variant</button>
+	</div>
+
+	<div class="veapp__list mb-1 h-100">
+		{{#each rows}}
+			<div class="w-100 ve-flex-v-center pb-1p veapp__list-row min-h-24p">
+				<span class="col-3 pl-1">{{name}}</span>
+				<span class="col-1 text-center {{sourceClassName}}" title="{{sourceLong}}">{{sourceShort}}</span>
+				<span class="col-1-5 text-center">{{cr}}</span>
+				<div class="col-2 ve-flex-v-center"><input class="w-100 mx-1 input-xs form-control veapp__ipt-row-inline" name="ipt-rename" type="text"></div>
+				<label class="col-0-5 ve-flex-vh-center"><input name="cb-is-named" type="checkbox"></label>
+
+				{{#if isAdjustableCr}}
+					<div class="col-2 ve-flex-v-center">
+						<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-cr">
+							<option value="-1" title="Use Existing CR">&mdash;</option>
+							<option value="0">0</option>
+							<option value="0.125">1/8</option>
+							<option value="0.25">1/4</option>
+							<option value="0.5">1/2</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+						</select>
+					</div>
+				{{else if isAdjustableSummonSpellLevel}}
+					<div class="col-2 ve-flex-v-center">
+						<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-summon-spell-level">
+							<option value="-1">&mdash;</option>
+							{{#each availableSummonSpellLevels}}
+								<option value="{{this}}">{{Parser_getOrdinalForm this}}-level Spell</option>
+							{{/each}}
+						</select>
+					</div>
+				{{else if isAdjustableSummonClassLevel}}
+					<div class="col-2 ve-flex-v-center">
+						<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-summon-class-level">
+							<option value="-1">&mdash;</option>
+							{{#each availableSummonClassLevels}}
+								<option value="{{level}}">Level {{level}} {{className}}</option>
+							{{/each}}
+						</select>
+					</div>
+				{{else}}
+					<div class="col-2 text-center">&mdash;</div>
+				{{/if}}
+
+				{{#if hasVariants}}
+					<div class="col-2 ve-flex-v-center">
+						<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-variant">
+							<option value="-1">&mdash;</option>
+							{{#each availableVariants}}
+								<option value="{{ix}}">{{name}}</option>
+							{{/each}}
+						</select>
+					</div>
+				{{else}}
+					<div class="col-2 text-center">&mdash;</div>
+				{{/if}}
+			</div>
+		{{/each}}
+	</div>
+
+	<div class="no-shrink">
+		<button class="btn-5et" name="btn-run">Import</button>
+	</div>
+</div>

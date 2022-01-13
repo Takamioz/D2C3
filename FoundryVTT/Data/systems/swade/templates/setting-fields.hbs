@@ -1,0 +1,65 @@
+{{#if hasAdditionalStatsFields}}
+<header class="header-field flexrow">
+  <span>{{localize "SWADE.AddStats"}}</span>
+</header>
+<div class="additional-stats">
+  {{#each data.data.additionalStats as |attr key|}}
+  <div class="form-group">
+    {{#unless (eq attr.dtype "Die")}} {{#if attr.isCheckbox}}
+    <label class="check-container"
+      >{{attr.label}}
+      <input
+        type="checkbox"
+        name="data.additionalStats.{{key}}.value"
+        {{checked
+        attr.value}}
+        data-dtype="Boolean"
+      />
+      <span class="checkmark"></span>
+    </label>
+    {{else}}
+    <label>{{attr.label}}</label>
+    <span class="form-fields">
+      <input
+        type="text"
+        name="data.additionalStats.{{key}}.value"
+        data-dtype="{{attr.dtype}}"
+        value="{{attr.value}}"
+        placeholder="{{localize 'SWADE.Curr'}} {{attr.label}}"
+      />
+      {{/if}} {{#if attr.hasMaxValue}}
+      <input
+        type="text"
+        name="data.additionalStats.{{key}}.max"
+        data-dtype="{{attr.dtype}}"
+        value="{{attr.max}}"
+        placeholder="{{localize 'SWADE.Max'}} {{attr.label}}"
+      />
+      {{/if}} {{else}}
+      <label>
+        <button type="button" class="roll" data-stat="{{key}}">
+          {{attr.label}}
+        </button>
+      </label>
+      <span class="form-fields">
+        <input
+          type="text"
+          name="data.additionalStats.{{key}}.value"
+          data-dtype="String"
+          value="{{attr.value}}"
+          placeholder="{{localize 'SWADE.Die'}}"
+        />
+        <input
+          type="text"
+          name="data.additionalStats.{{key}}.modifier"
+          data-dtype="String"
+          value="{{attr.modifier}}"
+          placeholder="{{localize 'SWADE.Mod'}}"
+        />
+      </span>
+      {{/unless}}
+    </span>
+  </div>
+  {{else}} {{/each}}
+</div>
+{{/if}}

@@ -1,0 +1,1585 @@
+{
+  "name": "Action Deck",
+  "type": "deck",
+  "description": "A standard 54-card Action Deck",
+  "img": "cards/backs/light-soft.webp",
+  "data": {},
+  "cards": [
+    {
+      "_id": "Gh7Jpi1TXCvQp6dp",
+      "name": "10 of Clubs",
+      "description": "10♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 10,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "10 of Clubs",
+          "img": "cards/light-soft/clubs-10.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 23,
+      "flags": {}
+    },
+    {
+      "_id": "DJqB1BEWzT9qMmf3",
+      "name": "10 of Diamonds",
+      "description": "10♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 10,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "10 of Diamonds",
+          "img": "cards/light-soft/diamonds-10.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 36,
+      "flags": {}
+    },
+    {
+      "_id": "dGU6vZlDRhjaapHm",
+      "name": "10 of Hearts",
+      "description": "10♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 10,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "10 of Hearts",
+          "img": "cards/light-soft/hearts-10.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 49,
+      "flags": {}
+    },
+    {
+      "_id": "5zVeylSw0FnuWvoo",
+      "name": "10 of Spades",
+      "description": "10♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 10,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "10 of Spades",
+          "img": "cards/light-soft/spades-10.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 62,
+      "flags": {}
+    },
+    {
+      "_id": "qZAVMARwEVUc7ELC",
+      "name": "2 of Clubs",
+      "description": "2♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 2,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "2 of Clubs",
+          "img": "cards/light-soft/clubs-02.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 15,
+      "flags": {}
+    },
+    {
+      "_id": "T0IKDfedbpVVsPhz",
+      "name": "2 of Diamonds",
+      "description": "2♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 2,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "2 of Diamonds",
+          "img": "cards/light-soft/diamonds-02.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 28,
+      "flags": {}
+    },
+    {
+      "_id": "OZeFdON6xKf0c4zR",
+      "name": "2 of Hearts",
+      "description": "2♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 2,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "2 of Hearts",
+          "img": "cards/light-soft/hearts-02.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 41,
+      "flags": {}
+    },
+    {
+      "_id": "w83AUqFogXKTQXcm",
+      "name": "2 of Spades",
+      "description": "2♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 2,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "2 of Spades",
+          "img": "cards/light-soft/spades-02.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 54,
+      "flags": {}
+    },
+    {
+      "_id": "gPwKLlSQtEaD1vjw",
+      "name": "3 of Clubs",
+      "description": "3♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 3,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "3 of Clubs",
+          "img": "cards/light-soft/clubs-03.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 16,
+      "flags": {}
+    },
+    {
+      "_id": "ww91Sez0pN8tN76X",
+      "name": "3 of Diamonds",
+      "description": "3♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 3,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "3 of Diamonds",
+          "img": "cards/light-soft/diamonds-03.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 29,
+      "flags": {}
+    },
+    {
+      "_id": "SjkhHHlT4IpoNgOy",
+      "name": "3 of Hearts",
+      "description": "3♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 3,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "3 of Hearts",
+          "img": "cards/light-soft/hearts-03.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 42,
+      "flags": {}
+    },
+    {
+      "_id": "COZCMfz2vTUhlv2j",
+      "name": "3 of Spades",
+      "description": "3♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 3,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "3 of Spades",
+          "img": "cards/light-soft/spades-03.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 55,
+      "flags": {}
+    },
+    {
+      "_id": "bw2Gj9EfVdHTlJhI",
+      "name": "4 of Clubs",
+      "description": "4♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 4,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "4 of Clubs",
+          "img": "cards/light-soft/clubs-04.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 17,
+      "flags": {}
+    },
+    {
+      "_id": "alHtAbK66LUM6tum",
+      "name": "4 of Diamonds",
+      "description": "4♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 4,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "4 of Diamonds",
+          "img": "cards/light-soft/diamonds-04.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 30,
+      "flags": {}
+    },
+    {
+      "_id": "hh4M0CTGAySmYshY",
+      "name": "4 of Hearts",
+      "description": "4♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 4,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "4 of Hearts",
+          "img": "cards/light-soft/hearts-04.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 43,
+      "flags": {}
+    },
+    {
+      "_id": "U4SZtpI2b51Vbwi8",
+      "name": "4 of Spades",
+      "description": "4♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 4,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "4 of Spades",
+          "img": "cards/light-soft/spades-04.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 56,
+      "flags": {}
+    },
+    {
+      "_id": "8aLMtVryWwUnx312",
+      "name": "5 of Clubs",
+      "description": "5♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 5,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "5 of Clubs",
+          "img": "cards/light-soft/clubs-05.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 18,
+      "flags": {}
+    },
+    {
+      "_id": "pgBb2geYY2LeQ1xl",
+      "name": "5 of Diamonds",
+      "description": "5♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 5,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "5 of Diamonds",
+          "img": "cards/light-soft/diamonds-05.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 31,
+      "flags": {}
+    },
+    {
+      "_id": "57Ox36kdlcLGuoPJ",
+      "name": "5 of Hearts",
+      "description": "5♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 5,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "5 of Hearts",
+          "img": "cards/light-soft/hearts-05.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 44,
+      "flags": {}
+    },
+    {
+      "_id": "0E0iypmauIcG9gVg",
+      "name": "5 of Spades",
+      "description": "5♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 5,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "5 of Spades",
+          "img": "cards/light-soft/spades-05.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 57,
+      "flags": {}
+    },
+    {
+      "_id": "tDIgSFMMYlwtzBc4",
+      "name": "6 of Clubs",
+      "description": "6♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 6,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "6 of Clubs",
+          "img": "cards/light-soft/clubs-06.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 19,
+      "flags": {}
+    },
+    {
+      "_id": "veZnY7XaZKPvxygc",
+      "name": "6 of Diamonds",
+      "description": "6♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 6,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "6 of Diamonds",
+          "img": "cards/light-soft/diamonds-06.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 32,
+      "flags": {}
+    },
+    {
+      "_id": "1jxmJ4V4Mkujg8Hs",
+      "name": "6 of Hearts",
+      "description": "6♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 6,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "6 of Hearts",
+          "img": "cards/light-soft/hearts-06.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 45,
+      "flags": {}
+    },
+    {
+      "_id": "uGtXyp4rHYh0rXCP",
+      "name": "6 of Spades",
+      "description": "6♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 6,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "6 of Spades",
+          "img": "cards/light-soft/spades-06.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 58,
+      "flags": {}
+    },
+    {
+      "_id": "q06ldXRKER06YMaP",
+      "name": "7 of Clubs",
+      "description": "7♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 7,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "7 of Clubs",
+          "img": "cards/light-soft/clubs-07.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 20,
+      "flags": {}
+    },
+    {
+      "_id": "C5mrAmDGCb6keTKA",
+      "name": "7 of Diamonds",
+      "description": "7♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 7,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "7 of Diamonds",
+          "img": "cards/light-soft/diamonds-07.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 33,
+      "flags": {}
+    },
+    {
+      "_id": "Vm5qgu31wk17r11U",
+      "name": "7 of Hearts",
+      "description": "7♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 7,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "7 of Hearts",
+          "img": "cards/light-soft/hearts-07.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 46,
+      "flags": {}
+    },
+    {
+      "_id": "iqqXvlvINVch04PR",
+      "name": "7 of Spades",
+      "description": "7♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 7,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "7 of Spades",
+          "img": "cards/light-soft/spades-07.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 59,
+      "flags": {}
+    },
+    {
+      "_id": "Iy9peG1sl0wzdumU",
+      "name": "8 of Clubs",
+      "description": "8♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 8,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "8 of Clubs",
+          "img": "cards/light-soft/clubs-08.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 21,
+      "flags": {}
+    },
+    {
+      "_id": "LlrkRfqzXwiHZCOd",
+      "name": "8 of Diamonds",
+      "description": "8♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 8,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "8 of Diamonds",
+          "img": "cards/light-soft/diamonds-08.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 34,
+      "flags": {}
+    },
+    {
+      "_id": "0JpaMi6ZLHVB6FpN",
+      "name": "8 of Hearts",
+      "description": "8♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 8,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "8 of Hearts",
+          "img": "cards/light-soft/hearts-08.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 47,
+      "flags": {}
+    },
+    {
+      "_id": "ArI0oeS9PkeKfNnc",
+      "name": "8 of Spades",
+      "description": "8♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 8,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "8 of Spades",
+          "img": "cards/light-soft/spades-08.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 60,
+      "flags": {}
+    },
+    {
+      "_id": "rEPe3tRxYCgf4CCI",
+      "name": "9 of Clubs",
+      "description": "9♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 9,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "9 of Clubs",
+          "img": "cards/light-soft/clubs-09.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 22,
+      "flags": {}
+    },
+    {
+      "_id": "IG1Qb9JNRS2HzesE",
+      "name": "9 of Diamonds",
+      "description": "9♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 9,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "9 of Diamonds",
+          "img": "cards/light-soft/diamonds-09.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 35,
+      "flags": {}
+    },
+    {
+      "_id": "2Xjq7RDqUPPzFTjC",
+      "name": "9 of Hearts",
+      "description": "9♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 9,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "9 of Hearts",
+          "img": "cards/light-soft/hearts-09.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 48,
+      "flags": {}
+    },
+    {
+      "_id": "EdHr7Zsd9Wy969Xc",
+      "name": "9 of Spades",
+      "description": "9♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 9,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "9 of Spades",
+          "img": "cards/light-soft/spades-09.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 61,
+      "flags": {}
+    },
+    {
+      "_id": "nNdA6F6yGZhTg1K3",
+      "name": "Ace of Clubs",
+      "description": "A♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 14,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Ace of Clubs",
+          "img": "cards/light-soft/clubs-ace.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 27,
+      "flags": {}
+    },
+    {
+      "_id": "MrH9qtQrZG5JTq7S",
+      "name": "Ace of Diamonds",
+      "description": "A♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 14,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Ace of Diamonds",
+          "img": "cards/light-soft/diamonds-ace.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 40,
+      "flags": {}
+    },
+    {
+      "_id": "EiQBrfNn5MTc3HHB",
+      "name": "Ace of Hearts",
+      "description": "A♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 14,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Ace of Hearts",
+          "img": "cards/light-soft/hearts-ace.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 53,
+      "flags": {}
+    },
+    {
+      "_id": "1eiqG705UL5j6Zbn",
+      "name": "Ace of Spades",
+      "description": "A♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 14,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Ace of Spades",
+          "img": "cards/light-soft/spades-ace.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 66,
+      "flags": {}
+    },
+    {
+      "_id": "zfWmdp0Re2ZIGl1D",
+      "name": "Black Joker",
+      "description": "Blk J",
+      "type": "poker",
+      "data": {
+        "suit": 99,
+        "isJoker": true
+      },
+      "suit": "joker",
+      "value": 98,
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "faces": [
+        {
+          "name": "Black Joker",
+          "img": "cards/light-soft/black-joker.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 1385,
+      "flags": {},
+      "width": null,
+      "height": null
+    },
+    {
+      "_id": "yAlPSehDTkYdchCO",
+      "name": "Jack of Clubs",
+      "description": "J♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 11,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Jack of Clubs",
+          "img": "cards/light-soft/clubs-jack.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 24,
+      "flags": {}
+    },
+    {
+      "_id": "7RSoOur3T329dtST",
+      "name": "Jack of Diamonds",
+      "description": "J♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 11,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Jack of Diamonds",
+          "img": "cards/light-soft/diamonds-jack.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 37,
+      "flags": {}
+    },
+    {
+      "_id": "SWqXGtmFaEjItgkX",
+      "name": "Jack of Hearts",
+      "description": "J♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 11,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Jack of Hearts",
+          "img": "cards/light-soft/hearts-jack.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 50,
+      "flags": {}
+    },
+    {
+      "_id": "SCjSDp8d1yXxCGGi",
+      "name": "Jack of Spades",
+      "description": "J♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 11,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Jack of Spades",
+          "img": "cards/light-soft/spades-jack.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 63,
+      "flags": {}
+    },
+    {
+      "_id": "OosbJxHlHou4wLYu",
+      "name": "King of Clubs",
+      "description": "K♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 13,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "King of Clubs",
+          "img": "cards/light-soft/clubs-king.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 26,
+      "flags": {}
+    },
+    {
+      "_id": "YnteLenQ30R3xJAy",
+      "name": "King of Diamonds",
+      "description": "K♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 13,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "King of Diamonds",
+          "img": "cards/light-soft/diamonds-king.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 39,
+      "flags": {}
+    },
+    {
+      "_id": "g6AH6pSfHs3ja7ao",
+      "name": "King of Hearts",
+      "description": "K♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 13,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "King of Hearts",
+          "img": "cards/light-soft/hearts-king.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 52,
+      "flags": {}
+    },
+    {
+      "_id": "ZUewXglAaPRNezVw",
+      "name": "King of Spades",
+      "description": "K♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 13,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "King of Spades",
+          "img": "cards/light-soft/spades-king.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 65,
+      "flags": {}
+    },
+    {
+      "_id": "e6DiwYccOyIEJ4Wd",
+      "name": "Queen of Clubs",
+      "description": "Q♣",
+      "type": "poker",
+      "data": {
+        "suit": 1,
+        "isJoker": false
+      },
+      "suit": "clubs",
+      "value": 12,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Queen of Clubs",
+          "img": "cards/light-soft/clubs-queen.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 25,
+      "flags": {}
+    },
+    {
+      "_id": "DxL588haXRdBAYr1",
+      "name": "Queen of Diamonds",
+      "description": "Q♦",
+      "type": "poker",
+      "data": {
+        "suit": 2,
+        "isJoker": false
+      },
+      "suit": "diamonds",
+      "value": 12,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Queen of Diamonds",
+          "img": "cards/light-soft/diamonds-queen.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 38,
+      "flags": {}
+    },
+    {
+      "_id": "7dMwWcL2MuKqGBHD",
+      "name": "Queen of Hearts",
+      "description": "Q♥",
+      "type": "poker",
+      "data": {
+        "suit": 3,
+        "isJoker": false
+      },
+      "suit": "hearts",
+      "value": 12,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Queen of Hearts",
+          "img": "cards/light-soft/hearts-queen.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 51,
+      "flags": {}
+    },
+    {
+      "_id": "l6IsguWIPmyI5DJm",
+      "name": "Queen of Spades",
+      "description": "Q♠",
+      "type": "poker",
+      "data": {
+        "suit": 4,
+        "isJoker": false
+      },
+      "suit": "spades",
+      "value": 12,
+      "back": {
+        "name": "",
+        "text": ""
+      },
+      "faces": [
+        {
+          "name": "Queen of Spades",
+          "img": "cards/light-soft/spades-queen.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 64,
+      "flags": {}
+    },
+    {
+      "_id": "xkqnGnkm1gogETJL",
+      "name": "Red Joker",
+      "description": "Red J",
+      "type": "poker",
+      "data": {
+        "suit": 99,
+        "isJoker": true
+      },
+      "suit": "joker",
+      "value": 99,
+      "back": {
+        "name": "",
+        "text": "",
+        "img": null
+      },
+      "faces": [
+        {
+          "name": "Red Joker",
+          "img": "cards/light-soft/red-joker.webp",
+          "text": ""
+        }
+      ],
+      "face": 0,
+      "drawn": false,
+      "origin": "PBSg2pwQQQlK8FgS",
+      "rotation": 0,
+      "sort": 1386,
+      "flags": {},
+      "width": null,
+      "height": null
+    }
+  ],
+  "width": 2,
+  "height": 3,
+  "rotation": 0,
+  "displayCount": false
+}

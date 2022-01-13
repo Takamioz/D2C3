@@ -1,0 +1,157 @@
+{
+  "resources": [
+    "surfaces.mp3"
+  ],
+  "spritemap": {
+    "surface_felt1": {
+      "start": 0,
+      "end": 0.37498866213151927,
+      "loop": false
+    },
+    "surface_felt2": {
+      "start": 2,
+      "end": 2.3749886621315195,
+      "loop": false
+    },
+    "surface_felt3": {
+      "start": 4,
+      "end": 4.3749886621315195,
+      "loop": false
+    },
+    "surface_felt4": {
+      "start": 6,
+      "end": 6.3749886621315195,
+      "loop": false
+    },
+    "surface_felt5": {
+      "start": 8,
+      "end": 8.37498866213152,
+      "loop": false
+    },
+    "surface_felt6": {
+      "start": 10,
+      "end": 10.37498866213152,
+      "loop": false
+    },
+    "surface_felt7": {
+      "start": 12,
+      "end": 12.37498866213152,
+      "loop": false
+    },
+    "surface_metal1": {
+      "start": 14,
+      "end": 14.37498866213152,
+      "loop": false
+    },
+    "surface_metal2": {
+      "start": 16,
+      "end": 16.374988662131518,
+      "loop": false
+    },
+    "surface_metal3": {
+      "start": 18,
+      "end": 18.374988662131518,
+      "loop": false
+    },
+    "surface_metal4": {
+      "start": 20,
+      "end": 20.374988662131518,
+      "loop": false
+    },
+    "surface_metal5": {
+      "start": 22,
+      "end": 22.374988662131518,
+      "loop": false
+    },
+    "surface_metal6": {
+      "start": 24,
+      "end": 24.374988662131518,
+      "loop": false
+    },
+    "surface_metal7": {
+      "start": 26,
+      "end": 26.374988662131518,
+      "loop": false
+    },
+    "surface_metal8": {
+      "start": 28,
+      "end": 28.374988662131518,
+      "loop": false
+    },
+    "surface_metal9": {
+      "start": 30,
+      "end": 30.374988662131518,
+      "loop": false
+    },
+    "surface_wood_table1": {
+      "start": 32,
+      "end": 32.37498866213152,
+      "loop": false
+    },
+    "surface_wood_table2": {
+      "start": 34,
+      "end": 34.37498866213152,
+      "loop": false
+    },
+    "surface_wood_table3": {
+      "start": 36,
+      "end": 36.37498866213152,
+      "loop": false
+    },
+    "surface_wood_table4": {
+      "start": 38,
+      "end": 38.37498866213152,
+      "loop": false
+    },
+    "surface_wood_table5": {
+      "start": 40,
+      "end": 40.37498866213152,
+      "loop": false
+    },
+    "surface_wood_table6": {
+      "start": 42,
+      "end": 42.37498866213152,
+      "loop": false
+    },
+    "surface_wood_table7": {
+      "start": 44,
+      "end": 44.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray1": {
+      "start": 46,
+      "end": 46.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray2": {
+      "start": 48,
+      "end": 48.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray3": {
+      "start": 50,
+      "end": 50.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray4": {
+      "start": 52,
+      "end": 52.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray5": {
+      "start": 54,
+      "end": 54.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray6": {
+      "start": 56,
+      "end": 56.37498866213152,
+      "loop": false
+    },
+    "surface_wood_tray7": {
+      "start": 58,
+      "end": 58.37498866213152,
+      "loop": false
+    }
+  }
+}

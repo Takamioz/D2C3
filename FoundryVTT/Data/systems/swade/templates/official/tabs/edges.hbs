@@ -1,0 +1,103 @@
+<span class='edges'>
+  <header class='section-header'>
+    <span class='name'>{{localize 'SWADE.Edges'}}</span>
+    <button type='button' class='item-create controls' data-type='edge'>
+      <i class='fa fa-plus'></i>{{localize 'SWADE.Add'}}
+    </button>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.edge}}
+      <li class='edge-hindrance item' data-item-id='{{id}}'>
+        <span class='flexrow'>
+          <img class='item-image' src='{{img}}' alt='{{name}}' />
+          <span class='item-name'>
+            <button type='button'>
+              <span class='sr-only'>{{localize 'SWADE.Expand'}}</span>
+              {{name}}
+            </button>
+          </span>
+          <div class='item-controls'>
+            {{#if isOwner}}
+              <button type='button' class='item-show'>
+                <i class='far fa-comment-alt'></i>
+              </button>
+              <button type='button' class='item-edit'>
+                <i class='fas fa-edit'></i>
+              </button>
+            {{/if}}
+          </div>
+        </span>
+        <div class='description'>{{enrich data.data.description}}</div>
+      </li>
+    {{/each}}
+  </ul>
+  <header class='section-header'>
+    <span class='name'>{{localize 'SWADE.Hindrances'}}</span>
+    <button type='button' class='item-create controls' data-type='hindrance'>
+      <i class='fa fa-plus'></i>{{localize 'SWADE.Add'}}
+    </button>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.hindrance}}
+      <li class='edge-hindrance item' data-item-id='{{id}}'>
+        <span class='flexrow'>
+          <img class='item-image' src='{{img}}' alt='{{name}}' />
+          <span class='item-name'>
+            <button type='button'>
+              <span class='sr-only'>{{localize 'SWADE.Expand'}}</span>
+              {{name}}
+              {{#if data.data.major}}{{localize
+                  'SWADE.Major'
+                }}{{else}}{{localize 'SWADE.Minor'}}{{/if}}
+            </button>
+          </span>
+          <div class='item-controls'>
+            {{#if isOwner}}
+              <button type='button' class='item-show'>
+                <i class='far fa-comment-alt'></i>
+              </button>
+              <button type='button' class='item-edit'>
+                <i class='fas fa-edit'></i>
+              </button>
+            {{/if}}
+          </div>
+        </span>
+        <div class='description'>{{enrich data.data.description}}</div>
+      </li>
+    {{/each}}
+  </ul>
+  <header class='section-header'>
+    <span class='name'>{{localize 'SWADE.SpecialAbilities'}}</span>
+    <button type='button' class='item-create controls' data-type='ability'>
+      <i class='fa fa-plus'></i>{{localize 'SWADE.Add'}}
+    </button>
+  </header>
+  <ul>
+    {{#each actor.itemTypes.ability}}
+      <li class='edge-hindrance item' data-item-id='{{id}}'>
+        <span class='flexrow'>
+          <img class='item-image' src='{{img}}' alt='{{name}}' />
+          <span class='item-name'>
+            <button type='button'>
+              <span class='sr-only'>{{localize 'SWADE.Expand'}}</span>
+              {{name}}
+            </button>
+          </span>
+          <div class='item-controls'>
+            {{#if isOwner}}
+              <button type='button' class='item-show'>
+                <i class='far fa-comment-alt'></i>
+              </button>
+              <button type='button' class='item-edit'>
+                <i class='fas fa-edit'></i>
+              </button>
+            {{/if}}
+          </div>
+        </span>
+        <div class='description'>
+          {{enrich data.data.description}}
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</span>

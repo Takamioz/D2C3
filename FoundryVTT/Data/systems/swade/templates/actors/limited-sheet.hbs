@@ -1,0 +1,36 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  {{! Sheet Header }}
+  <header class='sheet-header'>
+    <div class='profile-img-container'>
+      <img
+        class='profile-img'
+        src='{{actor.img}}'
+        data-edit='img'
+        title='{{actor.name}}'
+      />
+    </div>
+    <div class='header-fields'>
+      <div class='charline'>
+        <h1 class='charname'>
+          <input
+            name='name'
+            type='text'
+            value='{{actor.name}}'
+            placeholder='{{localize 'SWADE.Name'}}'
+          />
+        </h1>
+      </div>
+    </div>
+  </header>
+  <section class='sheet-body'>
+    <div style='height: 600px'>
+      {{editor
+        content=data.data.details.biography.value
+        target='data.details.biography.value'
+        button=true
+        owner=owner
+        editable=editable
+      }}
+    </div>
+  </section>
+</form>

@@ -1,0 +1,67 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+  {{#if disabled}}
+  {{localize "mtte.moulinetteCloudDisabled"}}
+  {{/if}}
+  {{#unless disabled}}
+    {{#unless user.fullName}}
+    <p>{{localize "mtte.patreonWelcome"}}</p>
+    <p>
+      <div class="error">{{localize "mtte.patreonDescription"}}</div>
+      <div class="progress"></div>
+    </p>
+    {{/unless}}
+    <footer>
+    <div class="module">
+      {{#if user.fullName}}
+      <p><button class="logout"><i class="fas fa-unlink"></i> {{localize "mtte.disconnect"}}</button></p>
+      <p><button class="gift"><i class="fas fa-gift"></i> {{localize "mtte.receiveGift"}}</button></p>
+      {{#unless user.patron}}
+      <p><a href="https://www.patreon.com/moulinette" target="_blank"><button><i class="fab fa-patreon"></i> {{localize "mtte.supportMoulinette"}}</button></a></p>
+      {{/unless}}
+      {{/if}}
+      {{#unless user.fullName}}
+      <p><button class="login"><i class="fab fa-patreon"></i> {{localize "mtte.authenticate"}}</button></p>
+      {{/unless}}
+    </div>
+    
+    <div class="module desc">
+      {{#if user.fullName}}
+      {{localize "mtte.patreonLinked"}}
+      <ul>
+      <li>{{user.fullName}} {{#if user.vanity}}({{user.vanity}}){{/if}}</li>
+      {{#if user.patron}}
+      <li>{{localize "mtte.patron"}} <i class="fas fa-heart red"></i> ({{user.patron}})</li>
+      {{/if}}
+      {{#unless user.patron}}
+      <li class="error">{{localize "mtte.notPatron"}}</li>
+      {{/unless}}
+      {{#if user.pledges}}
+        </ul>
+        {{localize "mtte.patreonPledges"}}
+        <ul>
+        {{#each user.pledges as |p|}}
+        <li>{{p.vanity}}: {{p.pledge}} <i class="fas fa-dollar-sign" title="{{p.paid}} $USD ({{p.days}} {{localize "mtte.days"}})"></i></li>
+        {{/each}}
+        </ul>
+      {{/if}}
+      {{#if user.gifts}}
+        </ul>
+        {{localize "mtte.patreonGifts"}}
+        <ul>
+        {{#each user.gifts as |g|}}
+        <li>{{g.vanity}}: {{g.tier}}</li>
+        {{/each}}
+        </ul>
+      {{/if}}
+      {{/if}}
+    </div>
+    </footer>
+    
+    {{#unless user.fullName}}
+    <p><em>
+      <a href="https://github.com/SvenWerlen/moulinette-core">{{localize "mtte.seeDoc"}}</a> {{localize "mtte.learnMore"}}
+    </em></p>
+    {{/unless}}
+  {{/unless}}
+  
+</form>

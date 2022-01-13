@@ -1,0 +1,154 @@
+<div class="form-group">
+  <label>{{localize "SWADE.Trait"}}</label>
+  <span class="form-fields">
+    <input name="data.actions.skill" type="text"
+    value="{{data.data.actions.skill}}" placeholder="{{localize "SWADE.Trait"}}"
+    data-dtype="String" /></span
+  >
+</div>
+<div class="form-group">
+  <label>{{localize "SWADE.SkillModUni"}}</label>
+  <span class="form-fields">
+    <input
+      name="data.actions.skillMod"
+      type="text"
+      value="{{data.data.actions.skillMod}}"
+      placeholder="{{localize 'SWADE.RollExample'}}"
+      data-dtype="String"
+      title="{{localize 'SWADE.ModHint'}}"
+  /></span>
+</div>
+<div class="form-group">
+  <label>{{localize "SWADE.DmgModUni"}}</label>
+  <span class="form-fields">
+    <input
+      name="data.actions.dmgMod"
+      type="text"
+      value="{{data.data.actions.dmgMod}}"
+      placeholder="{{localize 'SWADE.RollExample'}}"
+      title="{{localize 'SWADE.ModHint'}}"
+      data-dtype="String"
+  /></span>
+</div>
+{{#if isWeapon}}
+<div class="form-group">
+  <label>{{localize "SWADE.Ammo"}}</label>
+  <span class="form-fields">
+    <input
+      type="text"
+      name="data.ammo"
+      value="{{data.data.ammo}}"
+      list="{{data.id}}-ammo"
+      data-dtype="String"
+      title="{{localize 'SWADE.ClickSuggestions'}}"
+    />
+  </span>
+</div>
+<datalist id="{{data.id}}-ammo">
+  {{#each ammoList as |ammo|}}
+  <option value="{{ammo}}" />
+  {{/each}}
+</datalist>
+{{/if}}
+<header class="header-field flexrow">
+  <div>
+    <span>{{localize "SWADE.Actions"}}</span>
+  </div>
+  <div class="header-field-add">
+    <a class="action-create"><i class="fa fa-plus"></i></a>
+  </div>
+</header>
+<ol class="actions-list">
+  {{#each data.data.actions.additional as |attr key|}}
+  <li class="actions-container">
+    <div class="action-name form-group">
+      <label>{{localize "SWADE.Name"}}</label>
+      <span class="form-fields">
+        <input
+          type="text"
+          name="data.actions.additional.{{key}}.name"
+          value="{{attr.name}}"
+      /></span>
+    </div>
+    <div class="action-type form-group">
+      <label>{{localize "Type"}}</label>
+      <span class="form-fields">
+        <select name="data.actions.additional.{{key}}.type">
+          {{#select attr.type}}
+          <option value="skill">{{localize "SWADE.Trait"}}</option>
+          <option value="damage">{{localize "SWADE.Dmg"}}</option>
+          {{/select}}
+        </select>
+      </span>
+    </div>
+    <a
+      class="action-delete"
+      title="{{localize 'Delete'}}"
+      data-action-key="{{key}}"
+      ><i class="fas fa-trash"></i
+    ></a>
+    {{#if (eq attr.type "skill")}}
+    <div class="action-input-left form-group">
+      <label> {{localize "SWADE.AltTrait"}}</label>
+      <span class="form-fields">
+        <input
+          type="text"
+          name="data.actions.additional.{{key}}.skillOverride"
+          value="{{attr.skillOverride}}"
+        />
+      </span>
+    </div>
+    <div class="action-input-right form-group">
+      <label>{{localize "SWADE.Trait"}} {{localize "SWADE.Mod"}}</label>
+      <span class="form-fields">
+        <input
+          type="text"
+          name="data.actions.additional.{{key}}.skillMod"
+          value="{{attr.skillMod}}"
+          title="{{localize 'SWADE.ModHint'}}"
+        />
+      </span>
+    </div>
+    <div class="action-input-left form-group">
+      <label>{{localize "SWADE.RoF"}}</label>
+      <span class="form-fields">
+        <input type="text" name="data.actions.additional.{{key}}.rof" value="{{attr.rof}}" data-dtype="Number" />
+      </span>
+    </div>
+    <div class="action-input-right form-group">
+      <label>{{localize "SWADE.ShotsUsed"}}</label>
+      <span class="form-fields">
+        <input
+          type="number"
+          name="data.actions.additional.{{key}}.shotsUsed"
+          value="{{attr.shotsUsed}}"
+        />
+      </span>
+    </div>
+    {{else}}
+    <div class="action-input-left form-group">
+      <label>{{localize "SWADE.DmgOver"}}</label>
+      <span class="form-fields">
+        <input
+          type="text"
+          name="data.actions.additional.{{key}}.dmgOverride"
+          value="{{attr.dmgOverride}}"
+        />
+      </span>
+    </div>
+    <div class="action-input-right form-group">
+      <label>{{localize "SWADE.Dmg"}} {{localize "SWADE.Mod"}}</label>
+      <span class="form-fields">
+        <input
+          type="text"
+          name="data.actions.additional.{{key}}.dmgMod"
+          value="{{attr.dmgMod}}"
+          title="{{localize 'SWADE.ModHint'}}"
+        />
+      </span>
+    </div>
+    {{/if}}
+  </li>
+  {{/each}}
+</ol>
+<br />

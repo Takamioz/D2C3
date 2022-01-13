@@ -1,0 +1,50 @@
+{
+  "name": "colorsettings",
+  "title": "lib - Color Settings",
+  "description": "Library that allows modules to add color settings and forms.",
+  "author": "ardittristan#0001",
+  "authors": [],
+  "url": "https://github.com/ardittristan/VTTColorSettings",
+  "flags": {},
+  "version": "2.8.2",
+  "minimumCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "9.238",
+  "scripts": [],
+  "esmodules": [
+    "colorSetting.js"
+  ],
+  "styles": [
+    "./css/colorpicker.css"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json"
+    }
+  ],
+  "packs": [],
+  "system": [],
+  "dependencies": [],
+  "socket": true,
+  "manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
+  "download": "https://github.com/ardittristan/VTTColorSettings/releases/latest/download/colorSettings.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": true
+}

@@ -1,0 +1,43 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{!-- Item Sheet Header --}}
+  {{> "systems/swade/templates/items/partials/header-delete.hbs"}}
+  <main class="sheet-body">
+    <div class="form-group">
+      <label>{{localize "SWADE.Subtype"}}</label>
+      <select name="data.subtype">
+        {{#select data.data.subtype}}
+        <option value="special">{{localize localization.special.dropdown}}</option>
+        {{#unless data.isOwned}}
+        <option value="race">{{localize localization.race.dropdown}}</option>
+        <option value="archetype">{{localize localization.archetype.dropdown}}</option>
+        {{/unless}} {{/select}}
+      </select>
+    </div>
+    {{#unless isRaceOrArchetype}}
+    <div class="form-group">
+      <label class="check-container">
+        {{localize "SWADE.GrantsPowers"}}
+        <input
+          type="checkbox"
+          name="data.grantsPowers"
+          {{checked
+          data.data.grantsPowers}}
+          data-dtype="Boolean"
+        />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    {{/unless}}
+    {{> "systems/swade/templates/items/partials/description.hbs"}}
+    <br />
+    {{#if isRaceOrArchetype}}
+      <header class="header-field flexrow">
+         <span style='flex: 1'>{{localize abilityHeader}}</span>
+      </header>
+      {{{displayEmbedded data.flags.swade.embeddedAbilities}}}
+    {{/if}}
+    {{> "systems/swade/templates/setting-fields.hbs"}}
+    {{> "systems/swade/templates/items/partials/ae-header.hbs"}}
+    {{> "systems/swade/templates/effect-list.hbs"}}
+  </main>
+</form>

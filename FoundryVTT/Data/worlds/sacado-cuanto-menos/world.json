@@ -1,0 +1,32 @@
+{
+  "name": "sacado-cuanto-menos",
+  "title": "Sacado cuanto menos",
+  "description": "<p>Aaaaaa</p>",
+  "authors": [],
+  "flags": {},
+  "version": "1.0.0",
+  "scripts": [],
+  "esmodules": [],
+  "styles": [],
+  "languages": [],
+  "packs": [
+    {
+      "label": "Radugen",
+      "type": "Scene",
+      "name": "radugen",
+      "path": "packs/radugen.db",
+      "system": "dnd5e",
+      "package": "world",
+      "entity": "Scene",
+      "private": false
+    }
+  ],
+  "system": "dnd5e",
+  "dependencies": [],
+  "socket": false,
+  "protected": false,
+  "coreVersion": "9.242",
+  "resetKeys": false,
+  "safeMode": false,
+  "systemVersion": "1.5.6"
+}

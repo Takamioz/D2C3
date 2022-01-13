@@ -1,0 +1,113 @@
+<div class="flexrow">
+  <div class="form-group header-field">
+    <div class="arcane-tabs">
+      <div class="arcane" data-arcane="All">{{localize "SWADE.All"}}</div>
+      {{#each arcanes as |arcane id|}}
+      <div class="arcane" data-arcane="{{arcane}}">{{arcane}}</div>
+      {{/each}}
+    </div>
+    <!-- Global counter -->
+    {{#unless settingrules.noPowerPoints}}
+    <div class="power-counter" data-arcane="All">
+      <label for="data.powerPoints.value">{{localize "SWADE.PP"}}</label>
+      <input
+        name="data.powerPoints.value"
+        type="text"
+        value="{{data.data.powerPoints.value}}"
+        placeholder="{{localize 'SWADE.CurPP'}}"
+        data-dtype="Number"
+      />
+      <span>/</span>
+      <input
+        name="data.powerPoints.max"
+        type="text"
+        value="{{data.data.powerPoints.max}}"
+        placeholder="{{localize 'SWADE.MaxPP'}}"
+        data-dtype="Number"
+      />
+    </div>
+    <!-- Individual counters -->
+    {{#each arcanes as |arcane id|}}
+    <div class="power-counter" data-arcane="{{arcane}}">
+      {{#with (lookup ../data.data.powerPoints arcane)}}
+      <label for="data.powerPoints.{{arcane}}.value"
+        >{{localize "SWADE.PP"}}</label
+      >
+      <input
+        name="data.powerPoints.{{arcane}}.value"
+        type="text"
+        value="{{value}}"
+        placeholder="{{localize 'SWADE.CurPP'}}"
+        data-dtype="Number"
+      />
+      <span>/</span>
+      <input
+        name="data.powerPoints.{{arcane}}.max"
+        type="text"
+        value="{{max}}"
+        placeholder="{{localize 'SWADE.MaxPP'}}"
+        data-dtype="Number"
+      />
+      {{/with}}
+    </div>
+    {{/each}} {{/unless}}
+    <div class="header-field-add">
+      <a class="item-create" data-type="power"><i class="fa fa-plus"></i></a>
+    </div>
+  </div>
+</div>
+<powers {{{powersOptions}}}>
+  {{#each itemsByType.power as |power id|}}
+  <div
+    class="power item"
+    data-item-id="{{power._id}}"
+    data-arcane="{{power.data.arcane}}"
+  >
+    <div class="power-header flexrow">
+      <div
+        class="item-image"
+        style="background-image: url('{{power.img}}')"
+      ></div>
+      <h4 class="item-name">{{power.name}}</h4>
+      {{#if ../owner}}
+      <div class="item-controls flexrow">
+        {{#unless (eq ../actor.type "npc")}}
+        <a
+          class="item-control item-toggle {{#unless power.data.equipped}}item-unequipped{{/unless}}"
+          title='{{localize "SWADE.Equipped"}}'
+          ><i class="fas fa-star"></i
+        ></a>
+        {{/unless}}
+        <a class="item-show"><i class="fas fa-eye"></i></a>
+        <a class="item-edit"><i class="fas fa-edit"></i></a>
+      </div>
+      {{/if}}
+    </div>
+    <div class="power-content">
+      <div class="power-details">
+        <div class="flexrow">
+          {{#if power.data.rank}}
+          <div>{{localize 'SWADE.Rank'}}: {{power.data.rank}}</div>
+          {{/if}} {{#if power.data.pp}}
+          <div>{{power.data.pp}} PP</div>
+          {{/if}}
+        </div>
+        <div class="flexrow">
+          {{#if power.data.range}}
+          <div>{{localize 'SWADE.Rng'}}: {{power.data.range}}</div>
+          {{/if}} {{#if power.data.duration}}
+          <div>{{localize 'SWADE.Dur'}}: {{power.data.duration}}</div>
+          {{/if}}
+        </div>
+        {{#if power.data.damage.length}}
+        <div>
+          {{localize 'SWADE.Dmg'}}:
+          <a class="damage-roll">{{power.data.damage}}</a>
+        </div>
+        {{/if}}
+      </div>
+      <div class="power-description">{{enrich power.data.description}}</div>
+    </div>
+  </div>
+  {{/each}}
+</powers>

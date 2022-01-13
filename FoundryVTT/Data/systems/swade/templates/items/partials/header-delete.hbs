@@ -1,0 +1,37 @@
+<header class='item sheet-header' data-item-id='{{item.id}}'>
+  <div class='profile-img-container'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-edit='img'
+      alt='{{item.name}}'
+      title='{{localize 'SWADE.RightClickZoom'}}'
+    />
+  </div>
+  <div class='header-fields'>
+    <div class='itemline'>
+      <h1 class='itemname'>
+        <input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='{{localize 'SWADE.Name'}}'
+          data-dtype='String'
+        />
+      </h1>
+      <div class='item-controls'>
+        <a class='item-control item-delete' title='{{localize 'SWADE.Del'}}'><i
+            class='fas fa-trash fa-2x'
+          ></i></a>
+      </div>
+    </div>
+  </div>
+</header>
+{{#if displayNav}}
+  <nav class='tabs' data-group='primary' style='margin-bottom: 5px'>
+    <a class='item' data-tab='summary'>{{localize 'SWADE.Desc'}}</a>
+    <a class='item' data-tab='actions-effects'>
+      {{localize 'SWADE.ActionsEffects'}}
+    </a>
+  </nav>
+{{/if}}

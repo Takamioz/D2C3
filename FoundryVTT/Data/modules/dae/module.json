@@ -1,0 +1,110 @@
+{
+  "name": "dae",
+  "title": "Dynamic effects using Active Effects",
+  "description": "replacement for dynamic effects",
+  "author": "tposney",
+  "authors": [],
+  "url": "https://gitlab.com/tposney/dae",
+  "bugs": "https://gitlab.com/tposney/dae/-/issues",
+  "flags": {},
+  "version": "0.8.78",
+  "minimumCoreVersion": "0.8.4",
+  "compatibleCoreVersion": "9.231",
+  "scripts": [
+    "libs/tokenizer.min.js"
+  ],
+  "esmodules": [
+    "dae.js",
+    "module/patching.js"
+  ],
+  "styles": [
+    "css/dae.css",
+    "css/awesomplete.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "ja",
+      "name": " 日本語",
+      "path": "lang/ja.json"
+    },
+    {
+      "lang": "ko",
+      "name": "Korean",
+      "path": "lang/ko.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "lang/it.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "premadeitems",
+      "label": "Premade Items",
+      "path": "./packs/premadeitems.db",
+      "module": "world",
+      "entity": "Item",
+      "lang": [
+        "en",
+        "de"
+      ],
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "sample-macros",
+      "label": "Sample macros",
+      "path": "./packs/sample-macros.db",
+      "module": "world",
+      "entity": "Macro",
+      "lang": [
+        "en",
+        "de"
+      ],
+      "type": "Macro",
+      "private": false
+    }
+  ],
+  "system": [
+    "dnd5e",
+    "sw5e"
+  ],
+  "dependencies": [
+    {
+      "name": "lib-wrapper",
+      "type": "module"
+    },
+    {
+      "name": "socketlib",
+      "type": "module"
+    }
+  ],
+  "socket": true,
+  "manifest": "https://gitlab.com/tposney/dae/raw/master/package/module.json",
+  "download": "https://gitlab.com/tposney/dae/raw/master/package/dae-v0.8.78.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "minimumSystemVersion": "1.4.0",
+  "library": false
+}

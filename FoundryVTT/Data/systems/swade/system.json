@@ -1,0 +1,71 @@
+{
+	"name": "swade",
+	"type": "system",
+	"title": "Savage Worlds Adventure Edition",
+	"description": "Published by <a href=\"https://peginc.com\">Pinnacle Entertainment Group, Inc.</a></p><p>A comprehensive game system for running <cite><em>Savage Worlds Adventure Edition<em></cite>.<br><p>Any time. Any place. <em>Savage Worlds</em>.</p>",
+	"version": "0.22.5",
+	"minimumCoreVersion": "9",
+	"compatibleCoreVersion": "9",
+	"author": "FloRad",
+	"authors": [
+		{
+			"name": "FloRad",
+			"url": "https://gitlab.com/florad92",
+			"discord": "FloRadical#2142"
+		}
+	],
+	"esmodules": ["swade.js"],
+	"styles": ["swade.css"],
+	"packs": [
+		{
+			"name": "skills",
+			"label": "Basic Skills",
+			"system": "swade",
+			"path": "./packs/skills.db",
+			"type": "Item"
+		},
+		{
+			"name": "edges",
+			"label": "Basic Edges",
+			"system": "swade",
+			"path": "./packs/edges.db",
+			"type": "Item"
+		},
+		{
+			"name": "hindrances",
+			"label": "Basic Hindrances",
+			"system": "swade",
+			"path": "./packs/hindrances.db",
+			"type": "Item"
+		},
+		{
+			"name": "action-cards",
+			"label": "Basic Action Cards",
+			"system": "swade",
+			"path": "./packs/action-cards.db",
+			"type": "JournalEntry"
+		}
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		},
+		{
+			"lang": "de",
+			"name": "Deutsch",
+			"path": "lang/de.json"
+		}
+	],
+	"socket": true,
+	"gridDistance": 1,
+	"gridUnits": "in",
+	"url": "https://gitlab.com/peginc/swade",
+	"manifest": "https://gitlab.com/peginc/swade/-/raw/master/src/system.json",
+	"download": "https://gitlab.com/peginc/swade/-/raw/v0.22.5/package/swade-v0.22.5.zip",
+	"readme": "https://gitlab.com/peginc/swade/-/wikis/home",
+	"bugs": "https://gitlab.com/peginc/swade/-/issues",
+	"changelog": "https://gitlab.com/peginc/swade/-/releases",
+	"license": "https://gitlab.com/peginc/swade/-/blob/master/LICENSE.md"
+}

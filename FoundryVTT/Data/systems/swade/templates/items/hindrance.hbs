@@ -1,0 +1,28 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{!-- Item Sheet Header --}}
+  {{> "systems/swade/templates/items/partials/header-delete.hbs"}}
+  <main class="sheet-body">
+    <div class="tab active" data-group="primary" data-tab="summary">
+      <div class="form-group">
+        <label class="check-container"
+          >{{localize "SWADE.MajHind"}}
+          <input
+            type="checkbox"
+            name="data.major"
+            {{checked
+            data.data.major}}
+            data-dtype="Boolean"
+          />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      {{> "systems/swade/templates/setting-fields.hbs"}}
+      {{> "systems/swade/templates/items/partials/description.hbs"}}
+    </div>
+    <div class="tab" data-group="primary" data-tab="actions-effects">
+      {{> "systems/swade/templates/items/partials/ae-header.hbs"}}
+      {{> "systems/swade/templates/effect-list.hbs"}}
+      <br />
+    </div>
+  </main>
+</form>

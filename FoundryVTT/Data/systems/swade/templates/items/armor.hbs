@@ -1,0 +1,195 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{!-- Item Sheet Header --}} {{>
+  "systems/swade/templates/items/partials/header.hbs"}}
+  <main class="sheet-body flexrow">
+    <div class="flexrow tab active" data-group="primary" data-tab="summary">
+      <section class="item-stats">
+        <header class="header-field">
+          <span>{{localize "SWADE.Details"}}</span>
+        </header>
+        <div class="form-group">
+          <label class="check-container"
+            >{{localize "SWADE.Equipped"}}
+            <input
+              type="checkbox"
+              name="data.equipped"
+              {{checked
+              data.data.equipped}}
+              data-dtype="Boolean"
+            />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="check-container">{{localize "SWADE.ArcaneDevice"}}
+            <input type="checkbox" name="data.isArcaneDevice" {{checked data.data.isArcaneDevice}} data-dtype="Boolean" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="check-container"
+            >{{localize "SWADE.NaturalArmor"}}
+            <input
+              type="checkbox"
+              name="data.isNaturalArmor"
+              {{checked
+              data.data.isNaturalArmor}}
+              data-dtype="Boolean"
+            />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="data.quantity">{{localize "SWADE.Quantity"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.quantity"
+              type="text"
+              value="{{data.data.quantity}}"
+              placeholder="{{localize 'SWADE.Quantity'}}"
+              data-dtype="Number"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.armor">{{localize "SWADE.Armor"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.armor"
+              type="number"
+              value="{{data.data.armor}}"
+              placeholder="{{localize 'SWADE.Armor'}}"
+              data-dtype="Number"
+          /></span>
+        </div>
+                <div class="form-group">
+          <label for="data.armor">{{localize "SWADE.Tough"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.toughness"
+              type="number"
+              value="{{data.data.toughness}}"
+              placeholder="{{localize 'SWADE.Tough'}}"
+              data-dtype="Number"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.minStr">{{localize "SWADE.MinStrShort"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.minStr"
+              type="text"
+              value="{{data.data.minStr}}"
+              placeholder="{{localize 'SWADE.MinStr'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.weight">{{localize "SWADE.Weight"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.weight"
+              type="text"
+              value="{{data.data.weight}}"
+              placeholder="{{localize 'SWADE.Weight'}}"
+              data-dtype="Number"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.price">{{localize "SWADE.Price"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.price"
+              type="text"
+              value="{{data.data.price}}"
+              placeholder="{{localize 'SWADE.Price'}}"
+              data-dtype="Number"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.notes">{{localize "SWADE.Notes"}}</label>
+          <span class="form-fields">
+            <input
+              type="text"
+              name="data.notes"
+              value="{{data.data.notes}}"
+              placeholder="{{localize 'SWADE.Notes'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <header class="header-field">{{localize "SWADE.HitLocations"}}</header>
+        <div>
+          <div class="flexrow">
+            <div class="form-group">
+              <label class="check-container"
+                >{{localize "SWADE.Head"}}
+                <input
+                  type="checkbox"
+                  name="data.locations.head"
+                  {{checked
+                  data.data.locations.head}}
+                  data-dtype="Boolean"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="check-container"
+                >{{localize "SWADE.Torso"}}
+                <input
+                  type="checkbox"
+                  name="data.locations.torso"
+                  {{checked
+                  data.data.locations.torso}}
+                  data-dtype="Boolean"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="flexrow">
+            <div class="form-group">
+              <label class="check-container"
+                >{{localize "SWADE.Arms"}}
+                <input
+                  type="checkbox"
+                  name="data.locations.arms"
+                  {{checked
+                  data.data.locations.arms}}
+                  data-dtype="Boolean"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="check-container"
+                >{{localize "SWADE.Legs"}}
+                <input
+                  type="checkbox"
+                  name="data.locations.legs"
+                  {{checked
+                  data.data.locations.legs}}
+                  data-dtype="Boolean"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        {{> "systems/swade/templates/setting-fields.hbs"}} {{>
+        "systems/swade/templates/items/partials/description.hbs"}}
+      </section>
+    </div>
+    <div class="tab powers" data-group="primary" data-tab="powers">
+      {{> "systems/swade/templates/items/partials/powers.hbs"}}
+      <br />
+    </div>
+    <div class="tab" data-group="primary" data-tab="actions-effects">
+      {{> "systems/swade/templates/items/partials/actions.hbs"}}
+      {{> "systems/swade/templates/items/partials/ae-header.hbs"}}
+      {{> "systems/swade/templates/effect-list.hbs"}}
+      <br />
+    </div>
+  </main>
+</form>

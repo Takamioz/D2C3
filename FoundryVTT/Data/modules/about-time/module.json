@@ -1,0 +1,86 @@
+{
+  "name": "about-time",
+  "title": "About Time",
+  "description": "",
+  "author": "@tposney",
+  "authors": [],
+  "url": "https://gitlab.com/tposney/about-time",
+  "bugs": "https://gitlab.com/tposney/about-time/-/issues",
+  "flags": {},
+  "version": "1.0.6",
+  "minimumCoreVersion": "0.8.5",
+  "compatibleCoreVersion": "9.231",
+  "scripts": [],
+  "esmodules": [
+    "about-time.js"
+  ],
+  "styles": [
+    "about-time.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch (German)",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "ko",
+      "name": "Korean",
+      "path": "lang/ko.json"
+    },
+    {
+      "lang": "ja",
+      "name": " 日本語",
+      "path": "lang/ja.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "lang/it.json"
+    },
+    {
+      "lang": "cn",
+      "name": "中文",
+      "path": "lang/cn.json"
+    },
+    {
+      "lang": "zh-tw",
+      "name": "正體中文",
+      "path": "lang/zh-tw.json"
+    }
+  ],
+  "packs": [],
+  "system": [],
+  "dependencies": [
+    {
+      "name": "foundryvtt-simple-calendar",
+      "type": "module"
+    }
+  ],
+  "socket": true,
+  "manifest": "https://gitlab.com/tposney/about-time/raw/master/package/module.json",
+  "download": "https://gitlab.com/tposney/about-time/raw/master/package/about-time-v1.0.6.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}

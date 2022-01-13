@@ -1,0 +1,261 @@
+<form autocomplete='off'>
+  {{#if isActor}}
+    <section id='maxValues'>
+      {{#if isNPC}}
+        <div class='form-group' id='isWildCard'>
+          <label for='{{_id}}-wildcard'>{{localize 'SWADE.WildCard'}}</label>
+          <span class='form-fields'>
+            <input
+              type='checkbox'
+              name='data.wildcard'
+              id='{{_id}}-wildcard'
+              {{checked data.wildcard}}
+            />
+          </span>
+        </div>
+      {{/if}}
+      {{#unless isVehicle}}
+        <div class='form-group' id='animalSmarts'>
+          <label for='{{_id}}-animalSmarts'>{{localize
+              'SWADE.AnimalSmarts'
+            }}</label>
+          <span class='form-fields'>
+            <input
+              type='checkbox'
+              name='data.attributes.smarts.animal'
+              id='{{_id}}-animalSmarts'
+              {{checked data.attributes.smarts.animal}}
+            />
+          </span>
+        </div>
+        <div class='form-group' id='basePace'>
+          <label>{{localize 'SWADE.BasePace'}}</label>
+          <span class='form-fields'>
+            <input
+              type='text'
+              name='data.stats.speed.value'
+              value='{{data.stats.speed.value}}'
+              data-dtype='Number'
+            />
+          </span>
+        </div>
+        <div class='form-group' id='runningDie'>
+          <label>{{localize 'SWADE.RunningDie'}}</label>
+          <span class='form-fields'>
+            <select
+              class='running-die'
+              name='data.stats.speed.runningDie'
+              data-dtype='Number'
+            >
+              {{#select data.stats.speed.runningDie}}
+                <option value='1'>1</option>
+                <option value='4'>d4</option>
+                <option value='6'>d6</option>
+                <option value='8'>d8</option>
+                <option value='10'>d10</option>
+                <option value='12'>d12</option>
+              {{/select}}
+            </select>
+            <input
+              type='text'
+              name='data.stats.speed.runningMod'
+              value='{{data.stats.speed.runningMod}}'
+              data-dtype='Number'
+            />
+          </span>
+        </div>
+      {{/unless}}
+      <div class='form-group' id='maxWounds'>
+        <label>{{localize 'SWADE.WoundsMax'}}</label>
+        <span class='form-fields'>
+          <input
+            type='text'
+            name='data.wounds.max'
+            value='{{data.wounds.max}}'
+            data-dtype='Number'
+          />
+        </span>
+      </div>
+      {{#unless isVehicle}}
+        <div class='form-group' id='maxFatigue'>
+          <label>{{localize 'SWADE.FatigueMax'}}</label>
+          <span class='form-fields'>
+            <input
+              type='text'
+              name='data.fatigue.max'
+              value='{{data.fatigue.max}}'
+              data-dtype='Number'
+            />
+          </span>
+        </div>
+      {{/unless}}
+      {{#if isCharacter}}
+        <div class='form-group' id='maxBennies'>
+          <label>{{localize 'SWADE.BenniesMax'}}</label>
+          <span class='form-fields'>
+            <input
+              class='bennies-max'
+              name='data.bennies.max'
+              type='text'
+              value='{{data.bennies.max}}'
+              data-dtype='Number'
+            />
+          </span>
+        </div>
+      {{/if}}
+      <div class='form-group' id='ignoredWounds'>
+        <label for='data.wounds.ignored'>{{localize 'SWADE.IgnWounds'}}</label>
+        <span class='form-fields'>
+          <input
+            id='data.wounds.ignored'
+            name='data.wounds.ignored'
+            type='text'
+            value='{{data.wounds.ignored}}'
+            data-dtype='Number'
+          />
+        </span>
+      </div>
+      {{#if isVehicle}}
+        <div class='form-group' id='maxCargo'>
+          <label for='data.maxCargo'>{{localize 'SWADE.MaxCargo'}}</label>
+          <span class='form-fields'>
+            <input
+              id='data.maxCargo'
+              name='data.maxCargo'
+              type='text'
+              value='{{data.maxCargo}}'
+              data-dtype='Number'
+            />
+          </span>
+        </div>
+        <div class='form-group' id='maxMods'>
+          <label for='data.maxMods'>{{localize 'SWADE.MaxMods'}}</label>
+          <span class='form-fields'>
+            <input
+              id='data.maxMods'
+              name='data.maxMods'
+              type='text'
+              value='{{data.maxMods}}'
+              data-dtype='Number'
+            />
+          </span>
+        </div>
+      {{/if}}
+    </section>
+  {{/if}}
+  {{#if isActor}}
+    <section id='initiative'>
+      <h2>{{localize 'SWADE.Init'}}</h2>
+      <div class='form-group'>
+        <label for='{{_id}}-hasLevelHeaded'>{{localize
+            'SWADE.LevelHeaded'
+          }}</label>
+        <span class='form-fields'>
+          <input
+            type='checkbox'
+            name='data.initiative.hasLevelHeaded'
+            id='{{_id}}-hasLevelHeaded'
+            {{checked data.initiative.hasLevelHeaded}}
+          />
+        </span>
+      </div>
+      <div class='form-group'>
+        <label for='{{_id}}-hasImpLevelHeaded'>{{localize
+            'SWADE.ImprovedLevelHeaded'
+          }}</label>
+        <span class='form-fields'>
+          <input
+            type='checkbox'
+            name='data.initiative.hasImpLevelHeaded'
+            id='{{_id}}-hasImpLevelHeaded'
+            {{checked data.initiative.hasImpLevelHeaded}}
+          />
+        </span>
+      </div>
+      <div class='form-group'>
+        <label for='{{_id}}-hasHesitant'>{{localize 'SWADE.Quick'}}</label>
+        <span class='form-fields'>
+          <input
+            type='checkbox'
+            name='data.initiative.hasQuick'
+            id='{{_id}}-hasQuick'
+            {{checked data.initiative.hasQuick}}
+          />
+        </span>
+      </div>
+      <div class='form-group'>
+        <label for='{{_id}}-hasHesitant'>{{localize 'SWADE.Hesitant'}}</label>
+        <span class='form-fields'>
+          <input
+            type='checkbox'
+            name='data.initiative.hasHesitant'
+            id='{{_id}}-hasHesitant'
+            {{checked data.initiative.hasHesitant}}
+          />
+        </span>
+      </div>
+    </section>
+    {{#unless isVehicle}}
+      <section id='autocalculation'>
+        <h2>{{localize 'SWADE.AutoCalc'}}</h2>
+        <div class='form-group'>
+          <label for='{{_id}}-autoCalcToughness'>{{localize
+              'SWADE.Tough'
+            }}</label>
+          <span class='form-fields'>
+            <input
+              type='checkbox'
+              name='data.details.autoCalcToughness'
+              id='{{_id}}-autoCalcToughness'
+              {{checked data.details.autoCalcToughness}}
+            />
+          </span>
+          <p class='notes'>{{localize 'SWADE.InclArmor'}}</p>
+        </div>
+        <div class='form-group'>
+          <label for='{{_id}}-autoCalcParry'>{{localize 'SWADE.Parry'}}</label>
+          <span class='form-fields'>
+            <input
+              type='checkbox'
+              name='data.details.autoCalcParry'
+              id='{{_id}}-autoCalcParry'
+              {{checked data.details.autoCalcParry}}
+            />
+          </span>
+          <p class='notes'>{{localize 'SWADE.AutoCalcParry'}}</p>
+        </div>
+      </section>
+    {{/unless}}{{/if}}
+  <section id='additionalStats'>
+    <h2>{{localize 'SWADE.AddStats'}}</h2>
+    <header class='form-group flexrow additionalStats-header'>
+      <div>{{localize 'SWADE.Label'}}</div>
+      <div class='centered'>{{localize 'SWADE.HasMaxValue'}}</div>
+      <div class='centered'>{{localize 'SWADE.Enabled'}}</div>
+    </header>
+    {{#each settingFields as |attr key|}}
+      <div class='flexrow'>
+        <div style='text-align: left'>
+          <label for='{{_id}}-{{key}}-useField'>{{attr.label}}</label>
+        </div>
+        <div class='centered'>
+          <input type='checkbox' {{checked attr.hasMaxValue}} disabled />
+        </div>
+        <div class='centered'>
+          <input
+            type='checkbox'
+            name='data.additionalStats.{{key}}.useField'
+            id='{{_id}}-{{key}}-useField'
+            {{checked attr.useField}}
+          />
+        </div>
+      </div>
+    {{/each}}
+  </section>
+  <br />
+  <footer class='sheet-footer'>
+    <button type='submit'>
+      <i class='fas fa-save'></i>{{localize 'Save Changes'}}
+    </button>
+  </footer>
+</form>

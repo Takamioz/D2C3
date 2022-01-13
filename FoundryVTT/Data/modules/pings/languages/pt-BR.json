@@ -1,0 +1,66 @@
+{
+	"pings": {
+		"settings": {
+			"minMovePermission": {
+				"title": "Permissão mínima de movimentação",
+				"hint": "A permissão mínima para permitir que os usuários movam a tela com um ping. Por exemplo, se ASSISTANT for selecionado, apenas Gamemasters e seus assistentes poderão executar um ping que mova as telas de todos."
+			},
+			"mouseButton": {
+				"title": "Botão do mouse para pressionar por um ping",
+				"hint": "O botão do mouse que precisa ser pressionado por um tempo especificado (configurável abaixo) para executar um ping. 0 = esquerda, 1 = meio, 2 = direita. Pressione o botão do mouse desejado (com modificadores como shift/ctrl, se desejar) neste campo, use a tecla Esc para limpar novamente. "
+			},
+			"mouseButtonMove": {
+				"title": "Botão do mouse para um ping na tela",
+				"hint": "O botão do mouse que precisa ser pressionado por um tempo especificado (configurável abaixo) para executar um ping que também move todas as telas do player para o ping. 0 = esquerda, 1 = meio, 2 = Pressione o botão do mouse desejado (com modificadores como shift/ctrl, se desejar) neste campo, use a tecla Esc para limpá-lo novamente. "
+			},
+			"mouseButtonDuration": {
+				"title": "Duração do pressionamento do botão do mouse",
+				"hint": "O tempo em milissegundos que você precisa segurar o botão do mouse até que um ping seja executado."
+			},
+			"key": {
+				"title": "Tecla para pressionar um ping",
+				"hint": "A tecla a ser pressionada para executar um ping no local atual do cursor do mouse. Pressione a tecla desejada (com modificadores como shift/ctrl, se desejar) neste campo, use a tecla Escape para limpe novamente. "
+			},
+			"keyMove": {
+				"title": "Chave para um ping em movimento da tela",
+				"hint": "A tecla a ser pressionada para executar um ping no local atual do cursor do mouse que também move todas as telas do jogador para o ping. Pressione a tecla desejada (com modificadores como shift/ctrl, se desejar ) neste campo, use a tecla Escape para limpá-la novamente. "
+			},
+			"showName": {
+				"title": "Mostrar nome do jogador",
+				"hint": "Se o nome do jogador for exibido abaixo do ping."
+			},
+			"image": {
+				"title": "Imagem Ping",
+				"hint": "A imagem que deve ser usada como alternativa ao ping padrão. Uma tonalidade será aplicada com base na cor do jogador, para que tudo, exceto a escala de cinza, fique ruim."
+			},
+			"scale": {
+				"title": "Escala",
+				"hint": "Quão grande, nas grades, o ping deve ser."
+			},
+			"duration": {
+				"title": "Duração",
+				"hint": "Quanto tempo o ping deve ser mostrado, em segundos."
+			},
+			"rotate": {
+				"title": "Rotação",
+				"hint": "Se a imagem ping girar."
+			},
+			"rotateSpeed": {
+				"title": "Velocidade de rotação",
+				"hint": "Quantos segundos leva para a imagem ping girar 360 graus."
+			},
+			"sizeChange": {
+				"title": "Alteração de tamanho",
+				"hint": "Se a imagem ping mudar ligeiramente de tamanho."
+			},
+			"sizeChangeAmount": {
+				"title": "Valor de alteração de tamanho",
+				"hint": "Quanto do tamanho total deve ser alterado."
+			},
+			"sizeChangeSpeed": {
+				"title": "Velocidade de alteração de tamanho",
+				"hint": "Quanto tempo leva em segundos um ciclo de alteração de tamanho."
+			}
+		}
+	}
+}

@@ -1,0 +1,410 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <main class="sheet-body">
+    <section id="gm">
+      <h2 class="module-header">{{localize "SWADE.GM"}}</h2>
+      <div class="form-group">
+        <label>{{localize "SWADE.GmBennies"}}</label>
+        <div class="form-fields">
+          <input
+            type="text"
+            name="settingRules.gmBennies"
+            value="{{settingRules.gmBennies}}"
+            data-dtype="Number"
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.GmBenniesDesc"}}</p>
+      </div>
+    </section>
+    <section id="bennies">
+      <h2 class="module-header">{{localize "SWADE.Bennies"}}</h2>
+      <div class="form-group">
+        <label>{{localize "SWADE.HardChoices"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.hardChoices"
+            data-dtype="Boolean"
+            {{checked settingRules.hardChoices}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.HardChoicesDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.BennyImageSheet"}}</label>
+        <div class="form-fields">
+          {{filePicker target="settingRules.bennyImageSheet" type="image"}}
+          <input type="text" name="settingRules.bennyImageSheet" value="{{settingRules.bennyImageSheet}}" data-dtype="String"/>
+        </div>
+        <p class="notes">{{localize "SWADE.BennyImageSheetDesc"}}</p>
+      </div>
+
+      {{#if 3dBennies}}
+        <h3>{{localize "SWADE.3DBennies"}}</h3>
+        <p class="notification info" style="margin: 0 5px 10px 5px;">
+          {{localize "SWADE.ChangeBennyWarning"}}
+        </p>
+        <h4>Textures</h4>
+        <div class="form-group">
+          <label>{{localize "SWADE.Benny3DFront"}}</label>
+          <div class="form-fields" title="{{localize 'SWADE.Benny3DFrontDesc'}}">
+            {{filePicker target="settingRules.bennyImage3DFront" type="image"}}
+            <input type="text" name="settingRules.bennyImage3DFront" value="{{settingRules.bennyImage3DFront}}" data-dtype="String"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{localize "SWADE.Benny3DBack"}}</label>
+          <div class="form-fields" title="{{localize 'SWADE.Benny3DBackDesc'}}">
+            {{filePicker target="settingRules.bennyImage3DBack" type="image"}}
+            <input type="text" name="settingRules.bennyImage3DBack" value="{{settingRules.bennyImage3DBack}}" data-dtype="String"/>
+          </div>
+        </div>
+        <h4>Bumpmaps</h4>
+        <div class="form-group">
+          <label>{{localize "SWADE.Benny3DFrontBump"}}</label>
+          <div class="form-fields" title="{{localize 'SWADE.Benny3DFrontBumpDesc'}}">
+            {{filePicker target="settingRules.3dBennyFrontBump" type="image"}}
+            <input type="text" name="settingRules.3dBennyFrontBump" value="{{settingRules.3dBennyFrontBump}}" data-dtype="String"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{localize "SWADE.Benny3DBackBump"}}</label>
+          <div class="form-fields" title="title="{{localize 'SWADE.Benny3DBackBumpDesc'}}"">
+            {{filePicker target="settingRules.3dBennyBackBump" type="image"}}
+            <input type="text" name="settingRules.3dBennyBackBump" value="{{settingRules.3dBennyBackBump}}" data-dtype="String"/>
+          </div>
+        </div>
+      {{/if}}
+    </section>
+    <section id="characters">
+      <h2 class="module-header">{{localize "SWADE.Actors"}}</h2>
+      <div class="form-group">
+        <label>{{localize "SWADE.CoreSkills"}}</label>
+        <div class="form-fields">
+          <textarea
+            name="settingRules.coreSkills"
+            data-dtype="String"
+            placeholder="Example: Athletics, Common Knowledge, Notice, Persuasion, Stealth"
+          >
+{{settingRules.coreSkills}}</textarea
+          >
+        </div>
+        <p class="notes">{{localize "SWADE.CoreSkillsDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.CoreSkillsPack"}}</label>
+        <div class="form-fields">
+          <select name="settingRules.coreSkillsCompendium">
+            {{#select settingRules.coreSkillsCompendium}}{{selectOptions
+            coreSkillPackChoices}} {{/select}}
+          </select>
+        </div>
+        <p class="notes">{{localize "SWADE.CoreSkillsPackDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.WealthDie"}}</label>
+        <div class="form-fields">
+          <select name="settingRules.wealthType">
+            {{#select settingRules.wealthType}}
+            <option value="currency">{{localize 'SWADE.Currency'}}</option>
+            <option value="wealthDie">{{localize 'SWADE.WealthDie'}}</option>
+            <option value="none">{{localize 'SWADE.WealthSelectionNoneOther'}}</option>
+            {{/select}}
+          </select>
+        </div>
+        <p class="notes">{{localize "SWADE.WealthTypeDesc"}}</p>
+      </div>
+      {{#if (eq settingRules.wealthType "currency")}}
+      <div class="form-group">
+        <label>{{localize "SWADE.CurrencyName"}}</label>
+        <div class="form-fields">
+          <input
+            type="text"
+            name="settingRules.currencyName"
+            value="{{settingRules.currencyName}}"
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.CurrencyNameDesc"}}</p>
+      </div>
+      {{/if}}
+      <div class="form-group">
+        <label>{{localize "SWADE.WeightUnitLabel"}}</label>
+        <div class="form-fields">
+          <select name="settingRules.weightUnit">
+            {{#select settingRules.weightUnit}}
+            <option value="imperial">{{localize 'SWADE.Imperial'}}</option>
+            <option value="metric">{{localize 'SWADE.Metric'}}</option>
+            {{/select}}
+          </select>
+        </div>
+        <p class="notes">{{localize "SWADE.WeightUnitDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.EnableConv"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.enableConviction"
+            data-dtype="Boolean"
+            {{checked
+            settingRules.enableConviction}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.EnableConvDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.ParryBase"}}</label>
+        <div class="form-fields">
+          <input
+            type="text"
+            name="settingRules.parryBaseSkill"
+            data-dtype="String"
+            value="{{settingRules.parryBaseSkill}}"
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.ParryBaseDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.JokersWild"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.jokersWild"
+            data-dtype="Boolean"
+            {{checked
+            settingRules.jokersWild}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.JokersWildDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.EnableWoundPace"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.enableWoundPace"
+            data-dtype="Boolean"
+            {{checked
+            settingRules.enableWoundPace}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.EnableWoundPaceDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.NoPowerPoints"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.noPowerPoints"
+            data-dtype="Boolean"
+            {{checked
+            settingRules.noPowerPoints}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.NoPowerPointsDesc"}}</p>
+      </div>
+      <section id="ammo">
+        <h3>{{localize "SWADE.Ammo"}}</h3>
+        <hr />
+        <div class="form-group">
+          <label>{{localize "SWADE.AmmoManagement"}}</label>
+          <div class="form-fields">
+            <input
+              type="checkbox"
+              name="settingRules.ammoManagement"
+              data-dtype="Boolean"
+              {{checked
+              settingRules.ammoManagement}}
+            />
+          </div>
+          <p class="notes">{{localize "SWADE.AmmoManagementDesc"}}</p>
+        </div>
+        <div class="form-group">
+          <label>{{localize "SWADE.PCAmmoFromInventory"}}</label>
+          <div class="form-fields">
+            <input
+              type="checkbox"
+              name="settingRules.ammoFromInventory"
+              data-dtype="Boolean"
+              {{checked
+              settingRules.ammoFromInventory}}
+            />
+          </div>
+          <p class="notes">{{localize "SWADE.PCAmmoFromInventoryDesc"}}</p>
+        </div>
+        <div class="form-group">
+          <label>{{localize "SWADE.NPCAmmoFromInventory"}}</label>
+          <div class="form-fields">
+            <input
+              type="checkbox"
+              name="settingRules.npcAmmo"
+              data-dtype="Boolean"
+              {{checked
+              settingRules.npcAmmo}}
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{localize "SWADE.VehicleAmmoFromInventory"}}</label>
+          <div class="form-fields">
+            <input
+              type="checkbox"
+              name="settingRules.vehicleAmmo"
+              data-dtype="Boolean"
+              {{checked
+              settingRules.vehicleAmmo}}
+            />
+          </div>
+        </div>
+        <hr />
+      </section>
+    </section>
+    <section id="vehicles">
+      <h2 class="module-header">{{localize "SWADE.Vehicles"}}</h2>
+      <div class="form-group">
+        <label>{{localize "SWADE.VehicleMods"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.vehicleMods"
+            data-dtype="Boolean"
+            {{checked
+            settingRules.vehicleMods}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.VehicleModsDesc"}}</p>
+      </div>
+      <div class="form-group">
+        <label>{{localize "SWADE.VehicleEdges"}}</label>
+        <div class="form-fields">
+          <input
+            type="checkbox"
+            name="settingRules.vehicleEdges"
+            data-dtype="Boolean"
+            {{checked
+            settingRules.vehicleEdges}}
+          />
+        </div>
+        <p class="notes">{{localize "SWADE.VehicleEdgesDesc"}}</p>
+      </div>
+    </section>
+    <section class="attributes" id="setting-specific">
+      <h2 class="module-header">{{localize "SWADE.AddStats"}}</h2>
+      <h3>{{localize "SWADE.Actors"}}</h3>
+      <ul class="stats-container">
+        <li class="attribute attributes-header">
+          <span class="attribute-key">Stat Key</span>
+          <span class="attribute-label">Label</span>
+          <span class="attribute-dtype">Data Type</span>
+          <span class="attribute-maxValue">Has Max Value</span>
+          <!-- <span class="attribute-autoEnable"
+            >Auto enable on Entity creation</span
+          > -->
+          <a class="attribute-control" data-action="createChar"
+            ><i class="fas fa-plus"></i
+          ></a>
+        </li>
+        {{#each actorSettingStats as |attr key|}}
+        <li class="attribute" data-attribute="{{key}}">
+          <input
+            class="attribute-key"
+            type="text"
+            name="actorSettingStats.{{key}}.key"
+            value="{{key}}"
+          />
+          <input
+            class="attribute-label"
+            type="text"
+            name="actorSettingStats.{{key}}.label"
+            value="{{attr.label}}"
+          />
+          <select
+            class="attribute-dtype"
+            name="actorSettingStats.{{key}}.dtype"
+          >
+            {{#select attr.dtype}} {{selectOptions ../dtypes selected=attr.dtype
+            localize=true}} {{/select}}
+          </select>
+          <input
+            class="attribute-maxValue"
+            type="checkbox"
+            name="actorSettingStats.{{key}}.hasMaxValue"
+            {{checked
+            attr.hasMaxValue}}
+          />
+          <!-- <input
+            class="attribute-autoEnable"
+            type="checkbox"
+            name="actorSettingStats.{{key}}.autoEnable"
+            {{checked
+            attr.autoEnable}}
+          /> -->
+          <a class="attribute-control" data-action="delete"
+            ><i class="fas fa-trash"></i
+          ></a>
+        </li>
+        {{/each}}
+      </ul>
+      <hr />
+      <h3>{{localize "SWADE.Items"}}</h3>
+      <ul class="stats-container">
+        <li class="attribute attributes-header">
+          <span class="attribute-key">Stat Key</span>
+          <span class="attribute-label">Label</span>
+          <span class="attribute-dtype">Data Type</span>
+          <span class="attribute-maxValue">Has Max Value</span>
+          <!-- <span class="attribute-autoEnable"
+            >Auto enable on Entity creation</span
+          > -->
+          <a class="attribute-control" data-action="createItem"
+            ><i class="fas fa-plus"></i
+          ></a>
+        </li>
+        {{#each itemSettingStats as |attr key|}}
+        <li class="attribute" data-attribute="{{key}}">
+          <input
+            class="attribute-key"
+            type="text"
+            name="itemSettingStats.{{key}}.key"
+            value="{{key}}"
+          />
+          <input
+            class="attribute-label"
+            type="text"
+            name="itemSettingStats.{{key}}.label"
+            value="{{attr.label}}"
+          />
+          <select class="attribute-dtype" name="itemSettingStats.{{key}}.dtype">
+            {{#select attr.dtype}} {{selectOptions ../dtypes selected=attr.dtype
+            localize=true}} {{/select}}
+          </select>
+          <input
+            class="attribute-maxValue"
+            type="checkbox"
+            name="itemSettingStats.{{key}}.hasMaxValue"
+            {{checked
+            attr.hasMaxValue}}
+          />
+          <!-- <input
+            class="attribute-autoEnable"
+            type="checkbox"
+            name="itemSettingStats.{{key}}.autoEnable"
+            {{checked
+            attr.autoEnable}}
+          /> -->
+          <a class="attribute-control" data-action="delete"
+            ><i class="fas fa-trash"></i
+          ></a>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+  </main>
+  <footer class="sheet-footer flexrow">
+    <button type="submit" name="submit" id="submit">
+      <i class="far fa-save"></i>{{localize "SETTINGS.Save"}}
+    </button>
+    <button type="reset" name="reset" id="reset">
+      <i class="fas fa-undo"></i>{{localize "SETTINGS.Reset"}}
+    </button>
+  </footer>
+</form>

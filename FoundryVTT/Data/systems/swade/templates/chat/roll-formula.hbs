@@ -1,0 +1,10 @@
+<div class="dice-formula">
+  {{#each dice}}
+  <div class="{{#if this.dice}}dice{{else}}modifier{{/if}}">
+    <label style="color:{{this.color}};"> {{this.result}} </label>
+    {{#if this.img}}
+    <img src="{{this.img}}" />
+    {{/if}}
+  </div>
+  {{/each}}
+</div>

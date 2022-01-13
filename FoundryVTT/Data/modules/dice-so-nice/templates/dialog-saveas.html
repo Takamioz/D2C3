@@ -1,0 +1,17 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+    <p class="notes">{{localize "DICESONICE.SaveAsHint"}}</p>
+    <div class="form-group">
+        <select data-save-list name="save-list">
+            {{#each saveList as |name key|}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <button data-overwrite name="overwrite">{{localize "DICESONICE.Overwrite"}}</button>
+        <button data-delete name="delete" title='{{localize "DICESONICE.Delete"}}'><i class="fas fa-trash"></i></button>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <input type="text" name="save-name" data-save-name placeholder='{{localize "DICESONICE.SaveAsErrorName"}}'/>
+        <button data-add-new name="add-new">{{localize "DICESONICE.AddNew"}}</button>
+    </div>
+</form>

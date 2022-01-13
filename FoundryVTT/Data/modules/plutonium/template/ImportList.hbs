@@ -1,0 +1,70 @@
+<div class="ve-flex-col h-100 ve-window min-h-0">
+	<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+		<button class="btn-5et veapp__btn-filter" name="btn-filter">Filter</button>
+		<button class="btn btn-5et" title="Toggle Filter Summary Display" name="btn-toggle-summary"><span class="glyphicon glyphicon-resize-small"></span></button>
+		<div class="w-100 relative">
+			<input type="search" autocomplete="off" autocapitalize="off" spellcheck="false" class="h-100 search form-control lst__search lst__search--no-border-h" placeholder="Find {{titleSearch}}...">
+			<div class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+			<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
+		</div>
+		<button class="btn-5et veapp__btn-list-feeling-lucky ve-flex-vh-center" name="btn-feeling-lucky" title="Feeling Lucky?"><span class="glyphicon glyphicon-random"></span></button>
+		<button class="btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>
+	</div>
+
+	<div class="fltr__mini-view btn-group"></div>
+
+	<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink" data-name="wrp-btns-sort">
+		{{#if isRadio}}
+			<button class="btn-5et {{#if isPreviewable}}col-0-4{{else}}col-1{{/if}} px-1" disabled></button>
+		{{else}}
+			<label class="btn btn-5et {{#if isPreviewable}}col-0-4{{else}}col-1{{/if}} px-1 ve-flex-vh-center"><input type="checkbox" name="cb-select-all"></label>
+		{{/if}}
+
+		{{#if isPreviewable}}
+			<button class="btn-5et col-0-6 px-1 ve-muted" name="btn-toggle-all-previews">[+]</button>
+		{{/if}}
+
+		{{#each cols}}
+			<button class="btn-5et col-{{width}} px-1 sort" data-sort="{{field}}" {{#if title}}title="{{title}}"{{/if}}>{{name}}</button>
+		{{/each}}
+	</div>
+
+	<div class="veapp__list mb-1 h-100">
+		{{#each rows}}
+			<div class="w-100 ve-flex-col no-shrink veapp__list-row">
+				<label class="w-100 veapp__list-row-hoverable ve-flex-v-center {{#if isVersion}}ve-muted{{/if}}">
+					<span class="{{#if ../isPreviewable}}col-0-4{{else}}col-1{{/if}} px-1 ve-flex-vh-center">
+						{{#if ../isRadio}}
+							<input type="radio" name="radio" class="no-events">
+						{{else}}
+							<input type="checkbox" class="no-events">
+						{{/if}}
+					</span>
+
+					{{#if ../isPreviewable}}
+						<div class="col-0-6 px-1 ve-flex-vh-center">
+							<div class="ui-list__btn-inline" title="Toggle Preview (SHIFT to Toggle Info Preview)">[+]</div>
+							<div class="ui-list__btn-inline" title="Import">[&#10151;]</div>
+						</div>
+					{{/if}}
+
+					{{#each ../cols}}
+						<span
+								class="px-1 col-{{width}} {{#if rowClassName}}{{rowClassName}}{{/if}} {{#if classNameProp}}{{{lookup .. classNameProp}}}{{/if}}"
+								{{#if titleProp}}title="{{lookup .. titleProp}}"{{/if}} {{#if styleProp}}{{#if (lookup .. styleProp)}}style="{{lookup .. styleProp}}"{{/if}}{{/if}}
+						>
+							{{#if displayProp}}{{{lookup .. displayProp}}}{{else}}{{{lookup .. field}}}{{/if}}
+						</span>
+					{{/each}}
+				</label>
+			</div>
+		{{/each}}
+	</div>
+
+	<div class="no-shrink ve-flex-v-center">
+		<button class="btn-5et" name="btn-run">{{titleButtonRun}}</button>
+		{{#each buttonsAdditional}}
+			<button class="ml-2 btn-5et" name="{{name}}">{{text}}</button>
+		{{/each}}
+	</div>
+</div>

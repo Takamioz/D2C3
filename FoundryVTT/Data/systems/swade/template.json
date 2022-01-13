@@ -1,0 +1,369 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "vehicle"
+    ],
+    "templates": {
+      "common": {
+        "attributes": {
+          "agility": {
+            "die": {
+              "sides": 4,
+              "modifier": 0
+            },
+            "wild-die": {
+              "sides": 6
+            }
+          },
+          "smarts": {
+            "die": {
+              "sides": 4,
+              "modifier": 0
+            },
+            "wild-die": {
+              "sides": 6
+            },
+            "animal": false
+          },
+          "spirit": {
+            "die": {
+              "sides": 4,
+              "modifier": 0
+            },
+            "wild-die": {
+              "sides": 6
+            },
+            "unShakeBonus": 0
+          },
+          "strength": {
+            "die": {
+              "sides": 4,
+              "modifier": 0
+            },
+            "wild-die": {
+              "sides": 6
+            },
+            "encumbranceSteps": 0
+          },
+          "vigor": {
+            "die": {
+              "sides": 4,
+              "modifier": 0
+            },
+            "wild-die": {
+              "sides": 6
+            }
+          }
+        },
+        "stats": {
+          "speed": {
+            "runningDie": 6,
+            "runningMod": 0,
+            "value": 6
+          },
+          "toughness": {
+            "value": 0,
+            "armor": 0,
+            "modifier": 0
+          },
+          "parry": {
+            "value": 0,
+            "modifier": 0
+          },
+          "size": 0
+        },
+        "details": {
+          "biography": {
+            "value": ""
+          },
+          "species": {
+            "name": ""
+          },
+          "archetype": "",
+          "currency": 500,
+          "wealth": {
+            "die": 6,
+            "modifier": 0,
+            "wild-die": 6
+          },
+          "conviction": {
+            "value": 0,
+            "active": false
+          },
+          "autoCalcToughness": true,
+          "autoCalcParry": true
+        },
+        "powerPoints": {},
+        "fatigue": {
+          "value": 0,
+          "min": 0,
+          "max": 2
+        },
+        "wounds": {
+          "value": 0,
+          "min": 0,
+          "max": 3,
+          "ignored": 0
+        },
+        "advances": {
+          "value": 0,
+          "rank": "Novice",
+          "details": ""
+        },
+        "bennies": {
+          "value": 3,
+          "max": 3
+        },
+        "status": {
+          "isShaken": false,
+          "isDistracted": false,
+          "isVulnerable": false,
+          "isStunned": false,
+          "isEntangled": false,
+          "isBound": false
+        },
+        "initiative": {
+          "hasHesitant": false,
+          "hasLevelHeaded": false,
+          "hasImpLevelHeaded": false,
+          "hasQuick": false
+        },
+        "additionalStats": {}
+      },
+      "vehicle-common": {
+        "size": 0,
+        "scale": 0,
+        "classification": "",
+        "handling": 0,
+        "cost": 0,
+        "topspeed": 0,
+        "description": "",
+        "toughness": {
+          "total": 0,
+          "armor": 0
+        },
+        "wounds": {
+          "value": 0,
+          "max": 3,
+          "ignored": 0
+        },
+        "crew": {
+          "required": {
+            "value": 1,
+            "max": 1
+          },
+          "optional": {
+            "value": 0,
+            "max": 0
+          }
+        },
+        "driver": {
+          "id": null,
+          "skill": "",
+          "skillAlternative": ""
+        },
+        "status": {
+          "isOutOfControl": false,
+          "isWrecked": false
+        },
+        "initiative": {
+          "hasHesitant": false,
+          "hasLevelHeaded": false,
+          "hasImpLevelHeaded": false,
+          "hasQuick": false
+        },
+        "additionalStats": {},
+        "maxCargo": 0,
+        "maxMods": 0
+      }
+    },
+    "character": {
+      "templates": [
+        "common"
+      ],
+      "wildcard": true
+    },
+    "npc": {
+      "templates": [
+        "common"
+      ],
+      "wildcard": false,
+      "bennies": {
+        "value": 2,
+        "max": 2
+      },
+      "wounds": {
+        "max": 0
+      }
+    },
+    "vehicle": {
+      "templates": [
+        "vehicle-common"
+      ]
+    }
+  },
+  "Item": {
+    "types": [
+      "weapon",
+      "armor",
+      "shield",
+      "gear",
+      "edge",
+      "hindrance",
+      "skill",
+      "power",
+      "ability"
+    ],
+    "templates": {
+      "itemDescription": {
+        "description": "",
+        "notes": "",
+        "additionalStats": {}
+      },
+      "physicalItem": {
+        "quantity": 1,
+        "weight": 0,
+        "price": 0
+      },
+      "arcaneDevice": {
+        "isArcaneDevice": false,
+        "arcaneSkillDie": {
+          "sides": 4,
+          "modifier": 0
+        },
+        "powerPoints": {}
+      },
+      "equipable": {
+        "equippable": false,
+        "equipped": false
+      },
+      "vehicular": {
+        "isVehicular": false,
+        "mods": 1
+      },
+      "actions": {
+        "actions": {
+          "skill": "",
+          "skillMod": "",
+          "dmgMod": "",
+          "additional": {}
+        }
+      }
+    },
+    "gear": {
+      "templates": [
+        "itemDescription",
+        "physicalItem",
+        "equipable",
+        "arcaneDevice",
+        "vehicular",
+        "actions"
+      ]
+    },
+    "weapon": {
+      "templates": [
+        "itemDescription",
+        "physicalItem",
+        "equipable",
+        "arcaneDevice",
+        "vehicular",
+        "actions"
+      ],
+      "damage": "",
+      "range": "",
+      "rof": 1,
+      "ap": 0,
+      "parry": 0,
+      "minStr": "",
+      "shots": 0,
+      "currentShots": 0,
+      "ammo": "",
+      "autoReload": false
+    },
+    "armor": {
+      "templates": [
+        "itemDescription",
+        "physicalItem",
+        "equipable",
+        "arcaneDevice",
+        "actions"
+      ],
+      "minStr": "",
+      "armor": 0,
+      "toughness": 0,
+      "isNaturalArmor": false,
+      "locations": {
+        "head": false,
+        "torso": true,
+        "arms": false,
+        "legs": false
+      }
+    },
+    "shield": {
+      "templates": [
+        "itemDescription",
+        "physicalItem",
+        "equipable",
+        "arcaneDevice",
+        "actions"
+      ],
+      "minStr": "",
+      "parry": 0,
+      "cover": 0
+    },
+    "edge": {
+      "templates": [
+        "itemDescription"
+      ],
+      "isArcaneBackground": false,
+      "requirements": {
+        "value": ""
+      }
+    },
+    "hindrance": {
+      "templates": [
+        "itemDescription"
+      ],
+      "major": false
+    },
+    "power": {
+      "templates": [
+        "itemDescription",
+        "equipable",
+        "actions"
+      ],
+      "rank": "",
+      "pp": 0,
+      "damage": "",
+      "range": "",
+      "duration": "",
+      "trapping": "",
+      "arcane": "",
+      "skill": "",
+      "modifiers": []
+    },
+    "skill": {
+      "templates": [
+        "itemDescription"
+      ],
+      "attribute": "",
+      "isCoreSkill": false,
+      "die": {
+        "sides": 4,
+        "modifier": 0
+      },
+      "wild-die": {
+        "sides": 6
+      }
+    },
+    "ability": {
+      "templates": [
+        "itemDescription"
+      ],
+      "subtype": "special",
+      "grantsPowers": false
+    }
+  }
+}

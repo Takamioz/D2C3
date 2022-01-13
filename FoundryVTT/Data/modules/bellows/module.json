@@ -1,0 +1,41 @@
+{
+    "name": "bellows",
+    "title": "Bellows",
+    "description": "A music streaming module for Foundry VTT. Every forge needs bellows!",
+    "version": "v0.4.2",
+    "library": "false",
+    "manifestPlusVersion": "1.0.0",
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "0.8.8",
+    "authors": [
+        {
+            "name": "casualchameleon",
+            "url": "https://github.com/casualchameleon",
+            "discord": "casualchameleon#6618"
+        }
+    ],
+    "dependencies": [],
+    "conflicts": [],
+    "esmodules": [
+        "bellows.js"
+    ],
+    "scripts": [],
+    "styles": [
+        "/styles/bellows.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "languages/es.json"
+        }
+    ],
+    "url": "https://github.com/casualchameleon/Bellows",
+    "manifest": "https://github.com/casualchameleon/Bellows/releases/latest/download/module.json",
+    "download": "https://github.com/casualchameleon/Bellows/releases/download/v0.4.2/module.zip"
+}

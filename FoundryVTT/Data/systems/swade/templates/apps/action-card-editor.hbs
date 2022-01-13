@@ -1,0 +1,94 @@
+<form autocomplete='off'>
+  <header class='header'>
+    <h1>{{deckName}}</h1>
+    <button type='button' class='add-card'>{{localize 'SWADE.Add'}}</button>
+  </header>
+  <section class='body'>
+    <ul class='card-list'>
+      {{#each cards as |card|}}
+        <li class='flexrow'>
+          <img
+            class='card-face'
+            src='{{card.data.img}}'
+            alt='{{card.name}}'
+            data-id='{{card.id}}'
+          />
+          <span class='flexcol card-details'>
+            <span class='form-group'>
+              <label>{{localize 'Name'}}</label>
+              <span class='form-fields'>
+                <input
+                  type='text'
+                  name='card.{{card.id}}.name'
+                  value='{{card.name}}'
+                />
+              </span>
+            </span>
+            <span class='form-group'>
+              <label>{{localize 'SWADE.CardFace'}}</label>
+              <span class='form-fields'>
+                <input
+                  type='text'
+                  name='card.{{card.id}}.img'
+                  value='{{card.data.img}}'
+                />
+                <button
+                  type='button'
+                  class='file-picker'
+                  data-type='image'
+                  data-target='card.{{card.id}}.img'
+                  title='Browse Files'
+                >
+                  <i class='fas fa-file-import fa-fw'></i>
+                </button>
+              </span>
+            </span>
+            <span class='form-group'>
+              <label>{{localize 'SWADE.CardSuit'}}</label>
+              <span class='form-fields'>
+                <select data-dtype='Number' name='card.{{card.id}}.suitValue'>
+                  {{#select card.data.flags.swade.suitValue}}
+                    <option value='4'>Spades</option>
+                    <option value='3'>Hearts</option>
+                    <option value='2'>Diamonds</option>
+                    <option value='1'>Clubs</option>
+                    <option value='99'>Jokers</option>
+                  {{/select}}
+                </select>
+              </span>
+            </span>
+            <span class='form-group'>
+              <label>{{localize 'SWADE.CardValue'}}</label>
+              <span class='form-fields'>
+                <select data-dtype='Number' name='card.{{card.id}}.cardValue'>
+                  {{#select card.data.flags.swade.cardValue}}
+                    <option value='2'>Two</option>
+                    <option value='3'>Three</option>
+                    <option value='4'>Four</option>
+                    <option value='5'>Five</option>
+                    <option value='6'>Six</option>
+                    <option value='7'>Seven</option>
+                    <option value='8'>Eight</option>
+                    <option value='9'>Nine</option>
+                    <option value='10'>Ten</option>
+                    <option value='11'>Jack</option>
+                    <option value='12'>Queen</option>
+                    <option value='13'>King</option>
+                    <option value='14'>Ace</option>
+                    <option value='99'>Red Joker / Spades Joker</option>
+                    <option value='98'>Black Joker / Hearts Joker</option>
+                    <option value='97'>Blue Joker / Diamonds Joker</option>
+                    <option value='96'>Green Joker / Clubs Joker</option>
+                  {{/select}}
+                </select>
+              </span>
+            </span>
+          </span>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+  <button type='submit' name='submit' id='submit'>
+    <i class='far fa-save'></i>{{localize 'SETTINGS.Save'}}
+  </button>
+</form>

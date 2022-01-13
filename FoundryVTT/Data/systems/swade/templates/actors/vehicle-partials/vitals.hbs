@@ -1,0 +1,83 @@
+<section class="driver-box">
+  <div class="driver-title">
+    <strong>{{localize "SWADE.Operator"}}</strong>
+    <a class="reset-driver"><i class="fas fa-trash"></i></a>
+  </div>
+  <div id="driverImageContainer">
+    <img src="{{driver.img}}" alt="{{driver.name}}" class="driver-img" />
+  </div>
+</section>
+<section class="vitals flexrow">
+  <div class="vitals-container">
+    <div class="flexcol">
+      <div class="vital-name">{{localize "SWADE.Wounds"}}</div>
+      <span class="flexrow">
+        <input
+          type="number"
+          value="{{data.data.wounds.value}}"
+          name="data.wounds.value"
+          data-dtype="Number"
+          class="wound-input"
+          maxlength="4"
+          size="4"
+          class="vitals-value"
+        />
+        <span class="seperator">/</span>
+        <input
+          type="number"
+          value="{{data.data.wounds.max}}"
+          name="data.wounds.max"
+          data-dtype="Number"
+          class="wound-input"
+          maxlength="4"
+          size="4"
+          class="vitals-value"
+          disabled
+        />
+      </span>
+    </div>
+    <button type="button" id="maneuverCheck">
+      {{localize "SWADE.ManCheck"}}
+    </button>
+    {{#if settingrules.modSlots}}
+    <div id="modBox">
+      <div class="bar-container">
+        <span class="text"
+          >{{mods.used}}/{{data.data.maxMods}} {{localize "SWADE.Mods"}}</span
+        >
+        <div class="bar" style="width: {{mods.percentage}}%;"></div>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</section>
+<section id="crew">
+  <label>{{localize "SWADE.Crew"}}</label>
+  <div class="crew-input">
+    <input
+      type="text"
+      value="{{data.data.crew.required.value}}"
+      name="data.crew.required.value"
+    />
+    <span>/</span>
+    <input
+      type="text"
+      value="{{data.data.crew.required.max}}"
+      name="data.crew.required.max"
+    />
+  </div>
+  <label>{{localize 'SWADE.Passengers'}}</label>
+  <div class="crew-input">
+    <input
+      type="text"
+      value="{{data.data.crew.optional.value}}"
+      name="data.crew.optional.value"
+    />
+    <span>/</span>
+    <input
+      type="text"
+      value="{{data.data.crew.optional.max}}"
+      name="data.crew.optional.max"
+    />
+  </div>
+</section>

@@ -1,0 +1,2702 @@
+.swade.sheet.item .sheet-body .header-field, .swade.sheet.actor .inventory .inventory-categories .item-list .item-header, .swade.sheet.actor .sheet-body .header-field {
+  padding: 5px;
+  background: #972824;
+  border: 1px solid #293133;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  text-align: center;
+  color: #dfe6f5;
+}
+.swade.sheet.item .sheet-body .header-field .header-field-add, .swade.sheet.actor .inventory .inventory-categories .item-list .item-header .header-field-add, .swade.sheet.actor .sheet-body .header-field .header-field-add {
+  flex-grow: 0;
+  flex-basis: 15px;
+}
+
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute input, .swade.sheet.actor .sheet-body .attributes .attributes-list .attribute select, .swade.sheet input[type=text],
+.swade.sheet input[type=number] {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.swade.sheet.item .powers .powers-list .power .power-header .item-image, .swade.sheet.actor.npc .gear .gear-list .gear-card .card-header .item-image, .swade.sheet.actor .powers .powers-list .power .power-header .item-image, .swade.sheet.actor .inventory .inventory-categories .item-image, .swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card .card-header .item-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.swade .check-container,
+.swade-official .check-container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 1.15em;
+  line-height: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.swade .check-container input,
+.swade-official .check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.swade .check-container input:focus .check-container,
+.swade-official .check-container input:focus .check-container {
+  border: 1px solid black;
+}
+.swade .check-container input:focus + .checkmark,
+.swade-official .check-container input:focus + .checkmark {
+  outline: none;
+  box-shadow: 0 0 5px red;
+}
+.swade .checkmark,
+.swade-official .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #aca592;
+  border-radius: 2px;
+}
+.swade .check-container:hover input ~ .checkmark,
+.swade-official .check-container:hover input ~ .checkmark {
+  background-color: #aca592;
+  box-shadow: 0 0 5px red;
+}
+.swade .check-container:focus input ~ .checkmark,
+.swade-official .check-container:focus input ~ .checkmark {
+  box-shadow: 0 0 5px red;
+}
+.swade .check-container input:checked ~ .checkmark,
+.swade-official .check-container input:checked ~ .checkmark {
+  background-color: #aca592;
+}
+.swade .checkmark:after,
+.swade-official .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.swade .check-container input:checked ~ .checkmark:after,
+.swade-official .check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.swade .check-container .checkmark:after,
+.swade-official .check-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #972824;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Anton-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/RobotoSlab-VariableFont_wght.ttf") format("truetype");
+  font-variation-settings: "wght" 400;
+}
+.swade.sheet .window-content {
+  background-image: url("./assets/main_bg.webp");
+  background-repeat: repeat;
+  background-position: left top;
+}
+.swade.sheet .tabs {
+  border-bottom: 1px solid;
+  flex-grow: 0;
+}
+.swade.sheet .tabs .item {
+  border: 1px solid #2c4251;
+  background: #aca592;
+  border-radius: 4px 4px 0 0;
+  margin: 0 5px -1px;
+  padding: 4px;
+  color: #293133;
+  flex: 1;
+}
+.swade.sheet .tabs .item:hover, .swade.sheet .tabs .item:focus {
+  background: #972824;
+  text-shadow: none;
+  color: #dfe6f5;
+}
+.swade.sheet .tabs .item.active {
+  background: #972824;
+  border-bottom: 0;
+  text-shadow: none;
+  color: #dfe6f5;
+}
+.swade.sheet .tabs .item:first-of-type {
+  margin-left: 0;
+}
+.swade.sheet .tabs .item:last-of-type {
+  margin-right: 0;
+}
+.card-dialog {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.card-dialog .card {
+  min-width: 125px;
+  max-width: 125px;
+  flex-basis: auto;
+  flex-grow: 1;
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  /* HIDE RADIO */
+  /* IMAGE STYLES */
+  /* CHECKED STYLES */
+}
+.card-dialog .card figure {
+  margin: 0;
+}
+.card-dialog .card img {
+  height: 100px;
+  display: block;
+  margin: 5px auto;
+  transition: all 0.2s ease-out;
+}
+.card-dialog .card [type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.card-dialog .card [type=radio] + figure img {
+  cursor: pointer;
+}
+.card-dialog .card [type=radio] + figure img:hover {
+  transform: translateY(-5px) scale(1.2);
+}
+.card-dialog .card [type=radio]:checked ~ figure img {
+  transform: translateY(-5px) scale(1.2);
+  box-shadow: 0 0 5px red;
+}
+.card-dialog .card [type=radio]:checked ~ figure figcaption {
+  font-weight: bold;
+}
+
+.text-icon {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+}
+
+.cone::before {
+  content: "C";
+}
+
+.sbt::before {
+  content: "S";
+}
+
+.mbt::before {
+  content: "M";
+}
+
+.lbt::before {
+  content: "L";
+}
+
+.scrollable {
+  overflow-x: auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+.effects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
+}
+.effects-list li {
+  border-bottom: 1px solid #293133;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.effects-list .effect-icon {
+  flex: 0 0 24px;
+  height: 24px;
+  margin-right: 2px;
+  border: none;
+}
+.effects-list .effect-label {
+  flex: 1;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.effects-list .effect-controls {
+  line-height: 24px;
+  flex: 0 0 60px;
+  text-align: center;
+}
+.effects-list .effect-controls a,
+.effects-list .effect-controls button {
+  cursor: pointer;
+}
+.effects-list .fa-power-off {
+  color: black;
+}
+.effects-list .disabled-effect .effect-label {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.item.skill .skill-icon {
+  max-height: 1em;
+  flex-grow: 0;
+  object-fit: contain;
+  margin-top: 0.3em;
+  margin-right: 0.1em;
+  border: none;
+}
+
+.swade.sheet.actor {
+  min-width: 660px;
+}
+.swade.sheet.actor .profile-img-container {
+  width: 150px;
+  max-width: 150px;
+  height: 150px;
+  margin-right: 2px;
+}
+.swade.sheet.actor .profile-img-container img {
+  margin: 0;
+  border: none;
+}
+.swade.sheet.actor .profile-img-container .profile-img {
+  height: inherit;
+  width: inherit;
+  object-fit: contain;
+  cursor: pointer;
+}
+.swade.sheet.actor .sheet-header > * {
+  flex: none;
+}
+.swade.sheet.actor .sheet-header .charline {
+  width: 100%;
+  display: flex;
+}
+.swade.sheet.actor .sheet-header .charline .charname {
+  flex: 3;
+  font-size: 40px;
+  height: 100%;
+  margin: 0;
+  border: 1px solid transparent;
+}
+.swade.sheet.actor .sheet-header .conviction {
+  text-align: center;
+  margin-left: 4px;
+  width: 20%;
+}
+.swade.sheet.actor .sheet-header .conviction .convction-toggle {
+  padding-top: 6px;
+}
+.swade.sheet.actor .sheet-header .conviction .conviction-counter {
+  width: 50%;
+}
+.swade.sheet.actor .sheet-header .conviction .pulse {
+  box-shadow: 0 0 0 0 black;
+  transform: scale(1);
+  border-radius: 5px;
+  animation: pulsating 2s infinite;
+  white-space: nowrap;
+}
+@keyframes pulsating {
+  0% {
+    transform: scale(0.95);
+    background: rgba(255, 0, 0, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    background: rgba(255, 0, 0, 0);
+    box-shadow: 0 0 0 8px rgba(255, 0, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    background: rgba(255, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+.swade.sheet.actor .sheet-header .header-fields {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex: 1;
+  padding: 5px 0px;
+}
+.swade.sheet.actor .sheet-header .header-fields input {
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.swade.sheet.actor .sheet-header .header-fields input:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.swade.sheet.actor .sheet-header .header-stats {
+  align-content: space-around;
+  padding-left: 0;
+}
+.swade.sheet.actor .sheet-header .header-stats #xp-input {
+  margin-left: 2px;
+  text-align: center;
+}
+.swade.sheet.actor .sheet-header .header-stats div {
+  border: 1px solid transparent;
+  margin: 2px 0;
+  padding: 0 3px;
+  justify-content: center;
+}
+.swade.sheet.actor .status-container {
+  width: 20%;
+  flex-grow: 0;
+  flex-basis: 120px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.swade.sheet.actor .status-container .status-item {
+  padding: 4px;
+}
+.swade.sheet.actor .vitals-container {
+  padding: 3px;
+}
+.swade.sheet.actor .vitals-container .vital-label {
+  line-height: 30px;
+  font-weight: bold;
+}
+.swade.sheet.actor .vitals-container input {
+  font-size: 30px;
+  height: 40px;
+  width: 20px;
+}
+.swade.sheet.actor .vitals-container .max-value {
+  font-size: 30px;
+}
+.swade.sheet.actor .vitals-container .vitals-value {
+  padding: 0 10px;
+}
+.swade.sheet.actor .sheet-body {
+  height: auto;
+}
+.swade.sheet.actor .sheet-body .tab {
+  height: 100%;
+}
+.swade.sheet.actor .sheet-body .editor {
+  border: 1px groove #293133;
+  border-top: none;
+  width: 100%;
+}
+.swade.sheet.actor .sheet-body .vitals {
+  text-align: center;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list {
+  margin-top: 4px;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute {
+  margin: 0 2px;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute .attribute-label {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: solid #444 2px;
+  margin-bottom: 2px;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute .toughness-block {
+  display: flex;
+  flex-direction: row;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute .toughness-block input {
+  flex: 2;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute .toughness-block .armor-value {
+  flex: 1;
+  line-height: 27px;
+  font-weight: 600;
+  text-align: center;
+  background: url("/systems/swade/assets/icons/police-badge.svg") no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute select {
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 28px;
+  text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  font-weight: 600;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute select ::-ms-expand {
+  display: none;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute input {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  height: 28px;
+}
+.swade.sheet.actor .sheet-body .attributes .attributes-list .attribute a.attribute-control {
+  border: none;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list {
+  overflow: auto;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .quickaccess-header {
+  line-height: 24px;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .quickaccess-header h4 {
+  font-weight: 600;
+  text-indent: 10px;
+  margin: 0 0 0.2rem;
+  border-bottom: 1px solid grey;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .quickaccess-header .header-field-add {
+  flex-grow: 0;
+  flex-basis: 20px;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card {
+  border: 1px solid #293133;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card .card-header {
+  background: rgba(0, 0, 0, 0.2);
+  line-height: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 25px;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card .card-header .item-name {
+  margin: 0;
+  text-indent: 20px;
+  font-weight: 600;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card .card-header .item-image {
+  height: 25px;
+  flex-grow: 0;
+  flex-basis: 25px;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card .card-content {
+  border-top: 1px solid #293133;
+  background: rgba(255, 255, 255, 0.05);
+  line-height: 18px;
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.swade.sheet.actor .sheet-body .quickaccess-list .gear-list .gear-card .card-content div {
+  flex-grow: 1;
+  flex-basis: 130px;
+}
+.swade.sheet.actor .sheet-body .left-panel {
+  flex-basis: 250px;
+  flex-grow: 0;
+}
+.swade.sheet.actor .sheet-body .attributes-container .attributes {
+  margin: 5px 0;
+}
+.swade.sheet.actor .sheet-body .attributes-container .secondary {
+  flex-grow: 0;
+  flex-basis: 250px;
+}
+.swade.sheet.actor .sheet-body .skills .skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.swade.sheet.actor .sheet-body .gear .gear-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.swade.sheet.actor .sheet-body .gear .gear-list li > * {
+  background: transparent;
+}
+.swade.sheet.actor .sheet-body .biography .advances {
+  padding: 2px;
+  margin: 5px 0;
+}
+.swade.sheet.actor .sheet-body .biography .advances .editor {
+  height: 165px;
+  padding: 3px;
+}
+.swade.sheet.actor .sheet-body .biography .description .editor {
+  height: 350px;
+  padding: 3px;
+}
+.swade.sheet.actor .grid-row {
+  display: grid;
+  grid-gap: 5px;
+}
+.swade.sheet.actor .grid-row.--grid-row-summary, .swade.sheet.actor .grid-row.--grid-row-npc-summary {
+  grid-template-columns: 55% 45%;
+}
+.swade.sheet.actor .additional-stats button {
+  width: 80%;
+  line-height: 22px;
+}
+.swade.sheet.actor .inventory {
+  margin: 3px 0;
+}
+.swade.sheet.actor .inventory .inventory-info {
+  line-height: 30px;
+}
+.swade.sheet.actor .inventory .currency {
+  display: inline;
+  vertical-align: top;
+}
+.swade.sheet.actor .inventory .currency input {
+  width: auto;
+}
+.swade.sheet.actor .inventory .inventory-categories {
+  height: 520px;
+}
+.swade.sheet.actor .inventory .inventory-categories .items-section .header-field {
+  margin: 0;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-titles {
+  text-align: center;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-top: 1px;
+  padding-top: 2px;
+  font-weight: 300;
+  font-size: 12px;
+  background: #972824;
+  color: white;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-titles .item-name {
+  text-align: left;
+  text-indent: 8px;
+  flex-grow: 5;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-list li {
+  padding: 0 2px;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-list .item-header {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-list .item {
+  line-height: 30px;
+  height: 30px;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-list .item:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
+.swade.sheet.actor .inventory .inventory-categories .item-list .item-name {
+  line-height: 30px;
+  height: 30px;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-equipped {
+  grid-area: item-equipped;
+  justify-self: center;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-image {
+  flex-basis: 30px;
+  height: 28px;
+  margin: 2px;
+  flex-grow: 0;
+  cursor: pointer;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-name {
+  text-indent: 8px;
+  text-align: left;
+  margin: 0;
+  flex-grow: 5;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  max-width: 180px;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-name:hover .item-image {
+  background-image: url(/icons/svg/d20-grey.svg) !important;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-name .item-image:hover {
+  background-image: url(/icons/svg/d20-black.svg) !important;
+}
+.swade.sheet.actor .inventory .inventory-categories .field-longer {
+  text-indent: 8px;
+  text-align: left;
+  flex-grow: 3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.swade.sheet.actor .inventory .inventory-categories .field-long {
+  flex-grow: 2;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.swade.sheet.actor .inventory .inventory-categories .field-short {
+  flex-grow: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-controls {
+  flex-basis: 60px;
+  flex-grow: 0;
+  text-align: right;
+  margin-right: 4px;
+}
+.swade.sheet.actor .inventory .inventory-categories .item-controls .item-unequipped {
+  color: rgba(0, 0, 0, 0.2);
+}
+.swade.sheet.actor .powers {
+  margin: 3px 0;
+}
+.swade.sheet.actor .powers .header-field-add {
+  line-height: 24px;
+  margin-left: 5px;
+}
+.swade.sheet.actor .powers .arcane-tabs {
+  display: flex;
+}
+.swade.sheet.actor .powers .arcane-tabs .arcane {
+  cursor: pointer;
+  width: 90px;
+  height: 24px;
+  text-align: center;
+  line-height: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #972824;
+}
+.swade.sheet.actor .powers .arcane-tabs .arcane:hover, .swade.sheet.actor .powers .arcane-tabs .arcane:focus {
+  background: #3b3b3b;
+  text-shadow: none;
+}
+.swade.sheet.actor .powers .arcane-tabs .arcane.active {
+  background: #3b3b3b;
+}
+.swade.sheet.actor .powers .power-counter {
+  display: none;
+}
+.swade.sheet.actor .powers .power-counter input {
+  width: 40px;
+  color: #dfe6f5;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+}
+.swade.sheet.actor .powers .power-counter.active {
+  display: block;
+}
+.swade.sheet.actor .powers .powers-list {
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.swade.sheet.actor .powers .powers-list .power {
+  display: none;
+  margin: 2px;
+  flex-grow: 0;
+  flex-basis: calc(50% - 4px);
+  height: 250px;
+  border: 1px solid #293133;
+  border-top-left-radius: 4px;
+  border-radius: 2px;
+}
+.swade.sheet.actor .powers .powers-list .power.active {
+  display: block;
+}
+.swade.sheet.actor .powers .powers-list .power .power-header {
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #293133;
+}
+.swade.sheet.actor .powers .powers-list .power .power-header h4 {
+  margin: 0;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.swade.sheet.actor .powers .powers-list .power .power-header .item-image {
+  flex-grow: 0;
+  flex-basis: 25px;
+}
+.swade.sheet.actor .powers .powers-list .power .power-header .item-controls {
+  padding: 5px;
+  flex-grow: 0;
+  flex-wrap: nowrap;
+  color: black;
+}
+.swade.sheet.actor .powers .powers-list .power .power-header .item-controls a + a {
+  margin-left: 5px;
+}
+.swade.sheet.actor .powers .powers-list .power .power-header .item-controls .item-unequipped {
+  color: rgba(0, 0, 0, 0.2);
+}
+.swade.sheet.actor .powers .powers-list .power .power-content {
+  margin: 0 3px;
+  line-height: 24px;
+  padding: 5px;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+.swade.sheet.actor .powers .powers-list .power .power-content .power-details {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+  text-indent: 5px;
+}
+.swade.sheet.actor .powers .powers-list .power .power-content .power-description {
+  line-height: 15px;
+}
+
+.swade.sheet.actor.npc {
+  min-height: 240px;
+  max-height: 740px;
+}
+.swade.sheet.actor.npc .header-field {
+  padding: 1px;
+}
+.swade.sheet.actor.npc .header-field + .item {
+  padding-top: 2px;
+}
+.swade.sheet.actor.npc .sheet-header .profile-img-container {
+  height: 120px;
+}
+.swade.sheet.actor.npc .sheet-header .conviction {
+  width: 30%;
+}
+.swade.sheet.actor.npc .sheet-header .status-container {
+  margin-left: auto;
+}
+.swade.sheet.actor.npc .extra-gear-card {
+  border-bottom: 1px solid #293133;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.swade.sheet.actor.npc .extra-gear-card .stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.swade.sheet.actor.npc .extra-gear-card .stats .card-stat {
+  flex-grow: 1;
+  flex-basis: 140px;
+}
+.swade.sheet.actor.npc .extra-gear-card .item-controls {
+  flex-grow: 0;
+  flex-basis: 40px;
+}
+.swade.sheet.actor.npc .editor {
+  height: 200px;
+  padding: 2px;
+}
+.swade.sheet.actor.npc .vitals-container {
+  margin: 10px 8px;
+  padding: 3px;
+  text-align: center;
+}
+.swade.sheet.actor.npc .vitals-container .counter {
+  line-height: 25px;
+}
+.swade.sheet.actor.npc .vitals-container .counter .seperator {
+  padding-top: 5px;
+  font-size: 30px;
+  line-height: 25px;
+}
+.swade.sheet.actor.npc .skills .skills-list span a:hover {
+  border-bottom: 1px dotted #293133;
+}
+.swade.sheet.actor.npc .left-panel .items-list {
+  margin: 5px 0;
+  padding: 0;
+  overflow: auto;
+}
+.swade.sheet.actor.npc .left-panel .items-list .item {
+  display: inline-block;
+}
+.swade.sheet.actor.npc .gear {
+  margin: 5px 0px 0px 0px;
+}
+.swade.sheet.actor.npc .gear.inventory {
+  margin: 0;
+}
+.swade.sheet.actor.npc .gear .gear-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.swade.sheet.actor.npc .gear .gear-list li > * {
+  background: transparent;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card {
+  margin: 2px 0;
+  border: 1px solid #293133;
+  border-top-left-radius: 4px;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .card-header {
+  background: rgba(0, 0, 0, 0.2);
+  line-height: 20px;
+  cursor: pointer;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .card-header .item-name {
+  margin: 0;
+  text-indent: 20px;
+  font-weight: 600;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .card-header .item-image {
+  height: 20px;
+  flex-grow: 0;
+  flex-basis: 20px;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .card-header .item-controls {
+  flex: 0 0 60px;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .card-content {
+  border-top: 1px solid #293133;
+  background: rgba(255, 255, 255, 0.05);
+  line-height: 18px;
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .card-content div {
+  flex-grow: 1;
+  flex-basis: 130px;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .chips {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .chips span {
+  padding-bottom: 8px;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .chips .chip {
+  padding: 0px 5px 5px 5px;
+  font-size: 10px;
+}
+.swade.sheet.actor.npc .gear .gear-list .gear-card .chips .chip .chip-content {
+  padding: 2px 5px;
+  height: auto;
+  background-color: #bbb;
+  border-radius: 25%;
+  display: inline-block;
+}
+.swade.sheet.actor.npc .powers .header-field {
+  padding: 5px;
+}
+
+.swade.sheet.actor.vehicle .sheet-body .biography .description .editor {
+  height: 240px;
+}
+.swade.sheet.actor.vehicle .inventory .inventory-categories {
+  height: auto;
+}
+.swade.sheet.actor.vehicle .gear {
+  padding: 2px;
+  flex-basis: 200px;
+}
+.swade.sheet.actor.vehicle .gear section {
+  padding-bottom: 2px;
+}
+.swade.sheet.actor.vehicle .gear .gear-card {
+  margin: 2px;
+}
+.swade.sheet.actor.vehicle .gear .gear-card .card-header .item-controls {
+  flex-grow: 0;
+  flex-basis: 60px;
+}
+.swade.sheet.actor.vehicle .vitals {
+  flex-basis: 200px;
+  justify-content: space-evenly;
+}
+.swade.sheet.actor.vehicle .vitals .vital-name {
+  font-weight: bold;
+}
+.swade.sheet.actor.vehicle .vitals .wound-input {
+  flex-basis: 50px;
+  width: 50px;
+}
+.swade.sheet.actor.vehicle .vitals .seperator {
+  padding-top: 5px;
+  font-size: 30px;
+  line-height: 25px;
+}
+.swade.sheet.actor.vehicle #driver-bar section + section {
+  border-left: 1px solid #293133;
+}
+.swade.sheet.actor.vehicle #driverImageContainer .driver-img {
+  width: 100px;
+  max-width: 100px;
+  height: 100px;
+  margin: 5px auto 0px auto;
+  border: none;
+  object-fit: contain;
+  cursor: pointer;
+}
+.swade.sheet.actor.vehicle .driver-box {
+  flex-basis: 150px;
+  padding: 3px;
+  text-align: center;
+}
+.swade.sheet.actor.vehicle .driver-title {
+  position: relative;
+}
+.swade.sheet.actor.vehicle .driver-title .reset-driver {
+  position: absolute;
+  right: 0%;
+}
+.swade.sheet.actor.vehicle #crew {
+  padding: 0px 0px 0px 5px;
+  flex-basis: 150px;
+}
+.swade.sheet.actor.vehicle #crew label {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.swade.sheet.actor.vehicle #crew input[type=text] {
+  flex: 0;
+  flex-basis: 70px;
+  width: 70px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.swade.sheet.actor.vehicle .crew-input {
+  display: flex;
+  justify-content: space-evenly;
+}
+.swade.sheet.actor.vehicle .crew-input input {
+  flex: 3;
+}
+.swade.sheet.actor.vehicle .crew-input span {
+  flex: 1;
+  text-align: center;
+}
+.swade.sheet.actor.vehicle #opSkill {
+  padding: 7px 0px;
+  display: inline-block;
+}
+.swade.sheet.actor.vehicle #opSkill input[type=text] {
+  flex: 0;
+  flex-basis: 150px;
+  width: 150px;
+}
+.swade.sheet.actor.vehicle #maneuverCheck {
+  margin-top: 5px;
+}
+.swade.sheet.actor.vehicle #modBox {
+  height: auto;
+  margin-top: 7px;
+  padding: 5px 2px;
+  text-align: center;
+  color: #f1f1f1;
+  position: relative;
+}
+.swade.sheet.actor.vehicle #modBox .bar-container {
+  border-radius: 5px;
+  height: 20px;
+  background-color: #999999;
+}
+.swade.sheet.actor.vehicle #modBox .bar {
+  border-radius: 5px;
+  background-color: #2196f3;
+  height: 20px;
+}
+.swade.sheet.actor.vehicle #modBox .text {
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swade.sheet.item {
+  min-width: 560px;
+}
+.swade.sheet.item .window-content {
+  padding: 5px;
+}
+.swade.sheet.item .sheet-header {
+  overflow: hidden;
+  flex-wrap: nowrap;
+  flex: 0 0 72px;
+}
+.swade.sheet.item .profile-img-container {
+  width: 64x;
+  max-width: 64px;
+  height: 64x;
+  margin-right: 2px;
+}
+.swade.sheet.item .profile-img-container img {
+  margin: 0;
+  border: none;
+}
+.swade.sheet.item .profile-img-container .profile-img {
+  object-fit: contain;
+}
+.swade.sheet.item .itemline {
+  height: 60px;
+  width: 100%;
+  display: inline-flex;
+}
+.swade.sheet.item .itemline .itemname {
+  height: 100%;
+  margin: 0;
+}
+.swade.sheet.item .itemline .itemname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.swade.sheet.item .itemline .item-controls {
+  width: 10%;
+  text-align: center;
+  margin-left: 4px;
+  line-height: 72px;
+}
+.swade.sheet.item .header-fields {
+  flex: 1;
+  padding: 5px;
+}
+.swade.sheet.item .header-fields input[type=text] {
+  background: none;
+  border: 1px solid transparent;
+}
+.swade.sheet.item .sheet-body .editor {
+  border: 1px groove #293133;
+  height: 300px;
+  padding: 0 3px;
+}
+.swade.sheet.item .sheet-body .item-stats {
+  max-width: 30%;
+  margin-right: 5px;
+}
+.swade.sheet.item .sheet-body .header-field {
+  margin-bottom: 0px;
+}
+.swade.sheet.item .powers {
+  margin: 3px 0;
+}
+.swade.sheet.item .powers .header-field-add {
+  line-height: 24px;
+  margin-left: 5px;
+}
+.swade.sheet.item .powers .creators-arcane-skill {
+  display: flex;
+  justify-content: flex-start;
+  color: #fff;
+}
+.swade.sheet.item .powers .creators-arcane-skill select,
+.swade.sheet.item .powers .creators-arcane-skill input {
+  color: #dfe6f5;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+}
+.swade.sheet.item .powers .creators-arcane-skill select {
+  margin-left: 1em;
+  width: 60px;
+}
+.swade.sheet.item .powers .creators-arcane-skill input {
+  width: 40px;
+}
+.swade.sheet.item .powers .creators-arcane-skill input::placeholder {
+  color: #ccc;
+}
+.swade.sheet.item .powers .arcane-tabs {
+  display: flex;
+}
+.swade.sheet.item .powers .arcane-tabs .arcane {
+  cursor: pointer;
+  width: 90px;
+  height: 24px;
+  text-align: center;
+  line-height: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #972824;
+}
+.swade.sheet.item .powers .arcane-tabs .arcane:hover, .swade.sheet.item .powers .arcane-tabs .arcane:focus {
+  background: #3b3b3b;
+  text-shadow: none;
+}
+.swade.sheet.item .powers .arcane-tabs .arcane.active {
+  background: #3b3b3b;
+}
+.swade.sheet.item .powers .power-counter {
+  display: none;
+}
+.swade.sheet.item .powers .power-counter input {
+  width: 40px;
+  color: #dfe6f5;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+}
+.swade.sheet.item .powers .power-counter.active {
+  display: block;
+}
+.swade.sheet.item .powers .powers-list {
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.swade.sheet.item .powers .powers-list .power {
+  display: none;
+  margin: 2px;
+  flex-grow: 0;
+  flex-basis: calc(50% - 4px);
+  height: 250px;
+  border: 1px solid #293133;
+  border-top-left-radius: 4px;
+  border-radius: 2px;
+}
+.swade.sheet.item .powers .powers-list .power.active {
+  display: block;
+}
+.swade.sheet.item .powers .powers-list .power .power-header {
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #293133;
+}
+.swade.sheet.item .powers .powers-list .power .power-header h4 {
+  margin: 0;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.swade.sheet.item .powers .powers-list .power .power-header .item-image {
+  flex-grow: 0;
+  flex-basis: 25px;
+}
+.swade.sheet.item .powers .powers-list .power .power-header .item-controls {
+  padding: 5px;
+  flex-grow: 0;
+  flex-wrap: nowrap;
+  color: black;
+}
+.swade.sheet.item .powers .powers-list .power .power-header .item-controls a + a {
+  margin-left: 5px;
+}
+.swade.sheet.item .powers .powers-list .power .power-header .item-controls .item-unequipped {
+  color: rgba(0, 0, 0, 0.2);
+}
+.swade.sheet.item .powers .powers-list .power .power-content {
+  margin: 0 3px;
+  line-height: 24px;
+  padding: 5px;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+.swade.sheet.item .powers .powers-list .power .power-content .power-details {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+  text-indent: 5px;
+}
+.swade.sheet.item .powers .powers-list .power .power-content .power-description {
+  line-height: 15px;
+}
+.swade.sheet.item .actions-list {
+  max-height: 400px;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+.swade.sheet.item .effects-list {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+.swade.sheet.item .actions-container {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, 1fr) 32px;
+  grid-template-rows: auto;
+  padding: 2px 0;
+}
+.swade.sheet.item .actions-container + .actions-container {
+  border-top: 1px solid #293133;
+}
+.swade.sheet.item .action-name {
+  grid-column: 1;
+}
+.swade.sheet.item .action-name label {
+  text-align: center;
+}
+.swade.sheet.item .action-type {
+  grid-column: 2;
+}
+.swade.sheet.item .action-type label {
+  text-align: center;
+}
+.swade.sheet.item .action-input-left {
+  grid-column: 1;
+}
+.swade.sheet.item .action-input-left label {
+  text-align: center;
+}
+.swade.sheet.item .action-input-left input {
+  place-self: center;
+}
+.swade.sheet.item .action-input-right {
+  grid-column: 2;
+}
+.swade.sheet.item .action-input-right label {
+  text-align: center;
+}
+.swade.sheet.item .action-input-right input {
+  place-self: center;
+}
+.swade.sheet.item .action-delete {
+  grid-column: 3;
+  place-self: center;
+}
+.swade.sheet.item .additional-stats button {
+  width: 80%;
+  line-height: 22px;
+}
+
+.dice-roll .dice-result .dice-formula,
+.dice-roll .dice-result .dice-total {
+  height: 30px;
+}
+.dice-roll .dice-result .dice-formula .dice,
+.dice-roll .dice-result .dice-total .dice {
+  margin: 2px;
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+}
+.dice-roll .dice-result .dice-formula .dice label,
+.dice-roll .dice-result .dice-total .dice label {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+.dice-roll .dice-result .dice-formula .dice img,
+.dice-roll .dice-result .dice-total .dice img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: none;
+}
+.dice-roll .dice-result .dice-formula .modifier,
+.dice-roll .dice-result .dice-total .modifier {
+  margin: 2px;
+  display: inline-flex;
+}
+
+.swade.chat-card {
+  font-style: normal;
+  font-size: 12px;
+}
+.swade.chat-card .card-header {
+  padding: 3px 0;
+  border-top: 2px groove #fff;
+  border-bottom: 2px groove #fff;
+}
+.swade.chat-card .card-header img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+  border: none;
+  object-fit: cover;
+}
+.swade.chat-card .card-header h3 {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  color: #111;
+  overflow: hidden;
+  height: 30px;
+  word-break: break-all;
+}
+.swade.chat-card .card-header h3:hover {
+  color: #111;
+}
+.swade.chat-card .card-content {
+  margin: 5px 0;
+}
+.swade.chat-card .card-content h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
+.swade.chat-card .card-content > * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.swade.chat-card .card-buttons {
+  margin: 5px 0;
+}
+.swade.chat-card .card-buttons span {
+  display: block;
+  line-height: 28px;
+  text-align: center;
+}
+.swade.chat-card .card-buttons button {
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+.swade.chat-card .card-footer {
+  padding: 3px 0 0;
+  border-top: 2px groove #fff;
+}
+.swade.chat-card .card-footer span {
+  border-right: 2px groove #fff;
+  padding: 0 5px 0 0;
+  font-size: 10px;
+}
+.swade.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.chat-message .message-header .message-sender {
+  white-space: normal;
+}
+.chat-message .initiative-draw {
+  display: flex;
+  align-items: center;
+  margin: 0.5em;
+}
+.chat-message .initiative-draw .result-text-card {
+  font-size: 1.125em;
+  font-weight: 700;
+  line-height: 1;
+  order: 2;
+  margin-left: 1em;
+}
+.chat-message .initiative-draw img.result-image {
+  flex-basis: auto;
+  height: 100px;
+  width: auto;
+  border: none;
+  box-shadow: 2px 3px 3px -2px rgba(0, 0, 0, 0.5);
+  order: 1;
+}
+
+.card-button, .swade-official .powers .item-card .card-buttons button, .swade-official .summary .quick-list .gear-card .card-content .card-buttons button {
+  display: block;
+  font-family: "Signika", sans-serif;
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+  width: 100%;
+  background: rgba(255, 255, 240, 0.8);
+  border: 1px solid #b5b3a4;
+  border-radius: 3px;
+}
+
+.actions-subheading {
+  font-weight: bold;
+}
+
+.swade-official .item-card .bold {
+  font-weight: bold;
+}
+.swade-official .powers .power .description-grid {
+  display: grid;
+  grid-template-areas: "details details" "trappings trappings" "description actions";
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+}
+.swade-official .powers .power .description-grid .power-details {
+  grid-area: details;
+}
+.swade-official .powers .power .description-grid .trapping {
+  grid-area: trappings;
+}
+.swade-official .powers .power .description-grid .enriched-description {
+  grid-area: description;
+  padding: 2px;
+}
+.swade-official .powers .power .description-grid .enriched-description .swade-core {
+  padding: 0;
+}
+.swade-official .powers .power .description-grid .item-card {
+  padding: 2px;
+  grid-area: actions;
+}
+.swade-official .powers .item-card {
+  font-size: 14px;
+}
+.sidebar-tab .directory-list .directory-item .wildcard-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: scale-down;
+  object-position: center;
+  margin: 0;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+#players ol li.player .bennies-count {
+  flex-grow: 0;
+  flex-basis: 25px;
+  background: url("assets/icons/plain-circle.svg") no-repeat center;
+  color: black;
+  font-weight: 900;
+  overflow: hidden;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 0 5px white;
+}
+#players ol li.player .bennies-count.bennies-gm {
+  cursor: pointer;
+}
+#players ol li.player .bennies-count.bennies-gm:hover {
+  filter: invert(100);
+}
+
+#combat li.combatant .token-initiative .initiative {
+  font-size: 20px;
+}
+
+.additionalStats-header {
+  padding: 5px;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+
+.swade.setting-config {
+  /* Attributes */
+}
+.swade.setting-config .window-content {
+  height: calc(100% - 30px);
+}
+.swade.setting-config .window-content form {
+  height: 100%;
+}
+.swade.setting-config .sheet-body {
+  max-height: 600px;
+  overflow-x: auto;
+  padding-right: 3px;
+}
+.swade.setting-config .stats-container {
+  margin: 0px 5px;
+  list-style: none;
+  padding: 0;
+}
+.swade.setting-config .attribute {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 20px;
+  place-items: center;
+  column-gap: 10px;
+  height: 28px;
+  line-height: 24px;
+}
+.swade.setting-config .attribute input,
+.swade.setting-config .attribute select {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+}
+.swade.setting-config .attribute > * {
+  text-align: center;
+}
+.swade.setting-config .attribute .attribute-key {
+  grid-column: 1;
+}
+.swade.setting-config .attribute .attribute-label {
+  grid-column: 2;
+}
+.swade.setting-config .attribute .attribute-dtype {
+  grid-column: 3;
+}
+.swade.setting-config .attribute .attribute-maxValue {
+  grid-column: 4;
+}
+.swade.setting-config .attribute .attribute-autoEnable {
+  grid-column: 5;
+}
+.swade.setting-config .attribute .attribute-control {
+  grid-column: 6;
+}
+.swade.setting-config .attributes-header {
+  height: auto;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+.swade.setting-config footer {
+  padding-top: 3px;
+}
+
+#combat.swade #combat-round .encounters h3 {
+  text-align: left;
+  padding: 0 5px;
+}
+#combat.swade li.combatant .roll {
+  background: url(../../systems/swade/assets/ui/ace-white.svg) no-repeat 50% 50%;
+}
+#combat.swade li.combatant .roll:hover {
+  background: url(../../systems/swade/assets/ui/ace-color.svg) no-repeat 50% 50%;
+}
+#combat.swade li.combatant .token-initiative {
+  flex: 0 0 60px;
+  border-right-width: 3px;
+  border-right-style: solid;
+}
+#combat.swade li.combatant.dropTarget {
+  background-color: #666;
+}
+#combat.swade li.combatant.dropTarget .token-name h4 {
+  text-shadow: 1px 1px 3px #000;
+  font-size: 1.2em;
+}
+
+.swade.action-card-editor .card-list {
+  list-style: none;
+}
+.swade.action-card-editor li + li {
+  border-top: 1px solid gray;
+  margin-top: 3px;
+  padding-top: 3px;
+}
+.swade.action-card-editor .header {
+  display: flex;
+  justify-content: space-around;
+}
+.swade.action-card-editor .header h1 {
+  flex: 5;
+  margin-right: 5px;
+}
+.swade.action-card-editor .header button {
+  flex: 1;
+}
+.swade.action-card-editor .body {
+  max-height: 600px;
+  overflow-x: auto;
+  padding-right: 3px;
+}
+.swade.action-card-editor .card-face {
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  height: 124px;
+  object-fit: contain;
+}
+.swade.action-card-editor .card-details {
+  flex: 3;
+}
+
+.roll-dialog {
+  font-family: var(--default-font);
+}
+.roll-dialog .window-content {
+  background-image: url(./assets/main_bg.webp);
+}
+.roll-dialog .modifiers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.roll-dialog .modifier-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0.5em 0.5em 0.25em 0.5em;
+  padding: 0 0 0.5em 0;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid var(--color-text-light-3);
+}
+.roll-dialog .modifier-entry input[type=checkbox],
+.roll-dialog .modifier-entry label {
+  margin: auto;
+}
+.roll-dialog .add-modifier {
+  line-height: inherit;
+}
+.roll-dialog .header {
+  text-align: center;
+  border-bottom: 2px groove var(--color-border-light-highlight);
+  margin-bottom: 0.5em;
+}
+.roll-dialog .footer {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.swade-official {
+  --content-background-image: url("./assets/main_bg.webp");
+  --section-header-color: #972824;
+  --section-header-size: 1.5em;
+  --section-header-font: "Anton", "Signika", sans-serif;
+  --default-font: "Roboto Slab", "Signika", serif;
+  --default-font-size: 1em;
+  --input-background: #cbc0af;
+  --input-box-shadow: 0 0 5px red;
+  --input-text-shadow: 0 0 10px red;
+  font-family: var(--default-font);
+  font-weight: normal;
+  font-size: var(--default-font-size);
+}
+.swade-official .window-content {
+  background-image: var(--content-background-image);
+  background-repeat: repeat;
+  background-position: left top;
+}
+.swade-official .window-content .main-grid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, max-content) minmax(0, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.5em;
+}
+.swade-official .grid-under,
+.swade-official .grid-cover {
+  margin: 0;
+  display: none;
+  pointer-events: none;
+}
+.swade-official .charname-container {
+  grid-row: 1;
+  grid-column: 1/8;
+  display: flex;
+  align-items: center;
+}
+.swade-official .charname-container input[type] {
+  background: transparent;
+}
+.swade-official .branding {
+  grid-row: 1;
+  grid-column: 8/-1;
+  display: flex;
+  margin: 0;
+  justify-content: flex-end;
+}
+.swade-official .branding img {
+  border: none;
+  max-height: 48px;
+  flex: 0 0;
+  margin: auto 0;
+  object-fit: contain;
+}
+.swade-official .conviction-enabled .charname-container {
+  grid-column: 1/6;
+}
+.swade-official .conviction-enabled .branding {
+  grid-column: 6/10;
+}
+.swade-official .conviction-enabled #conviction {
+  grid-row: 1;
+  grid-column: 10/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.swade-official .character-detail {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+}
+.swade-official .character-detail input[type] {
+  background: transparent;
+}
+.swade-official .race {
+  grid-row: 2;
+  grid-column: 1/span 3;
+}
+.swade-official .archetype {
+  grid-row: 2;
+  grid-column: 4/span 3;
+}
+.swade-official .rank {
+  grid-row: 2;
+  grid-column: 7/span 3;
+}
+.swade-official .advances {
+  grid-row: 2;
+  grid-column: 10/span 3;
+}
+.swade-official .advances input {
+  text-align: center;
+}
+.swade-official .tabs {
+  grid-row: 3;
+  grid-column: 1/-1;
+  margin-top: 6px;
+}
+.swade-official .tabs .item {
+  flex: 1;
+  padding: 2px 1ch;
+  font-family: "Anton", "Signika", sans-serif;
+  text-align: center;
+  font-size: 1.75em;
+  color: black;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0px -4px 6px -3px #0000009e, 0px -4px 6px -3px #0000002b inset;
+  white-space: nowrap;
+}
+.swade-official .tabs .active {
+  color: #972824;
+  text-shadow: none;
+  box-shadow: 0px -6px 6px -1px #0000006b;
+}
+.swade-official .sheet-body {
+  grid-row: 4/-1;
+  grid-column: 1/-1;
+  margin: -7px;
+}
+.swade-official .tab {
+  display: none;
+  overflow: hidden auto;
+  height: 100%;
+  width: 100%;
+  padding: 7px;
+}
+.swade-official .tab .active {
+  display: block;
+}
+.swade-official input[type=text],
+.swade-official input[type=number] {
+  border: none;
+  background: var(--input-background);
+}
+.swade-official input[type=text]:hover,
+.swade-official input[type=text] :focus,
+.swade-official input[type=number]:hover,
+.swade-official input[type=number] :focus {
+  box-shadow: var(--input-box-shadow);
+}
+.swade-official button {
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  line-height: 16px;
+  font-family: var(--default-font);
+  width: auto;
+  padding: 2px;
+  margin: 2px;
+}
+.swade-official button i {
+  margin: 0;
+}
+.swade-official button:focus {
+  box-shadow: var(--input-box-shadow);
+}
+.swade-official button:hover {
+  text-shadow: var(--input-text-shadow);
+}
+.swade-official .editor {
+  border: 2px solid rgba(59, 59, 59, 0.5);
+  width: 100%;
+}
+.swade-official .section-header {
+  font-family: var(--section-header-font);
+  text-align: center;
+  font-size: var(--section-header-size);
+  color: var(--section-header-color);
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.swade-official .section-header .name {
+  text-align: center;
+  z-index: 0;
+  grid-column: 1/span 2;
+  grid-row: 1;
+}
+.swade-official .section-header .controls {
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--default-font);
+}
+.swade-official .item-unequipped {
+  color: rgba(0, 0, 0, 0.2);
+}
+.swade-official .item-create {
+  color: #aca592;
+}
+.swade-official .item-create:hover,
+.swade-official .item-create :focus {
+  color: #3b3b3b;
+}
+.swade-official .sheet-header-official input[type=text],
+.swade-official .sheet-header-official input[type=number] {
+  background: transparent;
+  flex-basis: 100px;
+}
+.swade-official .charname {
+  margin: 2px;
+  font-size: 30px;
+  height: 48px;
+  border: none;
+  background: none;
+  width: 100%;
+  margin: 0;
+}
+.swade-official .char-details {
+  justify-content: space-around;
+}
+.swade-official #conviction {
+  --color-initial: rgba(0, 0, 0, 1);
+  --color-high: rgba(255, 0, 0, 0.7);
+  --color-low: rgba(255, 0, 0, 0);
+  text-align: center;
+  flex: 0;
+}
+.swade-official #conviction .conviction-toggle {
+  cursor: pointer;
+}
+.swade-official #conviction input {
+  width: 100%;
+  max-width: 50px;
+}
+.swade-official #conviction .pulse {
+  box-shadow: 0 0 0 0 var(--color-initial);
+  transform: scale(1);
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+  white-space: nowrap;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    background: var(--color-high);
+    box-shadow: 0 0 0 0 var(--color-high);
+  }
+  70% {
+    transform: scale(1);
+    background: var(--color-low);
+    box-shadow: 0 0 0 8px var(--color-low);
+  }
+  100% {
+    transform: scale(0.95);
+    background: var(--color-low);
+    box-shadow: 0 0 0 0 var(--color-low);
+  }
+}
+.swade-official .additional-stats select,
+.swade-official .currency select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+  border-radius: 0;
+}
+.swade-official .additional-stats select option,
+.swade-official .currency select option {
+  color: black;
+}
+.swade-official .additional-stats button,
+.swade-official .currency button {
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  width: 80%;
+}
+.swade-official .additional-stats input,
+.swade-official .currency input {
+  text-align: center;
+}
+.swade-official .summary {
+  grid-template-rows: max-content max-content minmax(0, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.5em;
+}
+.swade-official .summary.active {
+  display: grid;
+}
+.swade-official .summary .fatigue-wrapper,
+.swade-official .summary .wounds-wrapper {
+  grid-row: 1;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.swade-official .summary .status {
+  grid-row: 1;
+  grid-column: span 2;
+  font-weight: bold;
+  display: grid;
+}
+.swade-official .summary .bennies {
+  grid-row: 1;
+  grid-column: span 2;
+}
+.swade-official .summary .attributes {
+  grid-row: 2;
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+}
+.swade-official .summary .skills,
+.swade-official .summary .quickaccess {
+  grid-row: 3;
+  grid-column: span 5;
+}
+.swade-official .label {
+  text-align: center;
+}
+.swade-official .wounds {
+  background-image: url("./assets/circle_wounds.webp");
+  margin: 2px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  line-height: 70px;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+}
+.swade-official .wounds input {
+  width: 35px;
+  text-align: end;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  height: 70px;
+}
+.swade-official .wounds .values {
+  padding-right: 10px;
+}
+.swade-official .fatigue {
+  background-image: url("./assets/circle_fatigue.webp");
+  margin: 2px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  line-height: 70px;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+}
+.swade-official .fatigue input {
+  width: 35px;
+  text-align: end;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  height: 70px;
+}
+.swade-official .fatigue .values {
+  padding-right: 20px;
+}
+.swade-official .bennies {
+  display: grid;
+  grid-template-columns: repeat(12, 10px);
+  min-height: 80px;
+}
+.swade-official .benny {
+  width: 80px;
+  height: 80px;
+  align-self: center;
+  justify-self: start;
+  grid-row: 1;
+  background-position: center;
+  background-size: contain;
+  text-align: center;
+}
+.swade-official .benny:hover {
+  filter: grayscale(100%);
+}
+.swade-official .current-bennies {
+  grid-row: 1;
+  grid-column: 11/span 2;
+  align-self: end;
+  justify-self: end;
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 2px;
+  margin-bottom: -5px;
+  z-index: 10;
+}
+.swade-official .add-benny {
+  grid-row: 1;
+  grid-column: 11/span 2;
+  align-self: start;
+  justify-self: center;
+  z-index: 10;
+}
+.swade-official .attributes,
+.swade-official .gear {
+  justify-content: center;
+}
+.swade-official .additional-stats {
+  padding-left: 10px;
+  max-width: 95%;
+}
+.swade-official .armor-display {
+  background-image: url("./assets/sheet_armor.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.swade-official .parry-display {
+  background-image: url("./assets/sheet_parry.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.swade-official .primary {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.swade-official .primary .attribute-label {
+  font-weight: 700;
+}
+.swade-official .primary .attribute-value {
+  margin-top: 2px;
+  flex-wrap: nowrap;
+}
+.swade-official .primary .attribute {
+  margin-bottom: 5px;
+}
+.swade-official .primary .attribute input {
+  background-color: transparent;
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  height: 28px;
+}
+.swade-official .primary .attribute select {
+  color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 28px;
+  text-align-last: center;
+  -moz-text-align-last: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+}
+.swade-official .primary .attribute select ::-ms-expand {
+  display: none;
+}
+.swade-official .primary .attribute option {
+  color: black;
+}
+.swade-official .primary .attribute + .attribute {
+  padding-left: 5px;
+}
+.swade-official .derived {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.swade-official .derived .stat {
+  margin-bottom: 5px;
+}
+.swade-official .derived .stat-label {
+  font-weight: 700;
+}
+.swade-official .derived .stat-value {
+  margin-top: 5px;
+  flex-wrap: nowrap;
+}
+.swade-official .derived input {
+  margin: 0;
+  width: 100%;
+  height: 28px;
+}
+.swade-official .derived .stat + .stat {
+  padding-left: 2px;
+}
+.swade-official .derived .running-die {
+  max-height: 28px;
+  margin: 0 2px;
+  padding: 0 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.swade-official .primary + .derived {
+  margin-left: 10px;
+}
+.swade-official .note-box {
+  display: grid;
+  gap: 0;
+  grid-template-rows: minmax(2.2em, auto) 1fr 3em;
+  margin-top: -10px;
+}
+.swade-official .note-box .section-header {
+  width: 90%;
+  margin: auto;
+}
+.swade-official .note-box .note-header {
+  grid-row: 1;
+  grid-column: 1;
+  background-image: url("./assets/skills_header.webp");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  max-width: 100%;
+}
+.swade-official .note-box .note-main {
+  grid-row: 2;
+  grid-column: 1;
+  background-image: url("./assets/skills_bg.webp");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+.swade-official .note-box .note-footer {
+  grid-row: 3;
+  grid-column: 1;
+  background-image: url("./assets/skills_footer.webp");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.swade-official .skills .skill-list {
+  margin: 0;
+  list-style: none;
+  padding-left: 10px;
+  width: 95%;
+  font-size: 1.15em;
+}
+.swade-official .skills .skill-name {
+  text-align: left;
+  flex: 3;
+  justify-self: flex-start;
+}
+.swade-official .skills .skill-die {
+  text-align: left;
+  flex: 1;
+  justify-self: flex-start;
+}
+.swade-official .skills li {
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+}
+.swade-official .skills li.item.skill {
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.swade-official .skills li.item.skill .skill-icon {
+  max-height: 24px;
+  flex-grow: 0;
+  object-fit: contain;
+  margin-top: 0.3em;
+  margin-right: 0.1em;
+  border: none;
+}
+.swade-official .skills li.item.skill .card-header.flexrow {
+  align-items: center;
+}
+.swade-official .skills li.item.skill .item-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+.swade-official .quickaccess ol,
+.swade-official .quickaccess ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  width: 95%;
+}
+.swade-official .quickaccess .effects-list li {
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+}
+.swade-official .quickaccess .effects-list .effect-icon {
+  flex: 0 0 24px;
+  height: 24px;
+  margin-right: 2px;
+  border: none;
+}
+.swade-official .quickaccess .effects-list span.effect-label {
+  flex: 1;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.swade-official .quickaccess .effects-list button.effect-label {
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  padding-left: 5px;
+  justify-self: flex-start;
+}
+.swade-official .quickaccess .effects-list .effect-controls {
+  line-height: 24px;
+  flex: 0 0 60px;
+  text-align: center;
+}
+.swade-official .quickaccess .effects-list .effect-controls button {
+  padding: 0;
+  margin: 0;
+}
+.swade-official .gear-card {
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.swade-official .gear-card .item-name {
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  padding-left: 5px;
+  justify-self: flex-start;
+}
+.swade-official .gear-card .item-name:focus {
+  border: none;
+}
+.swade-official .gear-card .item-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  justify-self: flex-start;
+  height: 24px;
+  flex-grow: 0;
+  flex-basis: 24px;
+}
+.swade-official .gear-card .item-controls {
+  line-height: 24px;
+  text-align: center;
+  flex: 0 0 32px;
+  justify-self: flex-end;
+}
+.swade-official .gear-card .card-content {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.swade-official .gear-card .card-content div {
+  flex-grow: 1;
+  flex-basis: 130px;
+}
+.swade-official .currency {
+  justify-self: flex-end;
+  max-width: 33%;
+}
+.swade-official .inventory ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.swade-official .inventory li {
+  display: grid;
+  line-height: 30px;
+  padding: 2px 5px;
+  margin-bottom: 2px;
+}
+.swade-official .inventory li:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
+.swade-official .inventory li > * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.swade-official .inventory .item-img {
+  height: 30px;
+  border: none;
+  margin-right: 2px;
+  object-fit: cover;
+}
+.swade-official .inventory .description {
+  display: none;
+  margin: 2px;
+  padding: 2px;
+  font-size: 14px;
+  font-family: "Signika", serif;
+  max-height: 300px;
+  overflow-y: scroll;
+  grid-column: 1/8;
+  white-space: normal;
+  line-height: normal;
+}
+.swade-official .header {
+  border-radius: 5px;
+  background-image: url("./assets/header_bg.webp");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: grid;
+  line-height: 24px;
+}
+.swade-official .header .item-controls {
+  justify-content: space-around !important;
+}
+.swade-official .header .header-name {
+  grid-column: 1/span 2;
+}
+.swade-official .weapon {
+  grid-template-columns: 30px 3fr 1fr 1fr 2fr 1fr 80px;
+  align-items: center;
+}
+.swade-official .weapon .item-img {
+  grid-column: 1;
+}
+.swade-official .weapon .name {
+  grid-column: 2;
+  flex-wrap: nowrap;
+}
+.swade-official .weapon .damage {
+  grid-column: 3;
+  text-align: center;
+}
+.swade-official .weapon .damage button {
+  width: 90%;
+}
+.swade-official .weapon .ap {
+  grid-column: 4;
+  text-align: center;
+}
+.swade-official .weapon .note {
+  grid-column: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.swade-official .weapon .weight {
+  grid-column: 6;
+  text-align: center;
+}
+.swade-official .weapon .item-controls {
+  grid-column: 7;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.swade-official .weapon .item-controls button {
+  padding: 0;
+}
+.swade-official .armor {
+  grid-template-columns: 30px 3fr 1fr 1fr 2fr 1fr 80px;
+  align-items: center;
+}
+.swade-official .armor .item-img {
+  grid-column: 1;
+}
+.swade-official .armor .name {
+  grid-column: 2;
+  flex-wrap: nowrap;
+}
+.swade-official .armor .bonus {
+  grid-column: 3;
+  text-align: center;
+}
+.swade-official .armor .min-str {
+  grid-column: 4;
+  text-align: center;
+}
+.swade-official .armor .note {
+  grid-column: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.swade-official .armor .weight {
+  grid-column: 6;
+  text-align: center;
+}
+.swade-official .armor .item-controls {
+  grid-column: 7;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.swade-official .armor .item-controls button {
+  padding: 0;
+}
+.swade-official .shield {
+  grid-template-columns: 30px 3fr 1fr 1fr 2fr 1fr 80px;
+  align-items: center;
+}
+.swade-official .shield .item-img {
+  grid-column: 1;
+}
+.swade-official .shield .name {
+  grid-column: 2;
+  flex-wrap: nowrap;
+}
+.swade-official .shield .parry {
+  grid-column: 3;
+  text-align: center;
+}
+.swade-official .shield .cover {
+  grid-column: 4;
+  text-align: center;
+}
+.swade-official .shield .note {
+  grid-column: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.swade-official .shield .weight {
+  grid-column: 6;
+  text-align: center;
+}
+.swade-official .shield .item-controls {
+  grid-column: 7;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.swade-official .shield .item-controls button {
+  padding: 0;
+}
+.swade-official .misc {
+  grid-template-columns: 30px 7fr 1fr 80px;
+  align-items: center;
+}
+.swade-official .misc .item-img {
+  grid-column: 1;
+}
+.swade-official .misc .name {
+  grid-column: 2;
+  flex-wrap: nowrap;
+}
+.swade-official .misc .weight {
+  grid-column: 3;
+  text-align: center;
+}
+.swade-official .misc .item-controls {
+  grid-column: 4;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.swade-official .misc .item-controls button {
+  padding: 0;
+}
+.swade-official .description .advances {
+  padding: 2px;
+  margin: 5px 0;
+}
+.swade-official .description .advances .editor {
+  height: 170px;
+  padding: 3px;
+}
+.swade-official .description .char-img-container {
+  background-image: url("./assets/char-bg.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: grid;
+}
+.swade-official .description .char-img-container img {
+  align-self: center;
+  justify-self: center;
+  max-width: 190px;
+  max-height: 190px;
+  object-fit: contain;
+  cursor: pointer;
+  margin: 0;
+  border: none;
+}
+.swade-official .description .biography {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.swade-official .description .biography .editor {
+  height: 270px;
+  padding: 3px;
+}
+.swade-official .edges .section-header {
+  font-size: 1.75em;
+}
+.swade-official .edges .edge-hindrance {
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+}
+.swade-official .edges ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+.swade-official .edges .item-name {
+  line-height: 30px;
+  text-align: left;
+  padding-left: 5px;
+  justify-self: flex-start;
+}
+.swade-official .edges .item-name button {
+  line-height: 24px;
+  font-size: 14px;
+}
+.swade-official .edges .item-image {
+  height: 30px;
+  flex: 0 0 30px;
+  border: none;
+}
+.swade-official .edges .item-controls {
+  display: flex;
+  line-height: 30px;
+  text-align: center;
+  flex: 0 0 32px;
+  justify-self: flex-end;
+}
+.swade-official .edges .item-controls button {
+  line-height: 24px;
+  text-align: center;
+}
+.swade-official .edges .description {
+  display: none;
+  margin: 2px;
+  padding: 2px;
+  font-size: 14px;
+  font-family: "Signika", serif;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.swade-official .powers .section-header {
+  font-size: 1.75em;
+}
+.swade-official .powers ul {
+  list-style: none;
+  padding: 0;
+}
+.swade-official .powers .power {
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgba(59, 59, 59, 0.5);
+}
+.swade-official .powers .item-name {
+  line-height: 30px;
+  text-align: left;
+  padding-left: 5px;
+  justify-self: flex-start;
+}
+.swade-official .powers .item-name button {
+  font-size: 14px;
+}
+.swade-official .powers .item-image {
+  height: 30px;
+  flex: 0 0 30px;
+  border: none;
+}
+.swade-official .powers .item-controls {
+  display: flex;
+  line-height: 30px;
+  text-align: center;
+  flex: 0 0 32px;
+  justify-self: flex-end;
+}
+.swade-official .powers .item-controls button {
+  line-height: 24px;
+  text-align: center;
+}
+.swade-official .powers .description {
+  display: none;
+  margin: 2px;
+  padding: 2px;
+  font-size: 14px;
+  font-family: "Signika", serif;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.swade-official .powers .description .power-details {
+  font-family: var(--default-font);
+  display: flex;
+  font-size: 14px;
+  font-weight: 900;
+}
+.swade-official .powers .description .power-details span {
+  margin: 2px;
+  padding: 2px;
+}
+.swade-official .powers .description .power-details button {
+  font-weight: 900;
+}
+.swade-official .powers .description .power-details * > {
+  flex: 1 1 100px;
+}
+.swade-official .powers .description .trapping {
+  margin: 2px;
+  padding: 2px;
+  font-family: var(--default-font);
+  font-size: 14px;
+  font-weight: 900;
+}
+.swade-official .powers .pp-counter {
+  font-family: var(--default-font);
+  color: black;
+}
+.swade-official .powers .pp-counter input {
+  width: 50px;
+}

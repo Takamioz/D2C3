@@ -1,0 +1,228 @@
+<div
+  class="swade chat-card item-card"
+  data-actor-id="{{item.actor.id}}"
+  data-item-id="{{item.id}}"
+  data-token-id="{{tokenId}}"
+>
+  {{#if item.data.data.notes}}
+  <div class="chips">
+    <p>
+      <span class="bold">
+        <i class="fas fa-sticky-note"></i> {{localize "SWADE.Notes"}}:
+      </span>
+      {{item.data.data.notes}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if (eq item.type "armor")}}
+  <div class="chips">
+    <p>
+      <span class="bold">
+        <i class="fas fa-shield-alt"></i> {{localize "SWADE.Armor"}}:
+      </span>
+      {{item.data.data.armor}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if (and (eq item.type "weapon") item.data.data.range)}}
+  <div class="chips">
+    <p>
+      <span class="bold"><i class="fas fa-ruler-combined"></i> Range:</span>
+      {{item.data.data.range}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if (and (eq item.type "weapon") (gt item.data.data.ap '0'))}}
+  <div class="chips">
+    <p>
+      <span class="bold"><i class="fas fa-shield-alt"></i> AP:</span>
+      {{item.data.data.ap}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if (eq item.type "shield")}}
+  <div class="chips">
+    <p>
+      <span class="bold">
+        <i class="fas fa-shield-alt"></i> {{localize "SWADE.Parry"}}:
+        </span>
+      {{item.data.data.parry}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if hasAmmoManagement}}
+  <div class="ammo-counter">
+    <p>
+      <span class="bold"><i class="fas fa-dot-circle"></i> {{localize "SWADE.Mag"}}:</span>
+      <span class="current-shots">{{item.data.data.currentShots}}</span>&nbsp;/&nbsp;<span class="max-shots">{{item.data.data.shots}}</span>
+      {{#if item.data.data.ammo}}&nbsp;- &nbsp;{{item.data.data.ammo}}{{/if}}
+    </p>
+  </div>
+  {{/if}}
+
+  <div class="card-buttons">
+    {{#if hasReloadButton}}
+    <button class="card-button" data-action="reload">
+      {{localize "SWADE.Reload"}}
+    </button>
+    {{/if}}
+  </div>
+
+  {{#if (eq item.type "power")}}
+  {{#unless powersTab}}
+  <div class="pp-counter">
+    <p>
+      <span class="bold">
+        {{#if item.data.data.arcane}}{{item.data.data.arcane}} {{/if}}{{localize "SWADE.PP"}}:
+      </span>
+      <span class="current-pp">
+        {{#if data.arcane}}
+        {{#each actor.data.data.powerPoints as |ab|}}
+        {{#if (eq @key ../data.arcane)}}
+        {{ab.value}}
+        {{/if}}
+        {{/each}}
+        {{else}}
+        {{powerPoints.current}}
+        {{/if}}
+      </span>
+      &nbsp;/&nbsp;
+      <span class="max-pp">
+        {{#if data.arcane}}
+        {{#each actor.data.data.powerPoints as |ab|}}
+        {{#if (eq @key ../data.arcane)}}
+        {{ab.max}}
+        {{/if}}
+        {{/each}}
+        {{else}}
+        {{powerPoints.max}}
+        {{/if}}
+      </span>
+    </p>
+  </div>
+  {{/unless}}
+  {{/if}}
+
+  {{#if item.data.data.isArcaneDevice}}
+  <div class="pp-counter">
+    <p>
+      <span class="bold">{{localize "SWADE.ArcaneDevice"}} {{localize "SWADE.PP"}}:</span>
+      <span class="current-pp">{{item.data.data.powerPoints.value}}</span>&nbsp;/&nbsp;<span
+        class="max-pp">{{item.data.data.powerPoints.max}}</span>
+    </p>
+  </div>
+  {{/if}}
+
+  <div class="card-buttons">
+    {{#if (eq item.type "power")}}
+    <span class="flexcol">
+      <span class="flexrow" style="display: flex">
+        <label>
+          <strong>{{localize "SWADE.PPCost"}}: </strong>
+        </label>
+        <input type="number" class="pp-adjust" value="{{item.data.data.pp}}" />
+      </span>
+      {{#unless (or powersTab ../../../settingrules.noPowerPoints)}}
+      <span class="flexrow" style="display: flex">
+        <button
+          class="card-button"
+          data-action="pp-adjust"
+          data-adjust="plus"
+          title="{{localize 'SWADE.AddPPDesc'}}"
+        >
+          &plus; {{localize "SWADE.Add"}}
+        </button>
+        <button
+          class="card-button"
+          data-action="pp-adjust"
+          data-adjust="minus"
+          title="{{localize 'SWADE.SubtractPPDesc'}}"
+        >
+          &minus; {{localize "SWADE.Subtract"}}
+        </button>
+      </span>
+      {{/unless}}
+    </span>
+    {{/if}}
+
+    {{#if item.data.data.isArcaneDevice}}
+    <span class="flexcol">
+      <span class="flexrow" style="display: flex">
+        <label>
+          <strong>{{localize "SWADE.PPCost"}}: </strong>
+        </label>
+        <input type="number" class="arcane-device-pp-adjust" value="1" />
+      </span>
+
+      {{#unless ../../../settingrules.noPowerPoints}}
+      <span class="flexrow" style="display: flex">
+        <button class="card-button" data-action="arcane-device-pp-adjust" data-adjust="plus" title="{{localize 'SWADE.AddPPDesc'}}">
+          &plus; {{localize "SWADE.Add"}}
+        </button>
+        <button class="card-button" data-action="arcane-device-pp-adjust" data-adjust="minus"
+          title="{{localize 'SWADE.SubtractPPDesc'}}">
+          &minus; {{localize "SWADE.Subtract"}}
+        </button>
+      </span>
+      {{/unless}}
+
+    </span>
+    {{/if}}
+
+    {{#unless powersTab}}
+    {{#if (or hasSkillRoll item.data.data.isArcaneDevice)}}
+    <h4 class="actions-subheading">
+      <i class="fas fa-bullseye"></i> {{localize "SWADE.TraitRolls"}}
+    </h4>
+    {{/if}}
+    {{/unless}}
+
+    {{#if hasSkillRoll}}
+    <button class="card-button" data-action="formula">
+      {{#if powersTab}}<i class="fas fa-hand-sparkles"></i> {{/if}}{{skill}}
+    </button>
+    {{/if}}
+
+    {{#each actions as |attr key|}}
+    {{#if (eq attr.type "skill")}}
+    <button class="card-button" data-action="{{attr.key}}">
+      {{#if powersTab}}<i class="fas fa-hand-sparkles"></i> {{/if}}{{attr.name}}
+    </button>
+    {{/if}}
+    {{/each}}
+
+    {{#if item.data.data.isArcaneDevice}}
+    <button class="card-button" data-action="arcane-device">
+      {{localize "SWADE.ActivateArcaneDevice"}}
+    </button>
+    {{/if}}
+
+    {{#unless powersTab}}
+    {{#if hasDamage }}
+    <h4 class="actions-subheading">
+      <i class="fas fa-tint"></i> {{localize "SWADE.DmgRolls"}}
+    </h4>
+    {{/if}}
+    {{/unless}}
+
+    {{#if item.data.data.damage}}
+    <button class="card-button" data-action="damage">
+      {{#if powersTab}}<i class="fas fa-tint"></i> {{/if}}{{item.data.data.damage}}
+    </button>
+    {{/if}}
+
+    {{#each actions as |attr key|}}
+    {{#if (eq attr.type "damage")}}
+    <button class="card-button" data-action="{{attr.key}}">
+      {{#if ../powersTab}}<i class="fas fa-tint"></i>{{/if}} {{attr.name}}
+    </button>
+    {{/if}}
+    {{/each}}
+
+  </div>
+</div>

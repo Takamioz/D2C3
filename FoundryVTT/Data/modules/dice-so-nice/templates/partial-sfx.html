@@ -1,0 +1,26 @@
+<li class="sfx flexrow sfx-line">
+    <div class="sfx-data sfx-flex-2">
+        <select data-sfx-dicetype name="sfxLine[{{id}}][diceType]">
+            {{selectOptions triggerTypeList selected=diceType nameAttr="id" labelAttr="name"}}
+        </select>
+    </div>
+    <div class="sfx-data sfx-flex-5">
+        <select data-sfx-result data-sfx-result-dicetype="{{diceType}}" name="sfxLine[{{id}}][onResult]" multiple>
+            {{selectOptions possibleResultList selected=onResult nameAttr="id" labelAttr="id"}}
+        </select>
+    </div>
+    <div class="sfx-data sfx-flex-3">
+        <select data-sfx-specialeffect name="sfxLine[{{id}}][specialEffect]">
+            {{selectOptions specialEffectsMode selected=specialEffect localize=true}}
+        </select>
+    </div>
+    <div class="sfx-hidden">
+        <div data-sfx-hidden-options>
+            {{{options}}}
+        </div>
+    </div>
+    <div class="sfx-controls">
+        <a class="sfx-control" data-sfx-options title='{{localize "DICESONICE.Options"}}'><i class="fas fa-cog"></i></a>
+        <a class="sfx-control" data-sfx-delete title='{{localize "DICESONICE.Delete"}}'><i class="fas fa-trash"></i></a>
+    </div>
+</li>

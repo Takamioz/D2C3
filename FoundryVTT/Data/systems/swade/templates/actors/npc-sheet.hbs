@@ -1,0 +1,205 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <div class="profile-img-container">
+      <img
+        class="profile-img"
+        src="{{actor.img}}"
+        data-edit="img"
+        title="{{actor.name}}"
+      />
+    </div>
+    <div class="header-fields">
+      <div class="charline flexrow">
+        <input
+          class="charname"
+          name="name"
+          type="text"
+          value="{{actor.name}}"
+          placeholder="{{localize 'SWADE.Name'}}"
+        />
+        {{#if actor.isWildcard}}
+        <div class="vitals-container">
+          <div>
+            <strong>{{localize "SWADE.Bennies"}}</strong>
+          </div>
+          <div class="counter flexrow">
+            <input
+              class="bennies-current"
+              name="data.bennies.value"
+              type="number"
+              value="{{data.data.bennies.value}}"
+              data-dtype="Number"
+            />
+            <span class="seperator"> /</span>
+            <input
+              class="bennies-max"
+              name="data.bennies.max"
+              type="number"
+              value="{{data.data.bennies.max}}"
+              data-dtype="Number"
+            />
+          </div>
+        </div>
+        {{/if}} {{#if actor.isWildcard}}{{#if settingrules.conviction}}
+        <div class="conviction">
+          <a
+            class="conviction-toggle {{#if data.data.details.conviction.active}}pulse{{/if}}"
+          >
+            <strong
+              >{{localize "SWADE.Conv"}}{{#if
+              data.data.details.conviction.active}} Active{{/if}}
+            </strong>
+          </a>
+          <div>
+            <input
+              type="text"
+              name="data.details.conviction.value"
+              value="{{data.data.details.conviction.value}}"
+              data-dtype="Number"
+              class="conviction-counter"
+            />
+          </div>
+        </div>
+        {{/if}} {{/if}}
+      </div>
+      <section class="vitals flexrow">
+        <div class="vitals-container">
+          <strong>{{localize "SWADE.Fatigue"}}</strong>
+          <div class="counter flexrow">
+            <input
+              type="number"
+              name="data.fatigue.value"
+              value="{{data.data.fatigue.value}}"
+              data-dtype="Number"
+              class="vitals-input"
+            />
+            <span class="seperator">/</span>
+            <input
+              type="number"
+              name="data.fatigue.max"
+              value="{{data.data.fatigue.max}}"
+              data-dtype="Number"
+              class="vitals-input"
+            />
+          </div>
+        </div>
+        <div class="vitals-container">
+          <strong>{{localize "SWADE.Wounds"}}</strong>
+          <div class="counter flexrow">
+            <input
+              type="number"
+              name="data.wounds.value"
+              value="{{data.data.wounds.value}}"
+              data-dtype="Number"
+              class="vitals-input"
+            />
+            <span class="seperator">/</span>
+            <input
+              type="number"
+              name="data.wounds.max"
+              value="{{data.data.wounds.max}}"
+              data-dtype="Number"
+              class="vitals-input"
+            />
+          </div>
+        </div>
+        <div class="status-container">
+          <div class="status-item">
+            <label class="check-container"
+              >{{localize "SWADE.Shaken"}}
+              <input
+                type="checkbox"
+                name="data.status.isShaken"
+                {{checked
+                data.data.status.isShaken}}
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="status-item">
+            <label class="check-container"
+              >{{localize "SWADE.Distr"}}
+              <input
+                type="checkbox"
+                name="data.status.isDistracted"
+                {{checked
+                data.data.status.isDistracted}}
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="status-item">
+            <label class="check-container"
+              >{{localize "SWADE.Vuln"}}
+              <input
+                type="checkbox"
+                name="data.status.isVulnerable"
+                {{checked
+                data.data.status.isVulnerable}}
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <div class="status-container">
+          <div class="status-item">
+            <label class="check-container"
+              >{{localize "SWADE.Stunned"}}
+              <input
+                type="checkbox"
+                name="data.status.isStunned"
+                {{checked
+                data.data.status.isStunned}}
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="status-item">
+            <label class="check-container"
+              >{{localize "SWADE.Entangled"}}
+              <input
+                type="checkbox"
+                name="data.status.isEntangled"
+                {{checked
+                data.data.status.isEntangled}}
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="status-item">
+            <label class="check-container"
+              >{{localize "SWADE.Bound"}}
+              <input
+                type="checkbox"
+                name="data.status.isBound"
+                {{checked
+                data.data.status.isBound}}
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  {{#if actor.hasArcaneBackground}}
+  <nav class="flexrow tabs" data-group="primary">
+    <a class="item" data-tab="summary">{{localize "SWADE.Summary"}}</a>
+    <a class="item" data-tab="powers">{{localize "SWADE.Pow"}}</a>
+  </nav>
+  {{/if}}
+
+  <main class="sheet-body">
+    {{!-- Summary Tab --}}
+    <section class="tab active" data-group="primary" data-tab="summary">
+      {{> "systems/swade/templates/actors/partials/npc-summary-tab.hbs"}}
+    </section>
+    {{!-- Powers Tab --}} {{#if actor.hasArcaneBackground}}
+    <section class="tab powers" data-group="primary" data-tab="powers">
+      {{> "systems/swade/templates/actors/partials/powers-tab.hbs"}}
+    </section>
+    {{/if}}
+  </main>
+</form>

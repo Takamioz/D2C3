@@ -1,0 +1,194 @@
+<div
+  class='swade chat-card item-card'
+  data-actor-id='{{actor.id}}'
+  data-item-id='{{item._id}}'
+  data-token-id='{{tokenId}}'
+>
+  <header class='card-header flexrow'>
+    <img src='{{item.img}}' title='{{item.name}}' width='36' height='36' />
+    <h3 class='item-name'><a>{{item.name}}</a></h3>
+  </header>
+
+  <!-- Ammo Management -->
+  {{#if hasAmmoManagement}}
+  <div class='ammo-counter'>
+    <i class='fas fa-dot-circle'></i>
+    {{localize 'SWADE.Mag'}}:
+    <span class='current-shots'>{{data.currentShots}}</span>
+    &nbsp;/&nbsp;
+    <span class='max-shots'>{{data.shots}}</span>
+    {{#if data.ammo}}&nbsp;- &nbsp;{{data.ammo}}{{/if}}
+  </div>
+  {{/if}}
+
+  <!-- PP Display -->
+  {{#if (eq item.type 'power')}}
+  {{#unless settingrules.noPowerPoints}}
+  <div class='pp-counter'>
+    {{#if data.arcane}}{{data.arcane}}{{/if}}
+    {{localize 'SWADE.PP'}}:
+    <span
+      class='current-pp'
+    >{{powerPoints.current}}</span>&nbsp;/&nbsp;<span
+      class='max-pp'
+    >{{powerPoints.max}}</span>
+  </div>
+  {{/unless}}
+  {{/if}}
+
+  {{#if data.isArcaneDevice}}
+  <div class="pp-counter">
+    {{localize "SWADE.ArcaneDevice"}} {{localize "SWADE.PP"}}:
+    <span class="current-pp">{{data.powerPoints.value}}</span>&nbsp;/&nbsp;<span
+      class="max-pp">{{data.powerPoints.max}}</span>
+  </div>
+  {{/if}}
+
+  <!-- Description -->
+  <div class='card-content' style='display: none'>{{{data.description}}}</div>
+
+  <!-- Reload Button -->
+  {{#if hasReloadButton}}
+  <div class='card-buttons'>
+    <button data-action='reload'>{{localize 'SWADE.Reload'}}</button>
+  </div>
+  {{/if}}
+
+  <!-- Trait Rolls -->
+  {{#if (or showTraitRolls data.isArcaneDevice)}}
+  <div class='card-buttons'>
+    <h4 class='actions-subheading'>
+      <i class='fas fa-bullseye'></i>
+      {{localize 'SWADE.TraitRolls'}}
+    </h4>
+
+    {{#if hasTraitRoll}}
+    <button data-action='formula' >{{trait}}</button>
+    {{/if}}
+
+    {{#if hasAdditionalActions}}
+    {{#each data.actions as |attr key|}}
+    {{#if (eq attr.type 'skill')}}
+    <button data-action='{{attr.key}}'>{{attr.name}}</button>
+    {{/if}}
+    {{/each}}
+    {{/if}}
+
+    <!-- Arcane Skill Roll (Artificer's) -->
+    {{#if data.isArcaneDevice}}
+    <button data-action="arcane-device">{{localize "SWADE.ActivateArcaneDevice"}}</button>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  <!-- Damage Rolls -->
+  {{#if showDamageRolls}}
+  <div class='card-buttons'>
+    <h4 class='actions-subheading'>
+      <i class='fas fa-tint'></i>
+      {{localize 'SWADE.DmgRolls'}}
+    </h4>
+
+    {{#if hasDamage}}
+    <button data-action='damage'>
+      <i class='fas fa-tint'></i> {{data.damage}}
+    </button>
+    {{/if}}
+
+    {{#if hasAdditionalActions}}
+    {{#each data.actions as |attr key|}}
+    {{#if (eq attr.type 'damage')}}
+      <button data-action='{{attr.key}}'>
+        <i class='fas fa-tint'></i> {{attr.name}}
+      </button>
+    {{/if}}
+    {{/each}}
+    {{/if}}
+  </div>
+  {{/if}}
+
+  <!-- Power Controls -->
+  {{#if (eq item.type 'power')}}
+  <div class='card-buttons'>
+    <span class='flexcol'>
+      <span class='flexrow' style='display: flex'>
+        <label>
+          <strong>{{localize 'SWADE.PPCost'}}: </strong>
+        </label>
+        <input
+          type='number'
+          class='pp-adjust'
+          data-dtype='Number'
+          value='{{data.pp}}'
+        />
+      </span>
+
+      {{#unless settingrules.noPowerPoints}}
+      <span class='flexrow' style='display: flex'>
+        <button
+          class='card-button'
+          data-action='pp-adjust'
+          data-adjust='plus'
+          title='{{localize 'SWADE.AddPPDesc'}}'
+        >
+          &plus;
+          {{localize 'SWADE.Add'}}
+        </button>
+        <button
+          class='card-button'
+          data-action='pp-adjust'
+          data-adjust='minus'
+          title='{{localize 'SWADE.SubtractPPDesc'}}'
+        >
+          &minus;
+          {{localize 'SWADE.Subtract'}}
+        </button>
+        <button
+          data-action='pp-adjust'
+          data-adjust='refresh'
+          title='{{localize 'SWADE.Refresh'}}'
+        >
+          <i class='fas fa-sync'></i>
+        </button>
+      </span>
+      {{/unless}}
+
+    </span>
+  </div>
+  {{/if}}
+
+  <!-- Arcane Device Controls -->
+  {{#if data.isArcaneDevice}}
+  <div class="card-buttons">
+    <span class="flexcol">
+      <span class="flexrow" style="display: flex">
+        <label>
+          <strong>{{localize "SWADE.PPCost"}}: </strong>
+        </label>
+        <input type="number" class="arcane-device-pp-adjust" data-dtype="Number" value="1" />
+      </span>
+
+      {{#unless settingrules.noPowerPoints}}
+      <span class="flexrow" style="display: flex">
+        <button class="card-button" data-action="arcane-device-pp-adjust" data-adjust="plus" title="{{localize 'SWADE.AddPPDesc'}}">
+          &plus; {{localize "SWADE.Add"}}
+        </button>
+        <button class="card-button" data-action="arcane-device-pp-adjust" data-adjust="minus"
+          title="{{localize 'SWADE.SubtractPPDesc'}}">
+          &minus; {{localize "SWADE.Subtract"}}
+        </button>
+        <button data-action="arcane-device-pp-adjust" data-adjust="refresh" title="{{localize 'SWADE.Refresh'}}">
+          <i class="fas fa-sync"></i>
+        </button>
+      </span>
+      {{/unless}}
+    </span>
+  </div>
+  {{/if}}
+
+  <footer class='card-footer'>
+    {{#each data.properties}}
+      <span>{{{this}}}</span>
+    {{/each}}
+  </footer>
+</div>

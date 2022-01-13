@@ -1,0 +1,236 @@
+<form autocomplete="off" class="dice-so-nice flexcol">
+    <nav class="sheet-tabs tabs" data-group="dsn-main">
+        <a class="item active" data-tab="general"><i class="fas fa-dice-d20"></i> {{localize "DICESONICE.settingsAppearance"}}</a>
+        <a class="item" data-tab="preferences"><i class="fas fa-cogs"></i> {{localize "DICESONICE.settingsPreferences"}}</a>
+        <a class="item" data-tab="sfx"><i class="fas fa-meteor"></i> {{localize "DICESONICE.settingsSpecialEffects"}}</a>
+        <a class="item" data-tab="performance"><i class="fas fa-tachometer-alt"></i> {{localize "DICESONICE.settingsPerformance"}}</a>
+        <a class="item" data-tab="backup"><i class="fas fa-upload"></i> {{localize "DICESONICE.settingsBackup"}}</a>
+    </nav>
+    <section id="config-tabs" class="content">
+        <div class="tab active" data-tab="general" data-group="dsn-main">
+            <div class="settings-list">
+                <div id="dice-configuration-canvas-container"></div>
+                <div class="dsn-settings-container">
+                    <hr />
+                    <div class="form-group">
+                        <label>{{localize "DICESONICE.enable"}}</label>
+                        <input type="checkbox" name="enabled" data-dtype="Boolean" {{checked enabled}} />
+                    </div>
+                    <div class="form-group">
+                        <label>{{localize "DICESONICE.showExtraDice"}}</label>
+                        <input type="checkbox" name="showExtraDice" data-showExtraDice data-dtype="Boolean" {{checked showExtraDice}} />
+                    </div>
+                    <hr />
+                    <a class="dice-more-theme" href="https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/wikis/Links" target="_blank">
+                        <i class="fas fa-store"></i> {{localize "DICESONICE.FindMoreTheme"}}
+                    </a>
+                    <nav class="dsn-appearance-tabs" data-group="dsn-dice">
+                        <span class="item" data-group="dsn-dice" data-tab="global">Global</span>
+                        <span class="dsn-appearance-hint" {{{displayHint}}}>{{localize "DICESONICE.navAppearanceHint"}}</span>
+                        {{#each navAppearance as |name key|}}
+                        <span class="item" data-group="dsn-dice" data-tab="{{key}}">{{name}} <i class="fas fa-times" data-close-tab></i></span>
+                        {{/each}}
+                    </nav>
+                    <section id="dsn-appearance-content">
+                        {{{tabsAppearance}}}
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="tab" data-tab="preferences" data-group="dsn-main">
+            <div class="settings-list">
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.hideAfterRoll"}}</label>
+                    <input type="checkbox" data-hideAfterRoll name="hideAfterRoll" data-dtype="Boolean" {{checked hideAfterRoll}} />
+                </div>
+
+                <div class="form-group setting-timeBeforeHide">
+                    <label>{{localize "DICESONICE.timeBeforeHide"}}</label>
+                    <input type="text" data-timeBeforeHide name="timeBeforeHide" value="{{timeBeforeHide}}">
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.hideFX"}}</label>
+                    <select data-hideFX name="hideFX">
+                        {{#select hideFX}}
+                        {{#each fxList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.sounds"}}</label>
+                    <input type="checkbox" data-sounds name="sounds" data-dtype="Boolean" {{checked sounds}} />
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.muteSoundSecretRolls"}}</label>
+                    <input type="checkbox" data-muteSoundSecretRolls name="muteSoundSecretRolls" data-dtype="Boolean" {{checked muteSoundSecretRolls}} />
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.soundsVolume"}}</label>
+                    <div class="form-fields">
+                        <input type="range" data-soundsVolume name="soundsVolume" value="{{soundsVolume}}" min="0.1" max="1" step="0.1" data-dtype="Number">
+                        <span class="range-value">{{soundsVolume}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.soundsSurface"}}</label>
+                    <select data-soundsSurface name="soundsSurface">
+                        {{#select soundsSurface}}
+                        {{#each soundsSurfaceList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.autoSize"}}</label>
+                    <input type="checkbox" data-autoscale name="autoscale" data-dtype="Boolean" {{checked autoscale}} />
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.size"}}</label>
+                    <div class="form-fields">
+                        <input type="range" data-scale name="scale" value="{{scale}}" min="20" max="100" step="1" data-dtype="Number">
+                        <span class="range-value">{{scale}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.speed"}}</label>
+                    <select data-speed name="speed">
+                        {{#select speed}}
+                        {{#each speedList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.canvasZIndex"}}</label>
+                    <select data-canvasZIndex name="canvasZIndex">
+                        {{#select canvasZIndex}}
+                        {{#each canvasZIndexList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.throwingForce"}}</label>
+                    <select data-throwingForce name="throwingForce">
+                        {{#select throwingForce}}
+                        {{#each throwingForceList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.enableFlavorColorset"}}</label>
+                    <input type="checkbox" data-enableFlavorColorset name="enableFlavorColorset" data-dtype="Boolean" {{checked enableFlavorColorset}} />
+                </div>
+            </div>
+        </div>
+        <div class="tab" data-tab="sfx" data-group="dsn-main">
+            <div class="settings-list">
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.showOthersSFX"}}</label>
+                    <input type="checkbox" name="showOthersSFX" data-dtype="Boolean" {{checked showOthersSFX}} />
+                </div>
+                <ol id="sfxs-list" class="sfxs-list">
+                    <li class="sfx flexrow sfx-header">
+                        <div class="sfx-name sfx-flex-2">{{localize "DICESONICE.diceType"}}</div>
+                        <div class="sfx-name sfx-flex-5">{{localize "DICESONICE.onResult"}}</div>
+                        <div class="sfx-name sfx-flex-3">{{localize "DICESONICE.specialEffect"}}</div>
+                        <div class="sfx-controls">
+                            <a class="sfx-control" data-sfx-create title='{{localize "DICESONICE.Add"}}'><i class="fas fa-plus"></i></a>
+                        </div>
+                    </li>
+                    {{{specialEffectsList}}}
+                </ol>
+            </div>
+        </div>
+        <div class="tab" data-tab="performance" data-group="dsn-main">
+            <div class="settings-list">
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.shadowQuality"}}</label>
+                    <select data-shadowQuality name="shadowQuality">
+                        {{#select shadowQuality}}
+                        {{#each shadowQualityList as |name key|}}
+                        <option value="{{key}}">{{name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.bumpMapping"}}</label>
+                    <input type="checkbox" data-bumpMapping name="bumpMapping" data-dtype="Boolean" {{checked bumpMapping}} />
+                </div>
+
+                <div class="form-group">
+                    <label>{{localize "DICESONICE.useHighDPI"}}</label>
+                    <input type="checkbox" data-useHighDPI name="useHighDPI" data-dtype="Boolean" {{checked useHighDPI}} />
+                </div>
+            </div>
+        </div>
+        <div class="tab" data-tab="backup" data-group="dsn-main">
+            <div class="settings-list">
+                <p class="notes">{{localize "DICESONICE.BackupHint"}}</p>
+                <div class="form-group">
+                    <button type="button" data-saveas name="saveas">
+                        <i class="fas fa-archive"></i> {{localize "DICESONICE.SaveAs"}}
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" data-load name="load">
+                        <i class="fas fa-box-open"></i> {{localize "DICESONICE.Load"}}
+                    </button>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <button type="button" data-import name="import">
+                        <i class="fas fa-file-import"></i> {{localize "DICESONICE.Import"}}
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" data-export name="export">
+                        <i class="fas fa-file-export"></i> {{localize "DICESONICE.Export"}}
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" data-exportSFX name="exportSFX">
+                        <i class="fas fa-file-export"></i> {{localize "DICESONICE.ExportSFX"}}
+                    </button>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <button type="button" data-reset name="reset">
+                        <i class="fas fa-undo"></i> {{localize "DICESONICE.Reset"}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="sheet-footer flexrow">
+        <button type="submit" name="submit">
+            <i class="far fa-save"></i> {{localize "DICESONICE.Save"}}
+        </button>
+        <button type="button" data-test name="test">
+            <i class="fas fa-dice"></i> {{localize "DICESONICE.TestRoll"}}
+        </button>
+        <button type="button" data-cancel name="cancel">
+            <i class="fas fa-ban"></i> {{localize "DICESONICE.Cancel"}}
+        </button>
+    </footer>
+</form>

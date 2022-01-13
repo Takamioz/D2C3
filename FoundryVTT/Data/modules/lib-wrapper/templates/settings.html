@@ -1,0 +1,179 @@
+<form class="{{classes}} lib-wrapper" autocomplete="off">
+	<nav class="sheet-tabs tabs">
+		<a class='item' data-tab='Priorities'>{{localize 'lib-wrapper.settings.menu.priorities.name'}}</a>
+		<a class='item' data-tab='Conflicts'>{{localize 'lib-wrapper.settings.menu.conflicts.name'}}</a>
+		<a class='item' data-tab='Wrappers'>{{localize 'lib-wrapper.settings.menu.active-wrappers.name'}}</a>
+		<a class='item' data-tab='About'>{{localize 'lib-wrapper.settings.menu.about.name'}}</a>
+	</nav>
+
+	<section class='tab' data-tab='Priorities'>
+		<h1>{{localize 'lib-wrapper.settings.menu.priorities.name'}}</h1>
+		{{#if about.collect_stats}}
+		{{^}}
+			<p style="margin:auto; width:100%; text-align: center; padding-bottom: 5px"><b>{{localize 'lib-wrapper.settings.menu.priorities.statistics-disabled'}}</b></p>
+		{{/if}}
+		<div class="package-priority-group">
+			<div class="form-group" style="width: 90%; float:left">
+				<label for="packages-prioritized">{{localize 'lib-wrapper.settings.menu.priorities.prioritized.title'}}
+					<p class="notes">{{localize 'lib-wrapper.settings.menu.priorities.prioritized.hint'}}</p>
+				</label>
+				<select name="packages-prioritized" class="packages-prioritized" size="8">
+					{{#if packages.prioritized}}
+					{{#each packages.prioritized}}
+						<option value="{{this.key}}">{{this.title}} ({{this.id}})</option>
+					{{/each}}
+					{{/if}}
+				</select>
+			</div>
+			<div class="vertical-arrow-btn-group" style="width: 5%; padding-top: 45px;">
+				<button type="button" class="change-priority" data-which="packages-prioritized" data-direction="up">&uarr;</button>
+				<button type="button" class="change-priority" data-which="packages-prioritized" data-direction="down">&darr;</button>
+			</div>
+			<div class="arrow-btn-group" style="width: 10%">
+				<button type="button" style="width:50%" class="change-category" data-from="packages-normal" data-to="packages-prioritized">&uarr;</button>
+				<button type="button" style="width:50%" class="change-category" data-from="packages-prioritized" data-to="packages-normal">&darr;</button>
+			</div>
+		</div>
+		<div class="package-priority-group">
+			<div class="form-group" style="width: 90%">
+				<label for="packages-normal">{{localize 'lib-wrapper.settings.menu.priorities.unprioritized.title'}}
+					<p class="notes">{{localize 'lib-wrapper.settings.menu.priorities.unprioritized.hint'}}</p>
+				</label>
+				<select name="packages-normal" class="packages-normal" size="8">
+					{{#if packages.normal}}
+					{{#each packages.normal}}
+						<option value="{{this.key}}">{{this.title}} ({{this.id}})</option>
+					{{/each}}
+					{{/if}}
+				</select>
+			</div>
+			<div class="arrow-btn-group" style="width: 10%">
+				<button type="button" style="width:50%" class="change-category" data-from="packages-deprioritized" data-to="packages-normal">&uarr;</button>
+				<button type="button" style="width:50%" class="change-category" data-from="packages-normal" data-to="packages-deprioritized">&darr;</button>
+			</div>
+		</div>
+		<div class="package-priority-group">
+			<div class="form-group" style="width: 90%; float:left">
+				<label for="packages-deprioritized">{{localize 'lib-wrapper.settings.menu.priorities.deprioritized.title'}}
+					<p class="notes">{{localize 'lib-wrapper.settings.menu.priorities.deprioritized.hint'}}<br><b>{{localize 'lib-wrapper.settings.menu.priorities.deprioritized.note'}}</b></p>
+				</label>
+				<select name="packages-deprioritized" class="packages-deprioritized" size="8">
+					{{#if packages.deprioritized}}
+					{{#each packages.deprioritized}}
+						<option value="{{this.key}}">{{this.title}} ({{this.id}})</option>
+					{{/each}}
+					{{/if}}
+				</select>
+			</div>
+			<div class="vertical-arrow-btn-group" style="width: 5%; padding-top: 45px;">
+				<button type="button" class="change-priority" data-which="packages-deprioritized" data-direction="up">&uarr;</button>
+				<button type="button" class="change-priority" data-which="packages-deprioritized" data-direction="down">&darr;</button>
+			</div>
+		</div>
+		<div style="margin: auto; width: 50%; padding-top: 60px">
+			<button type="button" class='submit' style="width:30%">{{localize 'lib-wrapper.settings.save'}}</button>
+			<button type="button" class="reload" style="width:30%">{{localize 'lib-wrapper.settings.reload'}}</button>
+			<button type="button" class="reset" style="width:30%">{{localize 'lib-wrapper.settings.reset'}}</button>
+		</div>
+	</section>
+
+	<section class='tab' data-tab='Conflicts'>
+		<h1>{{localize 'lib-wrapper.settings.menu.conflicts.name'}}</h1>
+		{{#if about.collect_stats}}
+			{{#if conflicts}}
+				{{#each conflicts}}
+				<ul id="{{this.package_id}}_{{this.other_id}}" class="has-nested">
+					<li>
+						<span class="caret has-nested">
+							{{this.package_id}} vs. {{this.other_id}} ({{#if this.count}}x{{this.count}}{{/if}}{{#if this.count}}{{#if this.ignored}}; {{/if}}{{/if}}{{#if this.ignored}}ignored x{{this.ignored}}{{/if}})
+						</span>
+						<ul class="nested">
+						{{#each this.targets}}
+							<li>
+								{{this.target}} ({{#if this.count}}x{{this.count}}{{/if}}{{#if this.count}}{{#if this.ignored}}; {{/if}}{{/if}}{{#if this.ignored}}ignored x{{this.ignored}}{{/if}})
+							</li>
+						{{/each}}
+						</ul>
+					</li>
+				</ul>
+				{{/each}}
+			{{^}}
+				<p>{{localize 'lib-wrapper.settings.menu.conflicts.none-detected'}}</p>
+			{{/if}}
+		{{^}}
+			<p>{{localize 'lib-wrapper.settings.menu.conflicts.statistics-disabled'}}</p>
+		{{/if}}
+
+		<div style="margin: auto; width: 100%; padding-top: 60px; text-align: center">
+			<button type="button" class="reload" style="width: 40%">{{localize 'lib-wrapper.settings.reload'}}</button>
+			<span style="position: relative; top: 5px; padding-left: 20px" class="lw-show-ignored-conflicts">
+				<input type="checkbox" id="lw-show-ignored-conflicts-checkbox" name="lw-show-ignored-conflicts-checkbox" {{#if show_ignored_conflicts}}checked{{/if}}>
+				<label for="lw-show-ignored-conflicts-checkbox" style="position: relative; top: -5px">{{localize 'lib-wrapper.settings.menu.conflicts.show-ignored'}}</label>
+			</span>
+		</div>
+	</section>
+
+	<section class='tab' data-tab='Wrappers'>
+		<h1>{{localize 'lib-wrapper.settings.menu.active-wrappers.name'}}</h1>
+		{{#if wrappers}}
+			{{#each wrappers}}
+			<ul id="{{this.name}}" class="has-nested">
+				<li><span class="caret has-nested">{{this.name}} ID={{this.id}} (x{{this.packages.length}})</span>
+					{{#if this.names}}
+					<ul class="nested">
+						<li><span class="has-nested">Wrappers:</span>
+							{{/if}}
+
+							<ul class="nested">
+							{{#each this.packages}}
+								<li>{{this.name}} ({{this.type}}{{this.perf_mode}})</li>
+							{{/each}}
+
+							{{#if this.names}}
+							</ul>
+						</li>
+						<li><span class="has-nested">Also known as:</span>
+							<ul class="nested">
+							{{#each this.names}}
+								<li>{{this}}</li>
+							{{/each}}
+							</ul>
+						</li>
+					{{/if}}
+					</ul>
+				</li>
+			</ul>
+			{{/each}}
+		{{^}}
+			<p>{{localize 'lib-wrapper.settings.menu.active-wrappers.none-active'}}</p>
+		{{/if}}
+
+		<div style="margin: auto; width: 15%; padding-top: 60px">
+			<button type="button" class="reload" style="width:100%">{{localize 'lib-wrapper.settings.reload'}}</button>
+		</div>
+	</section>
+
+	<section class='tab' data-tab='About'>
+		<h1>{{localize 'lib-wrapper.settings.menu.about.full-name'}}</h1>
+		<p style="text-align: center"><b>{{localize 'lib-wrapper.settings.menu.about.credits' name=about.name version=about.version author='Rui Pinheiro'}}</b>
+		{{#if about.translation_credits}}
+			<br>{{about.translation_credits}}
+		{{/if}}
+		</p>
+
+		<p>{{localize 'lib-wrapper.settings.menu.about.description'}}</p>
+		<p>{{{localize 'lib-wrapper.settings.menu.about.info' repo_url='https://foundryvtt.com/packages/lib-wrapper' github_url='https://github.com/ruipin/fvtt-lib-wrapper/'}}}</p>
+
+		{{#if about.support}}
+			<p>{{{localize 'lib-wrapper.settings.menu.about.support'}}}</p>
+			<ul>
+				{{#each about.support}}
+					<li>
+						<a href="{{this.url}}">{{this.title}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+		<p>{{{localize 'lib-wrapper.settings.menu.about.issue-tracker' issues_url='https://github.com/ruipin/fvtt-lib-wrapper/issues'}}}</p>
+	</section>
+</form>

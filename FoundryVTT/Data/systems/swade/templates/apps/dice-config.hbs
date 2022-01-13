@@ -1,0 +1,198 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{#*inline "settingPartial"}}
+  <div class="form-group">
+    <label>{{this.name}}</label>
+    <div class="form-fields">
+      {{#if this.isCheckbox}}
+      <input
+        type="checkbox"
+        name="{{this.module}}.{{this.key}}"
+        data-dtype="Boolean"
+        {{checked
+        this.value}}
+      />
+
+      {{else if this.isSelect}}
+      <select name="{{this.module}}.{{this.key}}">
+        {{#select this.value}} {{#each this.choices as |name k|}}
+        <option value="{{k}}">{{localize name}}</option>
+        {{/each}} {{/select}}
+      </select>
+
+      {{else if this.isSelectOptGroup}}
+      <select name="{{this.module}}.{{this.key}}">
+        {{#select this.value}} {{#each this.groups as |group key|}}
+        <optgroup label="{{key}}">
+          {{#each group as |name id|}}
+          <option value="{{id}}">{{name}}</option>
+          {{/each}}
+        </optgroup>
+        {{/each}} {{/select}}
+      </select>
+
+      {{else if this.isRange}}
+      <input
+        type="range"
+        name="{{this.module}}.{{this.key}}"
+        data-dtype="Number"
+        value="{{ this.value }}"
+        min="{{ this.range.min }}"
+        max="{{ this.range.max }}"
+        step="{{ this.range.step }}"
+      />
+      <span class="range-value">{{this.value}}</span>
+
+      {{else if this.isObject}}
+      <span></span>
+
+      {{else}}
+      <input
+        type="text"
+        name="{{this.module}}.{{this.key}}"
+        value="{{this.value}}"
+        data-dtype="{{this.type}}"
+      />
+      {{/if}}
+    </div>
+
+    <p class="notes">{{this.hint}}</p>
+  </div>
+
+  {{/inline}} {{#each settings}} {{> settingPartial}} {{/each}}
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.texture"}}</label>
+    <select
+      name="swade.dsnCustomWildDieOptions.texture"
+      {{disabled
+      hasCustomWildDie}}
+    >
+      {{selectOptions textureList
+      selected=settings.dsnCustomWildDieOptions.value.texture localize=true}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.material"}}</label>
+    <select
+      name="swade.dsnCustomWildDieOptions.material"
+      {{disabled
+      hasCustomWildDie}}
+    >
+      {{#select settings.dsnCustomWildDieOptions.value.material}}
+      {{selectOptions materialList
+      selected=settings.dsnCustomWildDieOptions.value.material localize=true}}
+      {{/select}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.font"}}</label>
+    <select
+      name="swade.dsnCustomWildDieOptions.font"
+      {{disabled
+      hasCustomWildDie}}
+    >
+      {{#select settings.dsnCustomWildDieOptions.value.font}} {{selectOptions
+      fontList selected=settings.dsnCustomWildDieOptions.value.font
+      localize=false}} {{/select}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.labelColor"}}</label>
+    <div class="form-fields">
+      <input
+        type="text"
+        name="labelColor"
+        value="{{settings.dsnCustomWildDieColors.value.labelColor}}"
+        data-dtype="String"
+        {{disabled
+        hasCustomWildDie}}
+      />
+      <input
+        type="color"
+        name="labelColorSelector"
+        value="{{settings.dsnCustomWildDieColors.value.labelColor}}"
+        data-edit="labelColor"
+        {{disabled
+        hasCustomWildDie}}
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.diceColor"}}</label>
+    <div class="form-fields">
+      <input
+        type="text"
+        name="diceColor"
+        value="{{settings.dsnCustomWildDieColors.value.diceColor}}"
+        data-dtype="String"
+        {{disabled
+        hasCustomWildDie}}
+      />
+      <input
+        type="color"
+        name="diceColorSelector"
+        value="{{settings.dsnCustomWildDieColors.value.diceColor}}"
+        data-edit="diceColor"
+        {{disabled
+        hasCustomWildDie}}
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.outlineColor"}}</label>
+    <div class="form-fields">
+      <input
+        type="text"
+        name="outlineColor"
+        value="{{settings.dsnCustomWildDieColors.value.outlineColor}}"
+        data-dtype="String"
+        {{disabled
+        hasCustomWildDie}}
+      />
+      <input
+        type="color"
+        name="outlineColorSelector"
+        value="{{settings.dsnCustomWildDieColors.value.outlineColor}}"
+        data-edit="outlineColor"
+        {{disabled
+        hasCustomWildDie}}
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "DICESONICE.edgeColor"}}</label>
+    <div class="form-fields">
+      <input
+        type="text"
+        name="edgeColor"
+        value="{{settings.dsnCustomWildDieColors.value.edgeColor}}"
+        data-dtype="String"
+        {{disabled
+        hasCustomWildDie}}
+      />
+      <input
+        type="color"
+        name="edgeColorSelector"
+        value="{{settings.dsnCustomWildDieColors.value.edgeColor}}"
+        data-edit="edgeColor"
+        {{disabled
+        hasCustomWildDie}}
+      />
+    </div>
+  </div>
+
+  <footer class="sheet-footer flexrow">
+    <button type="submit" name="submit" id="submit">
+      <i class="far fa-save"></i>{{localize "SETTINGS.Save"}}
+    </button>
+    <button type="reset" name="reset" id="reset">
+      <i class="fas fa-undo"></i>{{localize "SETTINGS.Reset"}}
+    </button>
+  </footer>
+</form>

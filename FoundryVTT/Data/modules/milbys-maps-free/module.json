@@ -1,0 +1,34 @@
+		{
+			"name": "milbys-maps-free",
+			"title": "Milby's Maps Free",
+			"description": "A collection of 66 maps and 278 tokens by Matt Milby (milbysmaps.com). The walls and doors were set up for lighting by Luke, the greatest DM that ever was or will be. DM notes and handouts for some maps are also included, as are several pre-generated characters for DND5e.",
+			"author": "Matt Milby and Luke Bev",
+			"version": "1.1.9",
+			"minimumCoreVersion": "0.6.0",
+			"compatibleCoreVersion":"1.0.0",
+			  "packs": [
+    {
+      "name": "milbys-maps-free-handouts",
+      "label": "Handouts (Milby's Maps Free)",
+      "path": "packs/milbys-maps-free-handouts.db",
+      "module": "milbys-maps-free",
+      "entity": "JournalEntry"
+    },
+    {
+      "name": "milbys-maps-free-actors",
+      "label": "Actors (Milby's Maps Free)",
+      "path": "packs/milbys-maps-free-actors.db",
+      "module": "milbys-maps-free",
+      "entity": "Actor"
+    },
+    {
+      "name": "milbys-maps-free-scenes",
+      "label": "Scenes (Milby's Maps Free)",
+      "path": "packs/milbys-maps-free-scenes.db",
+      "module": "milbys-maps-free",
+      "entity": "Scene"
+    }
+  ],
+  "manifest": "http://modules.milbysmaps.com/MMPublic/module.json",   
+  "download": "http://modules.milbysmaps.com/MMPublic/milbys-maps-free.zip" 
+}

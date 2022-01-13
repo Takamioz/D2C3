@@ -1,0 +1,136 @@
+<form
+  class="main-grid {{cssClass}}{{#if settingrules.conviction}} conviction-enabled{{/if}}"
+  autocomplete="off"
+>
+  <figure class="grid-under gu-1"></figure>
+  <figure class="grid-under gu-2"></figure>
+  <figure class="grid-under gu-3"></figure>
+  <figure class="grid-under gu-4"></figure>
+
+  {{!-- Sheet Header --}}
+  <label class="gridcell charname-container">
+    <span class="sr-only">{{localize 'Name'}}</span>
+    <input
+      type="text"
+      name="name"
+      class="charname"
+      value="{{actor.name}}"
+      placeholder="{{localize 'Name'}}"
+    />
+  </label>
+  <figure class="gridcell branding">
+    <img
+      src="systems/swade/assets/peg_logo.webp"
+      id="peg-logo"
+      alt="{{localize 'SWADE.PEGLogo'}}"
+    />
+    <img
+      src="systems/swade/assets/swade_logo.webp"
+      id="swade-logo"
+      alt="{{localize 'SWADE.SWADELogo'}}"
+    />
+  </figure>
+  {{#if settingrules.conviction}}
+  <div id="conviction" class="gridcell">
+    <button type="button" class="conviction-toggle">
+      <strong class="{{#if data.data.details.conviction.active}}pulse{{/if}}">
+        {{~#if data.data.details.conviction.active~}} {{localize
+        "SWADE.ConvictionActive"}} {{~else~}} {{localize "SWADE.Conv"}} {{/if}}
+      </strong>
+    </button>
+    <div>
+      <input
+        type="Number"
+        class="conviction-counter"
+        name="data.details.conviction.value"
+        value="{{data.data.details.conviction.value}}"
+        class="character-detail"
+        data-dtype="Number"
+      />
+    </div>
+  </div>
+  {{/if}}
+
+  <label class="gridcell character-detail race">
+    <span class="sr-only">{{localize 'SWADE.Race'}}</span>
+    <input
+      type="text"
+      name="data.details.species.name"
+      value="{{data.data.details.species.name}}"
+      placeholder="{{localize 'SWADE.Race'}}"
+    />
+  </label>
+    <label class="gridcell character-detail archetype">
+    <span class="sr-only">{{localize 'SWADE.Archetype'}}</span>
+    <input
+      type="text"
+      name="data.details.archetype"
+      value="{{data.data.details.archetype}}"
+      placeholder="{{localize 'SWADE.Archetype'}}"
+    />
+  </label>
+  <label class="gridcell character-detail rank">
+    <span class="sr-only">{{localize 'SWADE.Rank'}}</span>
+    <input
+      type="text"
+      name="data.advances.rank"
+      value="{{data.data.advances.rank}}"
+      placeholder="{{localize 'SWADE.Rank'}}"
+    />
+  </label>
+  <label class="gridcell character-detail advances">
+    <a>{{localize 'SWADE.Adv'}}</a>
+    <input
+      type="number"
+      name="data.advances.value"
+      value="{{data.data.advances.value}}"
+    />
+  </label>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="gridcell tabs" data-group="primary">
+    <a class="item" data-tab="summary">{{localize "SWADE.Summary"}}</a>
+    <a class="item" data-tab="edges">{{localize "SWADE.EdgesHindrances"}}</a>
+    <a class="item" data-tab="inventory">{{localize "SWADE.Inv"}}</a>
+    {{#if actor.hasArcaneBackground}}
+    <a class="item" data-tab="powers">{{localize "SWADE.Pow"}}</a>
+    {{/if}}
+    <a class="item" data-tab="description">{{localize "SWADE.About"}}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <main class="gridcell sheet-body">
+    {{!-- Summary Tab --}}
+    <section class="tab summary active" data-group="primary" data-tab="summary">
+      {{> "systems/swade/templates/official/tabs/summary.hbs"}}
+    </section>
+
+    {{!-- Edges/Hindrances Tab --}}
+    <section class="tab edges" data-group="primary" data-tab="edges">
+      {{> "systems/swade/templates/official/tabs/edges.hbs"}}
+    </section>
+
+    {{!-- Inventory Tab --}}
+    <section class="tab inventory" data-group="primary" data-tab="inventory">
+      {{> "systems/swade/templates/official/tabs/inventory.hbs"}}
+    </section>
+
+    {{!-- Powers Tab --}} {{#if actor.hasArcaneBackground}}
+    <section class="tab powers" data-group="primary" data-tab="powers">
+      {{> "systems/swade/templates/official/tabs/powers.hbs"}}
+    </section>
+    {{/if}} {{!-- Biography Tab --}}
+    <section
+      class="tab description"
+      data-group="primary"
+      data-tab="description"
+    >
+      {{> "systems/swade/templates/official/tabs/description.hbs"}}
+    </section>
+  </main>
+
+  <figure class="grid-cover gc-1"></figure>
+  <figure class="grid-cover gc-2"></figure>
+  <figure class="grid-cover gc-3"></figure>
+  <figure class="grid-cover gc-4"></figure>
+</form>

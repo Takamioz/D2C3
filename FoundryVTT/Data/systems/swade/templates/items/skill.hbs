@@ -1,0 +1,57 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{!-- Item Sheet Header --}}
+  {{> "systems/swade/templates/items/partials/header-delete.hbs"}}
+  <main class="sheet-body">
+    <div class="form-group">
+      <label for="die">{{localize "SWADE.Die"}}</label>
+      <span class="form-fields">
+        <select name="data.die.sides" id="die" data-dtype="Number">
+          {{#select data.data.die.sides}} {{>
+          "systems/swade/templates/die-sides-options.hbs"}} {{/select}}
+        </select>
+        <input
+          name="data.die.modifier"
+          type="text"
+          value="{{data.data.die.modifier}}"
+          placeholder="{{localize 'SWADE.Mod'}}"
+          data-dtype="Number"
+        />
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="attribute">{{localize "SWADE.LinkAttr"}}</label>
+      <span class="form-fields">
+        <select name="data.attribute" id="attribute" data-dtype="String">
+          {{#select data.data.attribute}} {{>
+          "systems/swade/templates/attribute-select.hbs"}} {{/select}}
+        </select>
+      </span>
+    </div>
+    {{#if item.actor.isWildcard}}
+    <div class="form-group">
+      <label for="wild-die">{{localize "SWADE.WildDie"}}</label>
+      <span class="form-fields">
+        <select name="data.wild-die.sides" id="wild-die" data-dtype="Number">
+          {{#select data.data.wild-die.sides}} {{>
+          "systems/swade/templates/die-sides-options.hbs"}} {{/select}}
+        </select>
+      </span>
+    </div>
+    {{/if}}
+    <div class="form-group">
+      <label for="core-skill">{{localize "SWADE.CoreSkill"}}</label>
+      <span class="form-fields">
+        <input
+          type="checkbox"
+          name="data.isCoreSkill"
+          id="core-skill"
+          {{checked
+          data.data.isCoreSkill}}
+          data-dtype="boolean"
+        />
+      </span>
+    </div>
+    {{> "systems/swade/templates/setting-fields.hbs"}}
+    {{> "systems/swade/templates/items/partials/description.hbs"}}
+  </main>
+</form>

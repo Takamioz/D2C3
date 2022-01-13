@@ -1,0 +1,102 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  {{!-- Item Sheet Header --}}
+  {{> "systems/swade/templates/items/partials/header-delete.hbs"}}
+  <main class="sheet-body flexrow">
+    <div class="flexrow tab active" data-group="primary" data-tab="summary">
+      <section class="item-stats">
+        <header class="header-field">
+          <span>{{localize "SWADE.Details"}}</span>
+        </header>
+        <div class="form-group">
+          <label for="data.rank">{{localize "SWADE.Rank"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.rank"
+              type="text"
+              value="{{data.data.rank}}"
+              placeholder="{{localize 'SWADE.Rank'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.pp">{{localize "SWADE.PPShort"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.pp"
+              type="text"
+              value="{{data.data.pp}}"
+              placeholder="{{localize 'SWADE.PP'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.range">{{localize "SWADE.Rng"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.range"
+              type="text"
+              value="{{data.data.range}}"
+              placeholder="{{localize 'SWADE.Rng'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.duration">{{localize "SWADE.Dur"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.duration"
+              type="text"
+              value="{{data.data.duration}}"
+              placeholder="{{localize 'SWADE.Dur'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.damage">{{localize "SWADE.Dmg"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.damage"
+              type="text"
+              value="{{data.data.damage}}"
+              placeholder="{{localize 'SWADE.Dmg'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+        <div class="form-group">
+          <label for="data.arcane">{{localize "SWADE.Arcane"}}</label>
+          <span class="form-fields">
+            <input
+              name="data.arcane"
+              type="text"
+              value="{{data.data.arcane}}"
+              placeholder="{{localize 'SWADE.Arcane'}}"
+              data-dtype="String"
+          /></span>
+        </div>
+      </section>
+      <section>
+        <header class="header-field">
+          <span>{{localize "SWADE.Desc"}}</span>
+        </header>
+        <input
+          name="data.trapping"
+          type="text"
+          value="{{data.data.trapping}}"
+          placeholder="{{localize 'SWADE.Trap'}}"
+          data-dtype="String"
+          style="margin: 2px 0"
+        />
+        {{> "systems/swade/templates/setting-fields.hbs"}}
+        {{editor
+        content=data.data.description target="data.description" button=true
+        owner=owner editable=editable}}
+      </section>
+    </div>
+    <div class="tab" data-group="primary" data-tab="actions-effects">
+      {{> "systems/swade/templates/items/partials/actions.hbs"}}
+      {{> "systems/swade/templates/items/partials/ae-header.hbs"}}
+      {{> "systems/swade/templates/effect-list.hbs"}}
+      <br />
+    </div>
+  </main>
+</form>

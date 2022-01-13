@@ -1,0 +1,131 @@
+<form id="sequencer-database-form" class="dialog-content" onsubmit="event.preventDefault();">
+
+    <style>
+
+        .top-row{
+            display: flex;
+        }
+
+        .database-entries-container{
+            max-height: calc(424px - 5rem);
+            display:flex;
+        }
+
+        .database-entries {
+            padding: 5px 0;
+            max-height: calc(425px - 5rem);
+            overflow-x: hidden;
+            overflow-y: scroll;
+            flex: 1;
+            flex-direction: row;
+        }
+
+        .database-entries-wrapper {
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .database-entry{
+            display:flex;
+            flex: 1 0 auto;
+        }
+
+        .database-entry > button{
+            flex: 0;
+            font-size: 0.7rem;
+            height: 1.25rem;
+            line-height: normal;
+            margin-right: 5px;
+        }
+
+        .btn_play{
+            min-width: 1.5rem;
+        }
+
+        .btn_play * {
+            pointer-events: none;
+        }
+
+        .btn_copy_filepath, .btn_copy_databasepath{
+            min-width: 4.5rem;
+            padding: 0;
+        }
+
+        .database-entry > div{
+            flex: 1;
+            line-height:1.25rem;
+        }
+
+        .database-entry-text {
+            position: relative;
+        }
+
+        .database-entry-text-highlight {
+            pointer-events: none;
+            color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .database-player-container {
+            padding: 5px;
+            width: 345px;
+            height: 345px;
+        }
+
+        .database-player{
+            background-color: #999999;
+            padding:10px;
+        }
+
+        .database-image{
+            width: 345px;
+        }
+
+        .hidden{
+            display:none;
+        }
+
+        .ml-2{
+            margin-left: 1rem;
+        }
+
+        .all-ranges-label{
+            flex: 1 0 auto;
+            margin-right: 0.5rem;
+            line-height: 2;
+        }
+
+    </style>
+
+    <div class="top-row flex mb-2">
+        <select name="pack-select" class="w-15" onsubmit="event.preventDefault();">
+            <option value="all">{{ localize "SEQUENCER.Database.AllPacks" }}</option>
+            {{#each packs as |pack index|}}
+                <option>{{ pack }}</option>
+            {{/each}}
+        </select>
+        <input placeholder='{{ localize "SEQUENCER.Database.Search" }}' name="search-field" type="text" class="ml-2" onsubmit="event.preventDefault();">
+        <input type="checkbox" id="database-all-ranges" class="ml-2">
+        <label for="database-all-ranges" class="all-ranges-label">{{ localize "SEQUENCER.Database.ShowAllRanges" }}</label>
+    </div>
+
+    <div class="database-entries-container">
+
+        <div class="database-entries">
+            <div class="database-entries-wrapper">
+            </div>
+        </div>
+        <div class="database-player-container">
+            <video class="database-player" controls autoplay preload width="335" height="335"></video>
+            <img class="database-image hidden">
+        </div>
+
+    </div>
+
+</form>

@@ -1,0 +1,46 @@
+{
+  "name": "ammo-tracker-fvtt",
+  "title": "Ammo Tracker",
+  "description": "",
+  "authors": [
+    {
+      "name": "NekroDarkmoon",
+      "url": "https://github.com/NekroDarkmoon",
+      "discord": "Nekro Darkmoon#2995",
+      "ko-fi": "https://ko-fi.com/nekrodarkmoon"
+    }
+  ],
+  "url": "https://github.com/NekroDarkmoon/ammo-tracker-fvtt",
+  "flags": {},
+  "version": "0.2.1",
+  "minimumCoreVersion": "0.8.5",
+  "compatibleCoreVersion": "9.224",
+  "scripts": [],
+  "esmodules": [
+    "./index.js"
+  ],
+  "styles": [
+    "/styles/module.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "packs": [],
+  "system": [],
+  "dependencies": [
+    {
+      "name": "socketlib",
+      "type": "module"
+    }
+  ],
+  "socket": true,
+  "manifest": "https://github.com/NekroDarkmoon/ammo-tracker-fvtt/releases/latest/download/module.json",
+  "download": "https://github.com/NekroDarkmoon/ammo-tracker-fvtt/releases/download/0.2.1/module.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": "false"
+}
